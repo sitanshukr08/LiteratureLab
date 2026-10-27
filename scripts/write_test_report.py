@@ -49,7 +49,7 @@ def main():
     with (REPORTS / 'live-case-summary.csv').open('w',newline='',encoding='utf-8-sig') as f:
         writer=csv.DictWriter(f,fieldnames=fields); writer.writeheader(); writer.writerows(rows)
     lines = ['# LiteratureLab test report', '', 'Recorded 27 October 2026 on the user’s Dell G15 / i5-13450HX / approximately 16 GB RAM. CPU parsing and embeddings; Groq GPT-OSS 120B generation/review. No local LLM inference is needed.', '',
-             '**Functional verification and scientific answer quality are separate. This is a working local prototype, not a validated unattended literature-review system.**', '',
+             '**Functional verification and scientific answer quality are separate. This is a working local system, not a validated unattended literature-review system.**', '',
              '## Verified behavior', '',
              f'- Automated regression/API/provider suite: **{tests} tests, {failures} failures/errors**. Evidence: `unit-tests.xml`. One unsuppressed Starlette/httpx test-client deprecation warning remains.',
              f'- Real Edge browser: **{len(browser.get("checks", []))} checks**, clean pass: **{browser.get("passed", False)}**. Cached final-version synthesis, keyboard access, selected papers, uploads, PDF/citation navigation, export/history, mocked quota recovery, no stale answers and 375px layout checked. Expected 400/429 test rejections are separated from unexpected errors.',

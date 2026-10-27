@@ -1,4 +1,6 @@
 .env
+.env.*
+!.env.example
 .venv/
 data/
 models/
@@ -15,3 +17,6 @@ reports/browser-exported-note.md
 reports/*.png
 
 groq-preflight.json
+
+# Formal report contains student and enrollment details.
+Project_Report/

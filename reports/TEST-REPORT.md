@@ -2,7 +2,7 @@
 
 Recorded 27 October 2026 on the user’s Dell G15 / i5-13450HX / approximately 16 GB RAM. CPU parsing and embeddings; Groq GPT-OSS 120B generation/review. No local LLM inference is needed.
 
-**Functional verification and scientific answer quality are separate. This is a working local prototype, not a validated unattended literature-review system.**
+**Functional verification and scientific answer quality are separate. This is a working local system, not a validated unattended literature-review system.**
 
 ## Verified behavior
 

@@ -1,4 +1,4 @@
-# LiteratureLab prototype contract
+# LiteratureLab project contract
 
 Local, single-user browser application for English academic PDFs. Groq generation, free-tier account only; local CPU embeddings, parsing, indices and evidence. The key stays in the Desktop folder's ignored .env. No paid fallbacks or web-search tools.
 

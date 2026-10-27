@@ -1,19 +1,21 @@
 # LiteratureLab
 
-A local academic literature workspace with Groq synthesis, CPU embeddings, hybrid retrieval, and adaptive paragraph/section evidence. It is a final-year prototype, not a promise of error-free scientific answers.
+A local academic literature workspace with Groq synthesis, CPU embeddings, hybrid retrieval, and adaptive paragraph/section evidence. It is a final-year project, not a promise of error-free scientific answers.
 
 ## Run
 
-This machine is preconfigured. Double-click **Start.cmd**, then open **http://127.0.0.1:8765**. Keep the terminal open; Ctrl+C stops it. If a server is already running, use the existing browser tab instead of starting a second copy.
+After setup, double-click **Start.cmd**, then open **http://127.0.0.1:8765**. Keep the terminal open; Ctrl+C stops it. If a server is already running, use the existing browser tab instead of starting a second copy.
 
 For a fresh installation on Windows with Python 3.12:
 
 ```powershell
+git clone https://github.com/sitanshukr08/LiteratureLab.git
+cd LiteratureLab
 powershell -ExecutionPolicy Bypass -File .\Setup.ps1
 .\Start.cmd
 ```
 
-Setup installs the pinned dependencies, downloads the pinned ~67 MB CPU embedding model and the six public research PDFs when missing, and indexes the papers. It does not download an LLM. Set `GROQ_API_KEY` in `.env`. `GROQ_MODEL=openai/gpt-oss-120b` is the tested generator. Restart after changing `.env`. The supplied key is already saved locally, excluded by `.gitignore`; replace the key that was pasted in chat before sharing the project. Do not copy `.env` into source control or a shared archive.
+Setup installs the pinned dependencies, downloads the pinned ~67 MB CPU embedding model and the six public research PDFs when missing, and indexes the papers. It does not download an LLM. Set `GROQ_API_KEY` in `.env`. `GROQ_MODEL=openai/gpt-oss-120b` is the tested generator. Restart after changing `.env`. Setup creates `.env` from `.env.example` when missing. Add your own Groq free-tier key there. The file is excluded by `.gitignore`; do not copy it into source control or a shared archive.
 
 The Desktop environment is isolated from global Python packages. `requirements.txt` pins the tested dependencies; the resolved environment and security check are recorded in `reports/`. Setup performs a normal dependency installation for another machine. Future provider quotas and package availability may change.
 

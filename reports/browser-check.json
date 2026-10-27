@@ -1,5 +1,5 @@
 {
-  "created": "2026-10-27T08:09:45.970804+00:00",
+  "created": "2026-10-27T08:42:03.893369+00:00",
   "browser": "Isolated Microsoft Edge (Playwright)",
   "url": "http://127.0.0.1:8765",
   "checks": [
@@ -8,7 +8,7 @@
       "passed": true,
       "details": {
         "papers": 6,
-        "ready_seconds": 0.697
+        "ready_seconds": 0.707
       }
     },
     {

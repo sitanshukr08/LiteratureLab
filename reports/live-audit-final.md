@@ -2,7 +2,7 @@
 
 Audited 27 October 2026 against the delivered `v4-reported-and-inferred` evaluation. A separate coding-agent pass inspected the retained claims, their selected source spans and the full original-text evidence embedded in each result. This is a qualitative development audit, not independent human evaluation, a held-out benchmark, or a numerical accuracy estimate. No API calls were made for this audit.
 
-**Conclusion:** the prototype provides inspectable evidence, useful answers on several focused questions, and appropriate abstention on the unavailable laptop measurement. Scientific synthesis still needs human review. In particular, q13 retains an overgeneralized finding that mixes a design recommendation into a claim labeled as reported evidence. Valid citation IDs, copied spans and a model review do not eliminate these errors.
+**Conclusion:** the system provides inspectable evidence, useful answers on several focused questions, and appropriate abstention on the unavailable laptop measurement. Scientific synthesis still needs human review. In particular, q13 retains an overgeneralized finding that mixes a design recommendation into a claim labeled as reported evidence. Valid citation IDs, copied spans and a model review do not eliminate these errors.
 
 ## Case findings
 

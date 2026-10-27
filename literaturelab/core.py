@@ -146,7 +146,7 @@ class Corpus:
                             records.append({'paper_id': paper_id, 'level': 'paragraph', 'section': heading,
                                             'pages': [page_index + 1], 'text': part, 'bbox': list(block['bbox'])})
                 if sum(len(r['text'].split()) for r in records) < 70:
-                    raise InputError('Too little readable text. This prototype needs text-based academic PDFs.')
+                    raise InputError('Too little readable text. This system needs text-based academic PDFs.')
                 filename = Path(filename.replace('\\', '/')).name[:180] or 'paper.pdf'
                 extracted_title = max(title_lines, default=(0, filename), key=lambda item: item[0])[1]
                 paper = {'id': paper_id, 'title': title or extracted_title, 'filename': filename, 'pages': len(doc),

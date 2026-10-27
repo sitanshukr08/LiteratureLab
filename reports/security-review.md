@@ -1,6 +1,6 @@
 # Security and dependency review
 
-Reviewed 27 October 2026 for the local, single-user LiteratureLab prototype. This is a focused source/dependency review and regression check, not a penetration test or a certification that the application is vulnerability-free.
+Reviewed 27 October 2026 for the local, single-user LiteratureLab system. This is a focused source/dependency review and regression check, not a penetration test or a certification that the application is vulnerability-free.
 
 ## Changes made
 
@@ -60,7 +60,7 @@ The remaining warning is Starlette's test-client deprecation notice for `httpx`,
 
 ## Remaining limits
 
-The application handles untrusted PDFs in the main local process. File/page limits do not establish protection against every decompression bomb or native parser resource-exhaustion input. Use trusted literature for this prototype; process isolation and stricter resource budgets are required before opening upload access to other users.
+The application handles untrusted PDFs in the main local process. File/page limits do not establish protection against every decompression bomb or native parser resource-exhaustion input. Use trusted literature for this system; process isolation and stricter resource budgets are required before opening upload access to other users.
 
 Notes, papers, vectors and the `.env` are local plaintext files. The Desktop is the user's chosen OneDrive-backed location, so its normal sync/access settings apply. No hosted deployment, encryption-at-rest system, identity provider or remote access was introduced. Selected source evidence is intentionally sent to Groq for generation/review, as disclosed in the interface.
 

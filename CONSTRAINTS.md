@@ -1,4 +1,4 @@
-# Prototype quality bar
+# Project quality bar
 
 1. Groq only for remote inference. No automatic paid-provider fallback, paid tools, or billing-plan changes. Keep the account on its free plan.
 2. Secrets remain backend-only in ignored `.env`. Never include them in source, logs, static resources, screenshots, reports or repository history.
