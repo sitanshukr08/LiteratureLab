@@ -2,6 +2,8 @@
 
 A local academic literature workspace with Gemini/Groq answers, CPU embeddings, hybrid retrieval, and adaptive paragraph/section evidence. It is a final-year project, not a promise of error-free scientific answers.
 
+See the [supplied-paper evaluation](reports/VERITRAIL-EVALUATION.md) for current checks. The [earlier six-paper evaluation](reports/TEST-REPORT.md) is preserved as a historical run.
+
 ## Run
 
 After setup, double-click **Start.cmd**, then open **http://127.0.0.1:8765**. Keep the terminal open; Ctrl+C stops it. If a server is already running, use the existing browser tab instead of starting a second copy.
