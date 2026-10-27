@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LiteratureLab · Research workspace</title><link rel="icon" href="data:,"><link rel="stylesheet" href="/assets/style.css"><script src="/assets/app.js" defer></script></head>
+<body>
+<a class="skip" href="#question">Skip to research question</a>
+<header class="topbar"><a class="brand" href="/"><span class="brand-icon" aria-hidden="true">L</span>LiteratureLab<span class="tag">PROTOTYPE</span></a><span id="connection" class="connection">Connecting…</span></header>
+<div class="workspace">
+<aside class="sidebar" aria-label="Paper library">
+ <div class="sidebar-heading"><h2>Paper library</h2><span id="paper-count" class="count">0</span></div>
+ <p class="muted small">Your sources stay local. Selected evidence is sent to Groq for synthesis.</p>
+ <label class="upload" for="upload"><span class="upload-plus" aria-hidden="true">＋</span><strong>Add research papers</strong><span>Text-based PDF · up to 20 MB each</span><input id="upload" type="file" accept=".pdf,application/pdf" multiple></label>
+ <p id="upload-status" class="small" role="status" aria-live="polite"></p>
+ <div class="library-tools"><span>SELECT SOURCES</span><button id="clear-selection" class="text-button">Search all</button></div>
+ <div id="papers" class="papers"></div>
+ <div class="history-heading"><h2>Research notes</h2><span class="muted small">Saved locally</span></div><div id="history" class="history"></div>
+ <div class="sidebar-foot"><span class="dot"></span>Local retrieval · Free-tier API</div>
+</aside>
+<main>
+ <nav class="tabs" aria-label="Workspace views"><button class="tab active" id="research-tab" aria-pressed="true">Research workspace</button><button class="tab" id="evaluation-tab" aria-pressed="false">Evaluation</button></nav>
+ <section id="research-view">
+  <div class="intro"><p class="eyebrow">FROM PAPERS TO UNDERSTANDING</p><h1>Connect ideas.<br><em>Follow the evidence.</em></h1><p class="muted">Compare methods, trace findings, and synthesize your reading<br class="desktop-only"> with citations you can open and inspect.</p></div>
+  <form id="ask-form" class="question-box"><label for="question">Your research question</label><textarea id="question" maxlength="1200" rows="3" placeholder="How do RAPTOR and HiChunk organize evidence differently?" required></textarea>
+   <div class="question-controls"><label class="select-label" for="strategy">Retrieval<select id="strategy"><option value="adaptive">Adaptive · multi-resolution</option><option value="hybrid">Hybrid · dense + BM25</option><option value="dense">Dense · baseline</option></select></label><div class="action-buttons"><button id="retrieve" type="button" class="secondary">Inspect retrieval</button><button id="ask" type="submit" class="primary">Synthesize <span aria-hidden="true">↗</span></button></div></div>
+  </form>
+  <div class="examples" aria-label="Example questions"><button data-question="Compare RAPTOR and HiChunk: how do their retrieval structures differ, and what evidence would be needed to compare latency?">Compare retrieval methods ↗</button><button data-question="What does Lost in the Middle find about where relevant information appears in a long context?">Understand a finding ↗</button><button data-question="What is RAPTOR's measured median retrieval latency on a Dell G15 with an RTX 3050?">Test missing evidence ↗</button></div>
+  <p id="research-status" class="status" role="status" aria-live="polite">Select papers to focus your question, or search the whole library.</p>
+  <div id="error" class="error" role="alert" hidden></div>
+  <section id="answer-section" class="answer" hidden><div class="answer-heading"><div><p class="eyebrow">RESEARCH NOTE</p><h2 id="answer-title">Synthesis</h2></div><button id="export" class="secondary">Export note</button></div><p id="answer-meta" class="muted small"></p><div id="answer-content"></div><div id="limitations"></div><p id="verification-note" class="verification-note"></p><details id="filtered"><summary id="filtered-summary">Claims withheld</summary><div id="filtered-content"></div></details></section>
+  <details id="trace-panel" class="trace" hidden><summary>Retrieval trace &amp; performance</summary><div id="trace-content"></div></details>
+  <section id="empty-guide" class="guide"><span class="guide-number">01 — 03</span><div><h2>A research workflow you can inspect</h2><p>Choose your sources. Ask a focused question. Open the evidence behind each claim.</p></div></section>
+ </section>
+ <section id="evaluation-view" hidden><div class="intro"><p class="eyebrow">MEASURE BEFORE YOU CLAIM</p><h1>Evaluation notebook</h1><p class="muted">Controlled retrieval checks and recorded live generation tests.</p></div><div id="evaluation-content"></div></section>
+</main>
+<aside class="evidence-pane" aria-label="Retrieved evidence"><div class="evidence-heading"><p class="eyebrow">SOURCE MATERIAL</p><h2>Evidence desk <span id="evidence-count" class="count">0</span></h2><p class="muted small">Original passages, with paper and page provenance.</p></div><div id="evidence" class="evidence-list"><p class="evidence-empty">Your retrieved passages will appear here.<br><br>Use “Inspect retrieval” to explore sources before generating an answer.</p></div></aside>
+</div>
+</body></html>
