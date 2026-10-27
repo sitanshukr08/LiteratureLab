@@ -3,6 +3,7 @@ import numpy as np
 import pymupdf
 import pytest
 from literaturelab.core import Corpus, InputError, rrf
+from literaturelab import core
 
 
 class FakeEmbedder:
@@ -153,3 +154,43 @@ def test_section_comparison_reserves_budget_for_each_selected_paper(corpus):
     assert result['trace']['evidence_words'] <= 1600
     assert result['trace']['coverage_truncations']
     assert result['trace']['missing_papers'] == []
+
+
+@pytest.mark.parametrize('appendix_heading', ['A LIMITATIONS', 'A.1 Additional Results', 'Appendix A Additional Results'])
+def test_appendices_are_indexed_after_bibliography_without_indexing_references(corpus, appendix_heading):
+    doc = pymupdf.open(); page = doc.new_page()
+    page.insert_text((50, 50), 'Retrieval Experiment', fontsize=20)
+    page.insert_text((50, 90), '1 Introduction', fontsize=15)
+    page.insert_textbox((50, 110, 540, 250), 'Main research evidence remains available for the source based literature analysis. '*8, fontsize=10)
+    page.insert_text((50, 270), 'References', fontsize=15)
+    page.insert_text((50, 300), 'A. Smith', fontsize=12, fontname='hebo')
+    page.insert_textbox((50, 320, 540, 450), 'Bibliography entry that is not an original finding and must be omitted from the evidence index. '*6, fontsize=10)
+    page = doc.new_page()
+    page.insert_text((50, 50), appendix_heading, fontsize=12)
+    page.insert_textbox((50, 80, 540, 300), 'The appendix reports additional experiment conditions and a documented failure on unseen datasets. '*8, fontsize=10)
+    paper = corpus.ingest(doc.tobytes(), 'appendix.pdf'); doc.close()
+    nodes = corpus.nodes()
+    assert any('documented failure on unseen datasets' in node['text'] for node in nodes)
+    assert all('Bibliography entry' not in node['text'] and 'A. Smith' not in node['text'] for node in nodes)
+    assert any(node['section'] == appendix_heading for node in nodes)
+    assert paper['index_policy_version'] == core.INDEX_POLICY_VERSION
+
+
+@pytest.mark.parametrize('question', ['in table 1 how much better is the new method', 'how much better is the new method for macro f1'])
+def test_explicit_table_reference_keeps_caption_headers_and_numeric_rows(corpus, question):
+    import json
+    paper = corpus.ingest(pdf_bytes(), 'table.pdf')
+    with corpus.db() as db:
+        metadata, vector = db.execute('SELECT metadata,vector FROM nodes LIMIT 1').fetchone()
+        original = json.loads(metadata)
+        for offset, (section, text) in enumerate([
+            ('Results', 'Table 1: Accuracy measurements for the compared methods on the same dataset.'),
+            ('Results', 'Method | Macro F1 | Dataset A | Dataset B'),
+            ('A B A B', 'New method 84.5 79.5 Baseline 69.6 75.1'),
+        ]):
+            node = dict(original, id=f'table:{offset}', level='paragraph', section=section, text=text)
+            db.execute('INSERT INTO nodes VALUES (?,?,?,?)', (node['id'], paper['id'], json.dumps(node), vector))
+            db.execute('INSERT INTO search VALUES (?,?,?,?)', (node['id'], text, node['title'], section))
+    result = corpus.search(question, [paper['id']])
+    assert result['trace']['structural_prior'] == 'table'
+    assert any('84.5' in node['text'] and '69.6' in node['text'] for node in result['evidence'])

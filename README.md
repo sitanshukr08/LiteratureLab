@@ -7,7 +7,7 @@ LiteratureLab is an open-source, local-first **final-year course project** that 
 
 Rather than presenting an answer as automatically trustworthy, LiteratureLab connects generated claims to source passages, checks citation references locally, performs an additional LLM support review, and explicitly reports insufficient evidence and limitations.
 
-> **Project status — working prototype (`v0.1.0`).** PDF ingestion, indexing, retrieval, Groq-based synthesis, citations, note history, Markdown export, a browser interface, and evaluation scripts are implemented. The immersive research-journal interface, in-app PDF page flipping/highlighting, conversation threads, and next-generation retrieval features described under **Roadmap** are **planned**, not implemented in this version.
+> **Project status — working project (`v0.2.0`).** PDF ingestion, indexing, retrieval, Gemini/Groq synthesis, citations, note history, Markdown export, a browser interface, and evaluation scripts are implemented. The immersive research-journal interface, in-app PDF page flipping/highlighting, conversation threads, and next-generation retrieval features described under **Roadmap** are **planned**, not implemented in this version.
 
 ## Why LiteratureLab?
 
@@ -18,7 +18,7 @@ LiteratureLab explores two connected goals:
 1. **Practical literature synthesis:** provide a functional desktop-browser workspace for collecting, querying, comparing, and citing academic papers.
 2. **Retrieval research:** compare a transparent structure-aware retrieval policy with dense and hybrid baselines, without claiming an improvement until proper evaluation establishes one.
 
-This is a **course-based prototype and research platform**, not a validated autonomous systematic-review tool or a guarantee of error-free scientific answers.
+This is a **course-based project and research platform**, not a validated autonomous systematic-review tool or a guarantee of error-free scientific answers.
 
 ## Features available now
 
@@ -30,7 +30,7 @@ This is a **course-based prototype and research platform**, not a validated auto
   - **Hybrid:** combine dense search with SQLite FTS5/BM25 using Reciprocal Rank Fusion (RRF).
   - **Adaptive:** use simple query heuristics to search section windows for broad questions, or coarse sections followed by child paragraphs for focused questions.
 - **Source-aware evidence selection:** prioritize explicitly selected or recognized papers and enforce a 1,600-word evidence ceiling.
-- **Structured synthesis:** generate cited draft findings and separately labeled inferences using a Groq-hosted model.
+- **Structured synthesis:** generate cited draft findings and separately labeled inferences using a configured Gemini or Groq model.
 - **Citation safeguards:** resolve evidence IDs to copied source spans, reject invalid quotations and certain unsupported numerical claims, and submit remaining claims for a second model-based support review.
 - **Evidence inspection:** view retrieved passages and open the original PDF at the cited page in a browser tab.
 - **Saved research notes:** store results locally, reuse marked cached results, and export Markdown.
@@ -51,9 +51,9 @@ flowchart TD
     D --> F[Retrieval: dense / hybrid / adaptive]
     E --> F
     F --> G[Evidence selection and source provenance]
-    G --> H[Groq structured draft claims]
+    G --> H[Gemini / Groq structured draft claims]
     H --> I[Local span and numeric checks]
-    I --> J[Groq support review]
+    I --> J[Same-provider cited-span review]
     J --> K[Draft research note with citations]
     K --> L[Browser view / SQLite history / Markdown export]
 ```
@@ -63,7 +63,7 @@ flowchart TD
 | Component | Location | Responsibility |
 | --- | --- | --- |
 | Corpus and retrieval | `literaturelab/core.py` | PDF validation, extraction, hierarchy, embeddings, SQLite storage, BM25/dense/RRF/adaptive search |
-| Synthesis and verification | `literaturelab/synthesis.py` | Structured Groq requests, evidence-span resolution, local claim checks, support review, caching, saved notes |
+| Synthesis and verification | `literaturelab/synthesis.py` | Structured provider requests, evidence-span resolution, local claim checks, support review, caching, saved notes |
 | API server | `literaturelab/api.py` | Loopback FastAPI endpoints, request validation, PDF serving, safe errors and browser static files |
 | Frontend | `web/` | Dependency-free HTML/CSS/JavaScript research workspace, evidence cards, citation navigation and evaluation view |
 | Test and evaluation scripts | `tests/`, `scripts/` | Offline regressions, browser checks, seeded real-paper tests and recorded retrieval/live evaluations |
@@ -75,8 +75,8 @@ The current system stores vectors as SQLite BLOBs and ranks eligible vectors loc
 ## Requirements
 
 - **Windows**, with **Python 3.12** recommended for the tested setup.
-- Internet access for first-time dependency, embedding-model and public-PDF downloads, and for Groq inference.
-- A **Groq API key** with access to the configured model. The tested setting is `openai/gpt-oss-120b`; provider models, free-tier quotas and availability can change.
+- Internet access for first-time dependency, embedding-model and public-PDF downloads, and for Gemini/Groq inference.
+- **Gemini and/or Groq API keys** on free-tier accounts. Tested settings are `gemini-3.5-flash-lite` and `openai/gpt-oss-120b`; provider quotas and availability can change.
 - Sufficient free disk space for Python dependencies, the approximately 67 MB embedding model, papers and the local index.
 
 The application runs in a browser but binds to **`127.0.0.1`** by default. It is designed for one trusted local user, not public hosting.
@@ -98,6 +98,9 @@ Edit **`.env`**:
 ```dotenv
 GROQ_API_KEY=your_groq_api_key_here
 GROQ_MODEL=openai/gpt-oss-120b
+GEMINI_API_KEY=your_gemini_api_key_here
+GEMINI_MODEL=gemini-3.5-flash-lite
+LLM_PROVIDER=auto
 ```
 
 **Never commit your real `.env` or API key.** The file is excluded by `.gitignore`.
@@ -172,7 +175,15 @@ Example retrieval request:
 
 An empty `paper_ids` array generally searches the library, subject to recognized paper aliases in the question. `refresh` is relevant to answer caching with `/api/ask`.
 
-## Evaluation and reproducibility
+## Current evaluation
+
+The supplied-paper checks and their limitations are recorded in [VERITRAIL-EVALUATION.md](reports/VERITRAIL-EVALUATION.md). The update passes **94 automated tests** and **13 real-browser checks**. A complete 12-question live run and separate targeted follow-ups are independently audited; partial and withheld answers remain visible in the results. These are development checks, not a general scientific accuracy guarantee.
+
+Auto tries configured Gemini then Groq after eligible availability, authentication or quota failures. Manual selections remain strict, and a safety refusal or unsupported answer does not trigger a more permissive provider. Each saved result records its actual provider and model.
+
+## Earlier six-paper evaluation and reproducibility
+
+The measurements in this section describe the original 0.1.0 run; they are preserved as a historical baseline. See the current evaluation above for the supplied VeriTrail paper and updated guardrails.
 
 The repository contains **recorded development results** from October 27, 2026—not a held-out, independently validated claim of scientific accuracy.
 
@@ -206,7 +217,7 @@ See [TEST-REPORT.md](reports/TEST-REPORT.md), [live-audit-final.md](reports/live
 .venv\Scripts\python.exe scripts/evaluate.py
 ```
 
-To run a live Groq evaluation with cache bypass (consumes provider quota):
+To run a live provider evaluation with cache bypass (consumes provider quota):
 
 ```powershell
 .venv\Scripts\python.exe scripts/evaluate.py --live --fresh
@@ -224,13 +235,13 @@ The browser script is configured to launch the Microsoft Edge channel (`msedge`)
 ## Privacy and security model
 
 - PDF parsing, embeddings, retrieval, indices and saved notes remain **local**.
-- For synthesis and review, **selected passages and question content are sent to Groq**. Do not upload confidential papers unless their disclosure to the provider is acceptable under your applicable policies.
+- For synthesis and review, **selected passages and question content are sent to the selected provider (Auto may use Gemini or Groq)**. Do not upload confidential papers unless their disclosure to the provider is acceptable under your applicable policies.
 - The API key stays in the local ignored `.env` and is not sent to the browser.
 - The app binds to loopback and applies basic host, origin, request-size and input-validation restrictions.
 - PDF uploads and provider responses are untrusted inputs. The app includes safeguards, but they do **not** constitute a full security audit or reliable prompt-injection immunity.
 - Uploaded documents and notes are stored as ordinary local files/database content, without application-level encryption at rest.
 
-**Do not expose this prototype to the public internet or a LAN without authentication, isolation, and an additional security review.**
+**Do not expose this project to the public internet or a LAN without authentication, isolation, and an additional security review.**
 
 ## Known limitations
 
@@ -243,7 +254,7 @@ The browser script is configured to launch the Microsoft Edge channel (`msedge`)
 - Retrieval currently loads local index data and ranks candidates without an ANN index; scalability remains unmeasured.
 - The 1,600-word evidence cap can omit relevant passages from broad multi-paper questions.
 - Saved history consists of individual research notes, not contextual multi-turn conversation threads.
-- Groq availability, rate limits and output quality can vary; rate-limit failures are surfaced rather than silently substituted.
+- Gemini/Groq availability, rate limits and output quality can vary; rate-limit failures are surfaced rather than silently substituted.
 
 ## Roadmap — proposed, not implemented
 
@@ -281,11 +292,14 @@ These planned features are research directions, **not claims of novelty or perfo
 
 ## Project scope and academic integrity
 
-This repository is developed as a **final-year academic course prototype**. It uses and builds on published retrieval and RAG techniques, including dense retrieval, BM25, Reciprocal Rank Fusion, hierarchical document representations and evidence-grounded language generation. Contributions should be described as system design and measured implementation improvements rather than as invented algorithms without prior-art review.
+This repository is developed as a **final-year academic course project**. It uses and builds on published retrieval and RAG techniques, including dense retrieval, BM25, Reciprocal Rank Fusion, hierarchical document representations and evidence-grounded language generation. Contributions should be described as system design and measured implementation improvements rather than as invented algorithms without prior-art review.
 
 The model's outputs should be treated as **draft analysis**, with source verification performed by the researcher.
 
 ## References and useful reading
+
+- [Gemini structured outputs](https://ai.google.dev/gemini-api/docs/structured-output)
+- [Gemini API key handling](https://ai.google.dev/gemini-api/docs/api-key)
 
 - [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401)
 - [Dense Passage Retrieval for Open-Domain Question Answering](https://arxiv.org/abs/2004.04906)
@@ -301,3 +315,25 @@ Exact versions and SHA-256 hashes for the seeded PDFs are recorded in [`demo/man
 ---
 
 **LiteratureLab — From research papers to inspectable evidence.**
+
+
+## Conversational answers and provider switching
+
+Ask in ordinary English; punctuation is optional. For example, `whats this paper about`, `why cant we just check the final answer`, or `in table 1 how do the numbers compare`. Select a paper if the library contains more than one and you refer to “this paper.” The trace shows a conservative query interpretation; a small spelling map is not a guarantee of understanding every typo or language.
+
+**Answer with** offers Auto, Gemini only and Groq only. Auto tries the configured Gemini model first and restarts the entire draft-and-review workflow on Groq after availability, authentication or quota failure. Safety refusals and unsupported/malformed answers do not trigger a hunt for a more permissive answer. Each research note records its actual provider/model and fallback attempts. An API request omitting `provider` follows `LLM_PROVIDER`; the UI sends its explicit selection.
+
+The reader now resumes at recognized appendices after skipping references. Existing library records need explicit reindexing to gain this coverage. Exact table references and quantitative lookups retrieve nearby original caption/header/data blocks; this helps text-based tables but is not visual table understanding. Overviews prioritize original abstract/introduction/conclusion text. Appendix prompt templates are deprioritized unless the question asks about prompts or instructions.
+
+Each source passage has an explicit span ID. Quotes are copied locally, their original PDF pages resolved, and every clause reviewed against only its cited quotes. Arithmetic stays labeled as inference and is checked again if review changes the classification. These controls can still miss semantic errors or withhold useful answers. No promise of hallucination-free output is made.
+
+## Supplied-paper evaluation
+
+`reports/paper-evaluation/` preserves pilot failures and complete versioned runs for the 43-page VeriTrail paper. The question set was frozen before seeing answers. The first complete run exposed under-answering, invalid span selection and retrieval gaps; it is preserved rather than overwritten. Read each run’s independent accuracy review, not just the number of retained claims. The set is an assistant-authored development evaluation, not independent human validation or a general accuracy estimate.
+
+```powershell
+python scripts/evaluate_paper.py --paper path/to/paper.pdf --questions path/to/questions.json
+python scripts/evaluate_paper.py --paper path/to/paper.pdf --questions path/to/questions.json --provider auto --live
+```
+
+The first command runs retrieval only. `--live` explicitly permits hosted inference. A source hash prevents accidentally evaluating a different PDF. The runner records each case and stops after two consecutive provider failures. Browser generation/error checks are intercepted with a recorded fixture and do not consume model quota; paper answer evaluation uses real APIs.

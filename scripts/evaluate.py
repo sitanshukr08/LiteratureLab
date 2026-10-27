@@ -1,4 +1,4 @@
-"""Real corpus retrieval diagnostics; optional live Groq generation, retaining every result."""
+"""Real corpus retrieval diagnostics; optional live provider generation, retaining every result."""
 import argparse
 from collections import Counter
 from datetime import datetime, timezone
@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--live', action='store_true', help='Send public question/evidence passages to Groq.')
+    parser.add_argument('--live', action='store_true', help='Send public question/evidence passages to the configured provider.')
     parser.add_argument('--fresh', action='store_true', help='Bypass response cache for every live case.')
     args = parser.parse_args()
     corpus = Corpus(ROOT / 'data')
@@ -72,7 +72,7 @@ def main():
                        'seconds':result['duration_seconds'],'insufficient_evidence':result['insufficient_evidence'],
                        'invalid_citations_or_spans':len(invalid),'cached':result['cached'],'result_id':result['id']}
             except ProviderError as exc:
-                row = {'case_id':case_id,'question':question,'error':str(exc), 'provider_diagnostic':engine.provider.last_failure}
+                row = {'case_id':case_id,'question':question,'error':str(exc), 'provider_attempts':engine.last_attempts}
             live.append(row)
             report['live_cases'] = live
             output.write_text(json.dumps(report,indent=2),encoding='utf-8')

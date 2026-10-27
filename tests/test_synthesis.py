@@ -1,3 +1,4 @@
+from types import SimpleNamespace
 import pytest
 from literaturelab.synthesis import validate_claims, Synthesis, ProviderError, expand_references
 from literaturelab.core import Corpus
@@ -48,7 +49,7 @@ def test_numerical_claim_requires_source_numbers_or_supported_subtraction():
     source = dict(EVIDENCE[0], text='The new accuracy is 82.6 percent, compared with the previous 62.3 percent.')
     refs = [{'id':'E1','quote':source['text']}]
     accepted, rejected = validate_claims([
-        {'text':'The gain is 20.3 percentage points.', 'evidence':refs},
+        {'kind':'inference','text':'The gain is 20.3 percentage points.', 'evidence':refs},
         {'text':'The experiment has 100 ms latency.', 'evidence':refs}], [source])
     assert len(accepted) == 1 and len(rejected) == 1
 
@@ -81,7 +82,7 @@ def test_verifier_rejection_is_not_displayed_as_supported(tmp_path):
             return {'claims':[{'text':'This has lower retrieval latency.', 'evidence':[{'id':'E1','quote':quote}]}],
                     'insufficient_evidence':False,'limitations':[]}, {'total_tokens':50}
         return {'checks':[{'index':0,'supported':False,'reason':'No measured latency in evidence.'}]}, {'total_tokens':20}
-    engine.provider.complete = provider
+    engine.provider = SimpleNamespace(name='fake',model='fake-v1',complete=provider)
     result = engine.ask('tree', [paper['id']])
     assert not result['claims'] and result['insufficient_evidence']
     assert result['rejected_claims'] and len(calls) == 2
@@ -94,5 +95,5 @@ def test_provider_failure_does_not_create_fake_answer(tmp_path):
     corpus.ingest(pdf_bytes(), 'test.pdf')
     engine = Synthesis(corpus)
     def fail(*args): raise ProviderError('Free-tier quota exhausted; retry later.', 429)
-    engine.provider.complete = fail
+    engine.provider = SimpleNamespace(name='fake',model='fake-v1',complete=fail)
     with pytest.raises(ProviderError): engine.ask('What is the method?')

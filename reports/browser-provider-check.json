@@ -1,0 +1,114 @@
+{
+  "created": "2026-10-27T13:38:39.721039+00:00",
+  "url": "http://127.0.0.1:8766",
+  "browser": "Isolated headless Microsoft Edge via Playwright",
+  "live_model_calls": 0,
+  "checks": [
+    {
+      "name": "One real 43-page paper and two provider configuration indicators; public metadata only",
+      "passed": true,
+      "mocked_generation": false
+    },
+    {
+      "name": "Provider choices have an associated visible label",
+      "passed": true,
+      "mocked_generation": false
+    },
+    {
+      "name": "Keyboard skip link reaches the question",
+      "passed": true,
+      "mocked_generation": false
+    },
+    {
+      "name": "Casual punctuation-free question uses real local retrieval and retrieves the abstract first",
+      "passed": true,
+      "mocked_generation": false,
+      "details": {
+        "evidence": 6,
+        "retrieval_ms": 44.46
+      }
+    },
+    {
+      "name": "Previously saved real answer opens without inference",
+      "passed": true,
+      "mocked_generation": false
+    },
+    {
+      "name": "Auto and both manual provider selections reach request payloads; answer rendering succeeds",
+      "passed": true,
+      "mocked_generation": true
+    },
+    {
+      "name": "Question actions and provider controls are disabled while a request is pending",
+      "passed": true,
+      "mocked_generation": true
+    },
+    {
+      "name": "Citation opens its exact evidence card and page link; original PDF is served",
+      "passed": true,
+      "mocked_generation": true
+    },
+    {
+      "name": "Export includes provider metadata and exact source quotation",
+      "passed": true,
+      "mocked_generation": true
+    },
+    {
+      "name": "Simulated quota failure hides stale answer and restores controls",
+      "passed": true,
+      "mocked_generation": true
+    },
+    {
+      "name": "Untrusted model text is rendered literally and cannot insert HTML",
+      "passed": true,
+      "mocked_generation": true
+    },
+    {
+      "name": "375-pixel layout has no horizontal page overflow",
+      "passed": true,
+      "mocked_generation": true
+    },
+    {
+      "name": "No unexpected browser console, JavaScript or HTTP errors",
+      "passed": true,
+      "mocked_generation": false
+    }
+  ],
+  "console_errors": [],
+  "page_errors": [],
+  "unexpected_http_errors": [],
+  "expected_rejections": [
+    {
+      "url": "http://127.0.0.1:8766/api/ask",
+      "status": 429
+    }
+  ],
+  "mocked_answer_requests": [
+    {
+      "provider": "auto",
+      "question": "can u explain this in normal words"
+    },
+    {
+      "provider": "gemini",
+      "question": "can u explain this in normal words"
+    },
+    {
+      "provider": "groq",
+      "question": "can u explain this in normal words"
+    },
+    {
+      "provider": "groq",
+      "question": "can u explain this in normal words"
+    },
+    {
+      "provider": "groq",
+      "question": "can u explain this in normal words"
+    },
+    {
+      "provider": "groq",
+      "question": "can u explain this in normal words"
+    }
+  ],
+  "screenshot_note_id": "021d7a37fa964e3c87d2cf6b809530a4",
+  "passed": true
+}

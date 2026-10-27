@@ -1,0 +1,108 @@
+{
+  "guard_version": "v2-purpose-qualification",
+  "live_model_calls": 0,
+  "scope": "Replay of deterministic local checks only; not a new semantic or live evaluation.",
+  "cases": [
+    {
+      "id": "vt01",
+      "recorded_claims": 5,
+      "retained_after_local_guard": 5,
+      "newly_withheld": []
+    },
+    {
+      "id": "vt02",
+      "recorded_claims": 4,
+      "retained_after_local_guard": 4,
+      "newly_withheld": []
+    },
+    {
+      "id": "vt03",
+      "recorded_claims": 2,
+      "retained_after_local_guard": 2,
+      "newly_withheld": []
+    },
+    {
+      "id": "vt04",
+      "recorded_claims": 2,
+      "retained_after_local_guard": 2,
+      "newly_withheld": []
+    },
+    {
+      "id": "vt05",
+      "recorded_claims": 2,
+      "retained_after_local_guard": 1,
+      "newly_withheld": [
+        {
+          "text": "The tool avoids context ambiguities by including either the full content for root nodes or the generated summary for other nodes during verdict generation.",
+          "reason": "The cited passage describes a design goal, not an established guarantee.",
+          "evidence": [
+            {
+              "id": "E4",
+              "quote": "To avoid such ambiguities, VeriTrail determines the input for the Verdict Generation prompt based on the nodes from which the sentences were selected: if the node is a root node, its full content is included;",
+              "node_id": "c25078f7cbe18ac8:p:28",
+              "paper_id": "c25078f7cbe18ac8",
+              "title": "VERITRAIL: CLOSED-DOMAIN HALLUCINATION",
+              "section": "3.1.3 VERDICT GENERATION",
+              "pages": [
+                4
+              ]
+            },
+            {
+              "id": "E4",
+              "quote": "otherwise, the summary generated during Evidence Selection is used.",
+              "node_id": "c25078f7cbe18ac8:p:28",
+              "paper_id": "c25078f7cbe18ac8",
+              "title": "VERITRAIL: CLOSED-DOMAIN HALLUCINATION",
+              "section": "3.1.3 VERDICT GENERATION",
+              "pages": [
+                4
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vt06",
+      "recorded_claims": 3,
+      "retained_after_local_guard": 3,
+      "newly_withheld": []
+    },
+    {
+      "id": "vt07",
+      "recorded_claims": 2,
+      "retained_after_local_guard": 2,
+      "newly_withheld": []
+    },
+    {
+      "id": "vt08",
+      "recorded_claims": 2,
+      "retained_after_local_guard": 2,
+      "newly_withheld": []
+    },
+    {
+      "id": "vt09",
+      "recorded_claims": 2,
+      "retained_after_local_guard": 2,
+      "newly_withheld": []
+    },
+    {
+      "id": "vt10",
+      "recorded_claims": 0,
+      "retained_after_local_guard": 0,
+      "newly_withheld": []
+    },
+    {
+      "id": "vt11",
+      "recorded_claims": 0,
+      "retained_after_local_guard": 0,
+      "newly_withheld": []
+    },
+    {
+      "id": "vt12",
+      "recorded_claims": 0,
+      "retained_after_local_guard": 0,
+      "newly_withheld": []
+    }
+  ]
+}

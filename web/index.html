@@ -7,7 +7,7 @@
 <div class="workspace">
 <aside class="sidebar" aria-label="Paper library">
  <div class="sidebar-heading"><h2>Paper library</h2><span id="paper-count" class="count">0</span></div>
- <p class="muted small">Your sources stay local. Selected evidence is sent to Groq for synthesis.</p>
+ <p class="muted small">Your papers are stored locally. Selected evidence is sent to the chosen provider for answers; Auto may use Gemini or Groq.</p>
  <label class="upload" for="upload"><span class="upload-plus" aria-hidden="true">＋</span><strong>Add research papers</strong><span>Text-based PDF · up to 20 MB each</span><input id="upload" type="file" accept=".pdf,application/pdf" multiple></label>
  <p id="upload-status" class="small" role="status" aria-live="polite"></p>
  <div class="library-tools"><span>SELECT SOURCES</span><button id="clear-selection" class="text-button">Search all</button></div>
@@ -19,8 +19,8 @@
  <nav class="tabs" aria-label="Workspace views"><button class="tab active" id="research-tab" aria-pressed="true">Research workspace</button><button class="tab" id="evaluation-tab" aria-pressed="false">Evaluation</button></nav>
  <section id="research-view">
   <div class="intro"><p class="eyebrow">FROM PAPERS TO UNDERSTANDING</p><h1>Connect ideas.<br><em>Follow the evidence.</em></h1><p class="muted">Compare methods, trace findings, and synthesize your reading<br class="desktop-only"> with citations you can open and inspect.</p></div>
-  <form id="ask-form" class="question-box"><label for="question">Your research question</label><textarea id="question" maxlength="1200" rows="3" placeholder="How do RAPTOR and HiChunk organize evidence differently?" required></textarea>
-   <div class="question-controls"><label class="select-label" for="strategy">Retrieval<select id="strategy"><option value="adaptive">Adaptive · multi-resolution</option><option value="hybrid">Hybrid · dense + BM25</option><option value="dense">Dense · baseline</option></select></label><div class="action-buttons"><button id="retrieve" type="button" class="secondary">Inspect retrieval</button><button id="ask" type="submit" class="primary">Synthesize <span aria-hidden="true">↗</span></button></div></div>
+  <form id="ask-form" class="question-box"><label for="question">Ask about your papers</label><textarea id="question" maxlength="1200" rows="3" placeholder="whats this paper about and what did they find" required></textarea>
+   <div class="question-controls"><label class="select-label" for="strategy">Retrieval<select id="strategy"><option value="adaptive">Adaptive · multi-resolution</option><option value="hybrid">Hybrid · dense + BM25</option><option value="dense">Dense · baseline</option></select></label><label class="select-label" for="provider">Answer with<select id="provider"><option value="auto">Auto · Gemini → Groq</option><option value="gemini">Gemini only</option><option value="groq">Groq only</option></select></label><div class="action-buttons"><button id="retrieve" type="button" class="secondary">Inspect retrieval</button><button id="ask" type="submit" class="primary">Synthesize <span aria-hidden="true">↗</span></button></div></div>
   </form>
   <div class="examples" aria-label="Example questions"><button data-question="Compare RAPTOR and HiChunk: how do their retrieval structures differ, and what evidence would be needed to compare latency?">Compare retrieval methods ↗</button><button data-question="What does Lost in the Middle find about where relevant information appears in a long context?">Understand a finding ↗</button><button data-question="What is RAPTOR's measured median retrieval latency on a Dell G15 with an RTX 3050?">Test missing evidence ↗</button></div>
   <p id="research-status" class="status" role="status" aria-live="polite">Select papers to focus your question, or search the whole library.</p>
