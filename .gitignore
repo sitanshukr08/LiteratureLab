@@ -1,0 +1,13 @@
+.env
+.venv/
+data/
+models/
+__pycache__/
+.pytest_cache/
+.test-tmp*/
+*.log
+demo/papers/
+reports/development-*/
+reports/live-*.json
+reports/probe-*.json
+reports/browser-exported-note.md
