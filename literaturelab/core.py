@@ -21,6 +21,45 @@ def normalize(text):
     return re.sub(r'\s+', ' ', unicodedata.normalize('NFKC', text)).strip()
 
 
+INDEX_POLICY_VERSION = 'v2-appendix-evidence'
+
+
+def normalize_question(question):
+    """Interpret common chat spelling without rewriting original source passages."""
+    value = normalize(question).casefold().translate(str.maketrans({'’':"'", '‘':"'", '‐':'-', '‑':'-', '–':'-', '—':'-'}))
+    replacements = {"what's":'what is', 'whats':'what is', "what're":'what are',
+                    "how's":'how is', 'hows':'how is', "that's":'that is', 'thats':'that is',
+                    "can't":'cannot', 'cant':'cannot', "don't":'do not', 'dont':'do not',
+                    "doesn't":'does not', 'doesnt':'does not', "isn't":'is not', 'isnt':'is not',
+                    'retrival':'retrieval', 'retrive':'retrieve', 'halluciantion':'hallucination',
+                    'halluciantions':'hallucinations', 'pls':'please', 'plz':'please', "i'm":'i am', 'im':'i am'}
+    value = re.sub(r"\b[\w']+\b", lambda match: replacements.get(match[0], match[0]), value)
+    # Standalone mathematical u is not a spelling error. Expand it only in a request.
+    value = re.sub(r'\b(can|could|would|will) u\b', r'\1 you', value)
+    value = re.sub(r'(?<!\d),|,(?!\d)|[;!?]+', ' ', value)
+    return normalize(value).rstrip('.')
+
+
+def question_terms(question):
+    stop = {'a','an','the','what','how','and','are','was','for','with','from','that','this','does','which',
+            'can','could','would','will','use','only','supplied','is','it','its','of','to','in','on','do',
+            'you','your','me','my','tell','explain','please','hey','about','paper','papers','study','studies'}
+    return [term for term in dict.fromkeys(re.findall(r'\w+', question)) if term not in stop and (len(term) > 1 or term in {'q', 'k', 'n'})][:45]
+
+
+def overview_question(question):
+    return bool(re.search(r'\b(?:overview|summary|summari\w*|summariz\w*|big picture|main (?:idea|point|contribution)s?)\b|'
+                          r'\b(?:what is|what are) (?:this |the )?(?:paper|study|research|work) (?:about|doing)\b|'
+                          r'\bexplain (?:this|the) (?:paper|study)\b', question))
+
+
+def broad_question(question):
+    overview = r'\b(?:overview|summary|summari\w*|summariz\w*|synthesi\w*|big picture|main (?:idea|point|contribution)s?)\b'
+    conversational = r'\b(?:what is|what are) (?:this |the )?(?:paper|study|research|work) (?:about|doing)\b|\bexplain (?:this|the) (?:paper|study)\b'
+    comparison = r'\b(?:compar\w*|difference|different from|differ from|differs from|across|methods|limitations?|weaknesses|drawbacks|pros and cons|good and bad)\b'
+    return bool(re.search('|'.join((overview, conversational, comparison)), question))
+
+
 def rrf(rankings, k=60):
     scores = {}
     for ranking in rankings:
@@ -126,14 +165,21 @@ class Corpus:
                         heading_label = re.sub(r'^\d+(?:\.\d+)*[.\s]+', '', text).strip()
                         heading_name = heading_label.lower()
                         bold = any(s.get('flags', 0) & 16 for line in lines for s in line['spans'])
+                        appendix_label = bool(re.match(r'^(?:Appendix(?:\s+[A-Z](?:\.\d+)*)?(?:\s|$)|[A-Z]\.\d+(?:\.\d+)*[.\s]+[A-Z]|[A-Z]\s+[A-Z]|[A-Z]\.\s+[A-Z]{2})', text))
+                        appendix_heading = (appendix_label and len(text.split()) <= 18 and len(text) < 180 and
+                                            not text.endswith(('.', ';', ':')) and
+                                            (font > body_size + 0.2 or bold or text.isupper()))
                         is_heading = (len(text.split()) <= 18 and len(text) < 180 and
                                       (heading_name in {'abstract', 'introduction', 'conclusion', 'conclusions', 'references', 'limitations', 'discussion'} or
+                                       appendix_heading or
                                        (bool(re.match(r'^\d+(?:\.\d+)*[.\s]+[A-Z]', text)) and
                                         not text.endswith(('.', ';', ':')) and (font > body_size + 0.2 or bold or heading_label.isupper())) or
                                        (font > body_size + 1.5 and page_index > 0)))
                         if is_heading:
                             if heading_name == 'references':
                                 references = True
+                            elif references and appendix_heading:
+                                references = False
                             heading = text
                             continue
                         if references or len(text.split()) < 12:
@@ -151,6 +197,7 @@ class Corpus:
                 extracted_title = max(title_lines, default=(0, filename), key=lambda item: item[0])[1]
                 paper = {'id': paper_id, 'title': title or extracted_title, 'filename': filename, 'pages': len(doc),
                          'sha256': digest, 'aliases': aliases or [Path(filename).stem.lower()],
+                         'index_policy_version': INDEX_POLICY_VERSION,
                          'paragraphs': len(records), 'sections': len({r['section'] for r in records})}
                 section_groups = {}
                 for i, record in enumerate(records):
@@ -201,6 +248,11 @@ class Corpus:
 
     def search(self, question, paper_ids=None, strategy='adaptive'):
         started = time.perf_counter()
+        if not isinstance(question, str) or len(question) > 1200:
+            raise InputError('Ask a question between 1 and 1200 characters.')
+        interpreted = normalize_question(question)
+        if not re.search(r'\w', interpreted):
+            raise InputError('Ask a question between 1 and 1200 characters.')
         if strategy not in {'dense', 'hybrid', 'adaptive'}:
             raise InputError('Unknown retrieval strategy.')
         papers = self.papers()
@@ -211,23 +263,25 @@ class Corpus:
             raise InputError('Upload at least one paper first.')
         target = set(paper_ids or [])
         if not target:
-            target = {p['id'] for p in papers if any(re.search(r'(?<!\w)' + re.escape(alias) + r'(?!\w)', question.lower()) for alias in p['aliases'] if len(alias) >= 3)}
+            target = {p['id'] for p in papers if any(re.search(r'(?<!\w)' + re.escape(alias) + r'(?!\w)', interpreted)
+                      for alias in (normalize_question(a) for a in p['aliases']) if len(alias) >= 3)}
         allowed = target or known
-        broad = bool(re.search(r'compar|synthesi|overview|summari|limitations|across|methods', question, re.I))
+        broad = broad_question(interpreted)
         resolution = 'section' if strategy == 'adaptive' and broad else 'paragraph'
         with self.db() as db:
             rows = db.execute('SELECT metadata,vector FROM nodes ORDER BY rowid').fetchall()
             nodes = [json.loads(row[0]) for row in rows]
             vectors = np.vstack([np.frombuffer(row[1], dtype=np.float32) for row in rows])
             embedding_start = time.perf_counter()
-            query = self.embedder.encode([question], query=True)[0]
+            query = self.embedder.encode([interpreted], query=True)[0]
             embedding_ms = (time.perf_counter() - embedding_start) * 1000
             candidates = [i for i, n in enumerate(nodes) if n['paper_id'] in allowed and n['level'] == resolution]
             coarse_count, fallback = 0, None
             if strategy == 'adaptive' and not broad:
                 coarse = [i for i, n in enumerate(nodes) if n['paper_id'] in allowed and n['level'] == 'section']
                 coarse_count = len(coarse)
-                coarse_rank = sorted(coarse, key=lambda i: -float(vectors[i] @ query))
+                discuss_prompts = bool(re.search(r'\bprompts?|instructions?|annotation\b', interpreted))
+                coarse_rank = sorted(coarse, key=lambda i: (bool(re.search(r'prompt|annotation instructions', nodes[i]['section'], re.I)) and not discuss_prompts, -float(vectors[i] @ query)))
                 best = []
                 for pid in allowed:
                     best.extend([i for i in coarse_rank if nodes[i]['paper_id'] == pid][:3])
@@ -242,9 +296,8 @@ class Corpus:
             dense = dense_all[:60]
             dense_ms = (time.perf_counter() - dense_start) * 1000
             lexical_start = time.perf_counter()
-            terms = list(dict.fromkeys(re.findall(r'\w+', question.lower())))[:45]
-            stop = {'the','what','how','and','are','was','for','with','from','that','this','does','which','can','use','only','supplied','evidence'}
-            match = ' OR '.join('"' + t + '"' for t in terms if t not in stop and len(t) > 1)
+            terms = question_terms(interpreted)
+            match = ' OR '.join('"' + t + '"' for t in terms)
             candidate_set = set(candidates)
             indices = {n['id']: i for i, n in enumerate(nodes) if i in candidate_set}
             lexical = []
@@ -256,6 +309,8 @@ class Corpus:
                     [match, *eligible])]
             lexical_ms = (time.perf_counter() - lexical_start) * 1000 if strategy != 'dense' else 0.0
         ranked = dense if strategy == 'dense' else rrf([dense, lexical])
+        if strategy == 'adaptive' and not re.search(r'\bprompts?|instructions?|annotation\b', interpreted):
+            ranked.sort(key=lambda i: bool(re.search(r'prompt|annotation instructions', nodes[i]['section'], re.I)))
         selected, used, excerpts, truncations = [], 0, {}, []
         def add(index, allowance=None):
             nonlocal used
@@ -267,6 +322,38 @@ class Corpus:
                 selected.append(index); used += count; excerpts[index] = excerpt
                 if len(words) > count:
                     truncations.append(node['id'])
+        # A paper overview needs its own abstract/introduction before generic matches
+        # such as appendix annotation instructions. This applies only to adaptive search.
+        structural_prior = strategy == 'adaptive' and overview_question(interpreted)
+        if structural_prior:
+            for pid in sorted(allowed):
+                for label in ('abstract', 'introduction', 'conclusion'):
+                    index = next((i for i in candidates if nodes[i]['paper_id'] == pid and
+                                  re.sub(r'^\d+(?:\.\d+)*[.\s]+', '', nodes[i]['section']).casefold().strip().rstrip('s') == label), None)
+                    if index is not None:
+                        add(index, max(1, min(320, 1600 // (3 * len(allowed)))))
+        # Explicit table references require the caption, headers and neighboring original
+        # table blocks, even when numeric-only rows have poor semantic similarity.
+        table_numbers = re.findall(r'\btable\s*(\d+)\b', interpreted)
+        table_anchors = []
+        if strategy == 'adaptive':
+            captions = [i for i, n in enumerate(nodes) if n['level'] == 'paragraph' and n['paper_id'] in allowed
+                        and re.match(r'^Table\s*\d+\s*[:.]', n['text'], re.I)]
+            if table_numbers:
+                table_anchors = [i for i in captions if any(re.match(r'^Table\s*' + re.escape(number) + r'\s*[:.]', nodes[i]['text'], re.I) for number in table_numbers)]
+            elif re.search(r'\b(?:how much|better|worse|highest|lowest|scores?|percent|percentage|accuracy|f1)\b', interpreted):
+                appendix_requested = bool(re.search(r'\bappendix|appendices|ablation|additional models\b', interpreted))
+                table_anchors = sorted(captions, key=lambda i: (
+                    bool(re.match(r'^(?:Appendix\s+)?[A-Z](?:\.\d+)*[.\s]+', nodes[i]['section'])) and not appendix_requested,
+                    -float(vectors[i] @ query)))[:2]
+            for index in table_anchors:
+                node = nodes[index]
+                add(index, 180)
+                for neighbor in range(index + 1, min(index + 4, len(nodes))):
+                    adjacent = nodes[neighbor]
+                    if (adjacent['level'] == 'paragraph' and adjacent['paper_id'] == node['paper_id'] and
+                            set(adjacent['pages']) & set(node['pages'])):
+                        add(neighbor, 180)
         # Explicitly requested papers each get evidence before remaining slots compete.
         if target:
             for pid in sorted(target):
@@ -284,6 +371,9 @@ class Corpus:
         evidence = [dict(nodes[i], text=excerpts[i], citation_id=f'E{j + 1}', dense_rank=dense_all.index(i) + 1 if i in dense_all else None,
                          lexical_rank=lexical.index(i) + 1 if i in lexical else None) for j, i in enumerate(selected)]
         return {'evidence': evidence, 'trace': {'strategy': strategy, 'resolution': resolution,
+                'interpreted_query': interpreted, 'query_terms': terms,
+                'structural_prior': 'table' if table_anchors else 'overview' if structural_prior else None,
+                'routing_reason': 'Overview or comparison phrasing benefits from section context.' if broad else 'Focused question uses paragraph evidence.',
                 'reason': 'Broad question: original section windows.' if resolution == 'section' else 'Focused question: original paragraphs.',
                 'total_nodes': len(nodes), 'coarse_vectors_scored': coarse_count, 'fine_vectors_scored': len(candidates),
                 'requested_papers': sorted(target), 'covered_papers': sorted({n['paper_id'] for n in evidence}),

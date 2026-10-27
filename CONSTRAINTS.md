@@ -1,6 +1,6 @@
 # Project quality bar
 
-1. Groq only for remote inference. No automatic paid-provider fallback, paid tools, or billing-plan changes. Keep the account on its free plan.
+1. Gemini and Groq are the only authorized remote inference providers, following the user’s 27 October 2026 request. Auto fallback may use only these configured providers. No paid tools or billing-plan changes; keep both accounts on their free plans.
 2. Secrets remain backend-only in ignored `.env`. Never include them in source, logs, static resources, screenshots, reports or repository history.
 3. No failing automated regression tests in the delivered state. Preserve regressions for observed failures rather than deleting or skipping them to pass.
 4. Real browser checks must finish cleanly and distinguish intentional rejected requests from unexpected errors. Test uploads, sources, exports, quota recovery and narrow layouts.

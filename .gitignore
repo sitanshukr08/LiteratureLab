@@ -20,3 +20,7 @@ groq-preflight.json
 
 # Formal report contains student and enrollment details.
 Project_Report/
+
+# Full supplied-paper inference records stay local; keep protocols and audit summaries.
+reports/paper-evaluation/pilot/
+reports/paper-evaluation/*/vt*.json

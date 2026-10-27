@@ -11,7 +11,7 @@ async function api(path, options = {}) {
 function showError(error) { $('error').textContent = error.message; $('error').hidden = false; }
 function setBusy(value, message) {
   state.busy = value;
-  for (const id of ['ask', 'retrieve', 'upload']) $(id).disabled = value;
+  for (const id of ['ask', 'retrieve', 'upload', 'provider', 'strategy']) $(id).disabled = value;
   $('research-status').textContent = message;
   $('research-status').classList.toggle('busy', value);
 }
@@ -72,13 +72,15 @@ function renderTrace(trace) {
 }
 function renderResult(result) {
   state.result = result; $('answer-section').hidden = false; $('empty-guide').hidden = true;
-  $('answer-title').textContent = result.claims.length ? 'Draft synthesis · inspect the sources' : 'Evidence is insufficient';
+  $('answer-title').textContent = result.claims.length ? 'Answer from your papers' : 'I couldn’t establish an answer';
   const tokens = (result.usage.generation.total_tokens || 0) + (result.usage.review.total_tokens || 0);
-  $('answer-meta').textContent = `${result.model} · ${result.cached ? 'Cached answer · original ' : ''}${result.duration_seconds}s · ${tokens} tokens · ${new Date(result.created).toLocaleString()}`;
+  $('answer-meta').textContent = `${result.provider || 'groq'} · ${result.model} · ${result.cached ? 'Cached answer · original ' : ''}${result.duration_seconds}s · ${tokens} tokens · ${new Date(result.created).toLocaleString()}`;
   $('answer-content').replaceChildren();
-  if (!result.claims.length) $('answer-content').append(el('p', 'The available passages do not establish an answer. No supported claim was retained.'));
+  if (!result.claims.length) $('answer-content').append(el('p', 'I couldn’t support an answer with the passages I found. Try a more focused question, or inspect the original paper.'));
   for (const claim of result.claims) {
-    const section = el('div', undefined, 'claim'); section.append(el('span', claim.kind === 'inference' ? 'DRAFT INFERENCE' : 'DRAFT REPORTED FINDING', 'evidence-label'), el('p', claim.text));
+    const section = el('div', undefined, 'claim');
+    if (claim.kind === 'inference') section.append(el('span', 'INTERPRETATION', 'evidence-label'));
+    section.append(el('p', claim.text));
     for (const ref of claim.evidence) {
       const button = el('button', `${ref.id} · p. ${ref.pages.join(', ')}`, 'citation'); button.title = `${ref.title}: ${ref.quote}`;
       button.addEventListener('click', () => {
@@ -88,6 +90,7 @@ function renderResult(result) {
       }); section.append(button);
     } $('answer-content').append(section);
   }
+  if ((result.provider_attempts || []).length > 1) $('answer-content').append(el('p', `Used ${result.provider} after the other provider could not complete the request.`, 'small muted'));
   $('limitations').replaceChildren();
   if (result.limitations.length || result.insufficient_evidence) {
     const box = el('div', undefined, 'limitations'); box.append(el('strong', 'Evidence limits'));
@@ -108,7 +111,7 @@ async function research(generate) {
   renderEvidence([]);
   setBusy(true, generate ? 'Retrieving evidence → drafting claims → reviewing support… Free-tier limits may add a wait.' : 'Searching your local paper library…');
   try {
-    const result = await api(generate ? '/api/ask' : '/api/search', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({question: $('question').value, paper_ids: selectedPapers(), strategy: $('strategy').value})});
+    const result = await api(generate ? '/api/ask' : '/api/search', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({question: $('question').value, paper_ids: selectedPapers(), strategy: $('strategy').value, provider: $('provider').value})});
     if (generate) { renderResult(result); await loadHistory(); }
     else { state.result = null; $('answer-section').hidden = true; renderEvidence(result.evidence); renderTrace(result.trace); $('trace-panel').open = true; }
     setBusy(false, generate ? 'Synthesis complete. Inspect the cited passages before using a claim.' : 'Retrieval complete. Original evidence is ready to inspect.');
@@ -135,7 +138,7 @@ $('upload').addEventListener('change', async event => {
 });
 $('export').addEventListener('click', () => {
   const r = state.result; if (!r) return;
-  const lines = [`# ${r.question}`, '', `Model: ${r.model} | Created: ${r.created}`, ''];
+  const lines = [`# ${r.question}`, '', `Provider: ${r.provider || 'groq'} | Model: ${r.model} | Created: ${r.created}`, ''];
   for (const claim of r.claims) { lines.push(`**${claim.kind === 'inference' ? 'Draft inference' : 'Draft reported finding'}:** ${claim.text}`, ''); for (const ref of claim.evidence) lines.push(`- [${ref.id}] ${ref.title}, ${ref.section}, PDF p. ${ref.pages.join(', ')}: “${ref.quote}”`); lines.push(''); }
   lines.push('## Evidence limits', ...r.limitations.map(t => `- ${t}`), '', r.verification_note);
   const url = URL.createObjectURL(new Blob([lines.join('\n')], {type: 'text/markdown'})); const a = el('a'); a.href = url; a.download = `literaturelab-${r.id.slice(0,8)}.md`; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
@@ -153,11 +156,11 @@ $('evaluation-tab').addEventListener('click', async () => {
     const table = el('table', undefined, 'eval-table'); const head = el('tr'); for (const label of ['Retriever','Median ms','p95 ms','Paper coverage']) head.append(el('th',label)); table.append(head);
     for (const [strategy, metrics] of Object.entries(report.strategies)) { const row = el('tr'); for (const value of [strategy,metrics.median_ms,metrics.p95_ms,`${metrics.paper_coverage_percent}%`]) row.append(el('td',String(value))); table.append(row); } target.append(table);
     target.append(el('p', report.retrieval_note, 'eval-note'));
-    if (report.live_cases) { target.append(el('h2', 'Live Groq checks')); for (const item of report.live_cases) { const row = el('div', undefined, 'eval-live'); row.append(el('h3',item.question),el('p',item.error || `${item.claims} retained claims · ${item.rejected} withheld · ${item.seconds}s · ${item.insufficient_evidence ? 'insufficient evidence flagged' : 'answered'}`)); target.append(row); } }
+    if (report.live_cases) { target.append(el('h2', 'Recorded provider checks')); for (const item of report.live_cases) { const row = el('div', undefined, 'eval-live'); row.append(el('h3',item.question),el('p',item.error || `${item.claims} retained claims · ${item.rejected} withheld · ${item.seconds}s · ${item.insufficient_evidence ? 'insufficient evidence flagged' : 'answered'}`)); target.append(row); } }
   } catch (error) { const message = el('div', error.message, 'error'); message.setAttribute('role', 'alert'); $('evaluation-content').replaceChildren(message); }
 });
 async function initialize() {
-  try { const status = await api('/api/status'); $('connection').textContent = status.key_configured ? 'Groq configured · Local workspace' : 'Groq key missing'; await Promise.all([loadPapers(), loadHistory()]); }
+  try { const status = await api('/api/status'); $('connection').textContent = status.key_configured ? `${(status.providers || []).filter(p => p.key_configured).map(p => p.name === 'gemini' ? 'Gemini' : 'Groq').join(' + ')} configured · Local workspace` : 'Add a provider key in .env'; await Promise.all([loadPapers(), loadHistory()]); }
   catch (error) { $('connection').textContent = 'Server unavailable'; showError(error); }
 }
 initialize();

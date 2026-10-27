@@ -1,13 +1,14 @@
 import json
 from types import SimpleNamespace
 import pytest
-from literaturelab.synthesis import Groq, Draft, ProviderError
+from literaturelab.providers import Groq, ProviderError
+from literaturelab.synthesis import Draft
 
 
 @pytest.fixture(autouse=True)
 def local_temp_directory(monkeypatch, tmp_path):
     # Keep test-created request files in pytest's isolated, writable test directory.
-    monkeypatch.setattr('literaturelab.synthesis.tempfile.tempdir', str(tmp_path))
+    monkeypatch.setattr('literaturelab.providers.tempfile.tempdir', str(tmp_path))
 
 
 @pytest.mark.parametrize('status,expected', [('401',503),('429',429),('500',502)])
@@ -21,8 +22,8 @@ def test_provider_errors_are_safe_and_bounded(monkeypatch, status, expected):
         from pathlib import Path
         Path(args[args.index('--dump-header')+1]).write_text('retry-after: 0\n')
         return SimpleNamespace(returncode=0,stdout='{"error":"private provider detail"}\n'+status)
-    monkeypatch.setattr('literaturelab.synthesis.subprocess.run',transport)
-    monkeypatch.setattr('literaturelab.synthesis.time.sleep',lambda _: None)
+    monkeypatch.setattr('literaturelab.providers.subprocess.run',transport)
+    monkeypatch.setattr('literaturelab.providers.time.sleep',lambda _: None)
     with pytest.raises(ProviderError) as error:
         engine.complete([],Draft)
     assert error.value.status == expected
@@ -34,7 +35,7 @@ def test_output_limit_and_invalid_schema_rejected(monkeypatch):
     engine = Groq(); engine.key = 'gsk_testsecret'
     for reason, content in [('length','{}'),('stop','{"claims":"bad"}')]:
         payload = {'choices':[{'finish_reason':reason,'message':{'content':content}}]}
-        monkeypatch.setattr('literaturelab.synthesis.subprocess.run',lambda *a, **k: SimpleNamespace(returncode=0,stdout=json.dumps(payload)+'\n200'))
+        monkeypatch.setattr('literaturelab.providers.subprocess.run',lambda *a, **k: SimpleNamespace(returncode=0,stdout=json.dumps(payload)+'\n200'))
         with pytest.raises(ProviderError): engine.complete([],Draft)
 
 
@@ -47,8 +48,8 @@ def test_transient_groq_schema_generation_failure_retried_without_scoring_answer
         calls.append(1)
         body = {'error':{'code':'json_validate_failed'}} if len(calls) == 1 else success
         return SimpleNamespace(returncode=0,stdout=json.dumps(body)+'\n'+('400' if len(calls) == 1 else '200'))
-    monkeypatch.setattr('literaturelab.synthesis.subprocess.run',transport)
-    monkeypatch.setattr('literaturelab.synthesis.time.sleep',lambda _:None)
+    monkeypatch.setattr('literaturelab.providers.subprocess.run',transport)
+    monkeypatch.setattr('literaturelab.providers.time.sleep',lambda _:None)
     result, usage = engine.complete([],Draft)
     assert result['insufficient_evidence'] and len(calls) == 2
     assert usage['transport_attempts'] == 2 and usage['schema_failures_retried'] == 1

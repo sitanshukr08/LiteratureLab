@@ -1,5 +1,14 @@
 # Development record
 
+## 0.2.0 — 27 October 2026
+
+- Added Gemini plus strict manual provider selection and complete-workflow Auto failover to Groq. Availability failures can fall back; safety refusals and unsupported answers cannot.
+- Added conversational query normalization, appendix indexing, overview context and explicit table-neighbor retrieval.
+- Replaced implicit citation positions with printed span IDs. Reviews see only cited quotes; page mapping and reviewer reclassification are revalidated locally.
+- Made scientific answer prose more natural while keeping each claim source-linked.
+- Added offline transport blocking, provider/cache/API/guardrail regressions and a frozen supplied-paper live evaluation. Earlier incomplete runs remain recorded.
+
+
 ## 0.1.0 — 27 October 2026
 
 Built a local Groq-powered literature workspace with PDF uploads, persistent paper/section/paragraph records, CPU BGE embeddings, dense/BM25/RRF/adaptive retrieval, cited claims, source-page navigation, saved notes, exports, and evaluation views.
