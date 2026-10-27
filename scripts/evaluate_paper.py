@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from literaturelab.core import Corpus
-from literaturelab.synthesis import Synthesis, ProviderError, PROMPT_VERSION
+from literaturelab.synthesis import Synthesis, ProviderError, PROMPT_VERSION, GUARD_VERSION
 
 
 def main():
@@ -42,7 +42,7 @@ def main():
                 'question_set_frozen': protocol['freeze_time_utc'], 'paper_id': paper['id'],
                 'title': paper['title'], 'pages': paper['pages'], 'paragraphs': paper['paragraphs'],
                 'index_policy_version': paper.get('index_policy_version'), 'prompt_version': PROMPT_VERSION,
-                'provider_preference': args.provider, 'live': args.live,
+                'guard_version': GUARD_VERSION, 'provider_preference': args.provider, 'live': args.live,
                 'ingestion_seconds': round(time.perf_counter() - started, 3),
                 'scope': protocol['evaluation_kind'], 'cases': []}
     failures = 0

@@ -1,0 +1,210 @@
+{
+  "reviewed_utc": "2026-10-27T14:07:39.071401+00:00",
+  "scope": "Two separate targeted development follow-ups; do not merge them into or substitute for the v9 full-run scores.",
+  "cases": [
+    {
+      "source_file": "guard-v2-followup/vt05.json",
+      "source_file_sha256": "2a2545130343eb3f563ce119d8754e5cde1b106ea75938ac54688ac8ea2b8a3a",
+      "question": "how does veritrail stop the evidence quotes from being made up",
+      "prompt_version": "v9-primary-table-context",
+      "guard_version": "v2-purpose-qualification",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "answer_judgment": "partial",
+      "reason": "Two retained claims accurately describe evidence-trail contents and provenance on pages 5\u20136. The earlier unqualified ambiguity-avoidance claim is absent in this fresh answer. The answer still omits sentence-ID assignment/invalid-ID rejection, so it is a safer partial answer, not a full method explanation.",
+      "retained_claims": 2,
+      "withheld_claims": 0,
+      "retained_claim_citation_support": "supported",
+      "displayed_reference_count": 4,
+      "reference_page_quote_mismatches": 0,
+      "not_a_replacement_for_full_run": true
+    },
+    {
+      "source_file": "comparison-followup/vt08.json",
+      "source_file_sha256": "61312b0ed6e5de7033a3d2c780f5830fdab5918dbbd012b8cb15c7b8f6223a85",
+      "question": "on the book dataset how much better was q 3 veritrail than rag for macro f1",
+      "prompt_version": "v10-comparison-completeness",
+      "guard_version": "v2-purpose-qualification",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "answer_judgment": "over_abstention",
+      "reason": "The generator drafts the correct values and calculates 14.9 percentage points for FABLES+ (and 4.4 for DiverseSumm+), but all three claims are withheld because the cited numeric rows do not establish dataset/metric mappings. No numeric answer reaches the reader. This is strict fail-closed citation checking, not a successful end-to-end arithmetic answer.",
+      "retained_claims": 0,
+      "withheld_claims": 3,
+      "retained_claim_citation_support": "no_retained_claims",
+      "displayed_reference_count": 0,
+      "reference_page_quote_mismatches": 0,
+      "not_a_replacement_for_full_run": true
+    },
+    {
+      "source_file": "table-context-followup/vt08.json",
+      "source_file_sha256": "002f88d78ff97aa139557d9a9cfaaadc34c5d5e53911274bff8dc0f2d75e4b66",
+      "question": "on the book dataset how much better was q 3 veritrail than rag for macro f1",
+      "prompt_version": "v10-comparison-completeness",
+      "guard_version": "v3-original-table-context",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "answer_judgment": "supported",
+      "reason": "All three retained claims are correct for Table 1 on PDF page 8. Original caption/header quotations now accompany the numeric rows, resolving the dataset/metric context gap. The answer correctly gives the requested FABLES+ absolute difference of 14.9 percentage points and labels the arithmetic as inference. The extra DiverseSumm+ comparison is unrequested but also correct (4.4 percentage points). This is one targeted successful case, not a replacement for the preserved v9 full-run results.",
+      "retained_claims": 3,
+      "withheld_claims": 0,
+      "retained_claim_citation_support": "supported_with_original_table_context",
+      "displayed_reference_count": 12,
+      "reference_page_quote_mismatches": 0,
+      "original_identifier_or_evidence_quote_mismatches": 0,
+      "not_a_replacement_for_full_run": true,
+      "claims": [
+        {
+          "claim_index": 0,
+          "kind": "reported",
+          "text": "On the FABLES+ dataset, VeriTrail with q = 3 achieved a macro F1 score of 84.5 while RAG achieved 69.6.",
+          "factual_correctness": "supported",
+          "citation_entailment": "supported_with_original_table_context",
+          "reason": "Caption E1 names FABLES+ (F) and DiverseSumm+ (D); header E2 names Macro F1; numeric rows E3 provide the values on the same original Table 1/PDF page 8.",
+          "references": [
+            {
+              "reference_id": "E3",
+              "pdf_pages": [
+                8
+              ],
+              "known_original_id": true,
+              "quote_matches_original_evidence": true,
+              "quote_matches_linked_pdf_page": true,
+              "extraction_whitespace_normalization_needed": true
+            },
+            {
+              "reference_id": "E3",
+              "pdf_pages": [
+                8
+              ],
+              "known_original_id": true,
+              "quote_matches_original_evidence": true,
+              "quote_matches_linked_pdf_page": true,
+              "extraction_whitespace_normalization_needed": true
+            },
+            {
+              "reference_id": "E1",
+              "pdf_pages": [
+                8
+              ],
+              "known_original_id": true,
+              "quote_matches_original_evidence": true,
+              "quote_matches_linked_pdf_page": true,
+              "extraction_whitespace_normalization_needed": true
+            },
+            {
+              "reference_id": "E2",
+              "pdf_pages": [
+                8
+              ],
+              "known_original_id": true,
+              "quote_matches_original_evidence": true,
+              "quote_matches_linked_pdf_page": true,
+              "extraction_whitespace_normalization_needed": false
+            }
+          ]
+        },
+        {
+          "claim_index": 1,
+          "kind": "reported",
+          "text": "On the DiverseSumm+ dataset, VeriTrail with q = 3 achieved a macro F1 score of 79.5 while RAG achieved 75.1.",
+          "factual_correctness": "supported",
+          "citation_entailment": "supported_with_original_table_context",
+          "reason": "Caption E1 names FABLES+ (F) and DiverseSumm+ (D); header E2 names Macro F1; numeric rows E3 provide the values on the same original Table 1/PDF page 8.",
+          "references": [
+            {
+              "reference_id": "E3",
+              "pdf_pages": [
+                8
+              ],
+              "known_original_id": true,
+              "quote_matches_original_evidence": true,
+              "quote_matches_linked_pdf_page": true,
+              "extraction_whitespace_normalization_needed": true
+            },
+            {
+              "reference_id": "E3",
+              "pdf_pages": [
+                8
+              ],
+              "known_original_id": true,
+              "quote_matches_original_evidence": true,
+              "quote_matches_linked_pdf_page": true,
+              "extraction_whitespace_normalization_needed": true
+            },
+            {
+              "reference_id": "E1",
+              "pdf_pages": [
+                8
+              ],
+              "known_original_id": true,
+              "quote_matches_original_evidence": true,
+              "quote_matches_linked_pdf_page": true,
+              "extraction_whitespace_normalization_needed": true
+            },
+            {
+              "reference_id": "E2",
+              "pdf_pages": [
+                8
+              ],
+              "known_original_id": true,
+              "quote_matches_original_evidence": true,
+              "quote_matches_linked_pdf_page": true,
+              "extraction_whitespace_normalization_needed": false
+            }
+          ]
+        },
+        {
+          "claim_index": 2,
+          "kind": "inference",
+          "text": "VeriTrail with q = 3 outperformed RAG by 14.9 percentage points on FABLES+ and by 4.4 percentage points on DiverseSumm+ in terms of macro F1.",
+          "factual_correctness": "supported",
+          "citation_entailment": "supported_with_original_table_context",
+          "reason": "The same original table context supports compatible macro F1 percentage values; 84.5-69.6=14.9 and 79.5-75.1=4.4 percentage points. The result is correctly labeled inference, not a directly reported difference.",
+          "references": [
+            {
+              "reference_id": "E3",
+              "pdf_pages": [
+                8
+              ],
+              "known_original_id": true,
+              "quote_matches_original_evidence": true,
+              "quote_matches_linked_pdf_page": true,
+              "extraction_whitespace_normalization_needed": true
+            },
+            {
+              "reference_id": "E3",
+              "pdf_pages": [
+                8
+              ],
+              "known_original_id": true,
+              "quote_matches_original_evidence": true,
+              "quote_matches_linked_pdf_page": true,
+              "extraction_whitespace_normalization_needed": true
+            },
+            {
+              "reference_id": "E1",
+              "pdf_pages": [
+                8
+              ],
+              "known_original_id": true,
+              "quote_matches_original_evidence": true,
+              "quote_matches_linked_pdf_page": true,
+              "extraction_whitespace_normalization_needed": true
+            },
+            {
+              "reference_id": "E2",
+              "pdf_pages": [
+                8
+              ],
+              "known_original_id": true,
+              "quote_matches_original_evidence": true,
+              "quote_matches_linked_pdf_page": true,
+              "extraction_whitespace_normalization_needed": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

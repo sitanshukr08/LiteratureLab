@@ -12,7 +12,8 @@ from pydantic import BaseModel, ConfigDict, Field
 from .core import normalize, InputError
 from .providers import Groq, Gemini, ProviderError, ProviderRouter
 
-PROMPT_VERSION = 'v9-primary-table-context'
+PROMPT_VERSION = 'v10-comparison-completeness'
+GUARD_VERSION = 'v3-original-table-context'
 
 
 class StrictModel(BaseModel):
@@ -81,6 +82,11 @@ def numeric_values(text):
 
 def grounding_issue(text, refs, kind='reported'):
     quotes = ' '.join(ref['quote'] for ref in refs)
+    purpose = re.search(r'\bto (?:avoid|prevent|eliminate)|\baims? to|\bdesigned to|\bintended to', quotes, re.I)
+    guarantee = re.search(r'\b(?:avoids|prevents|eliminates|guarantees|ensures)\b', text, re.I)
+    qualified = re.search(r'\b(?:aims?|designed|intended|seeks?|tries?|may|might|can help|could)\b', text, re.I)
+    if purpose and guarantee and not qualified:
+        return 'The cited passage describes a design goal, not an established guarantee.'
     quoted_numbers = numeric_values(quotes)
     allowed = set(quoted_numbers)
     if kind == 'inference' and re.search(r'\bgain\b|\bdifference\b|percentage points', text, re.I):
@@ -138,7 +144,16 @@ def validate_claims(claims, evidence):
         refs, reason = [], None
         if not claim.get('text', '').strip() or len(claim['text']) > 1600 or not claim.get('evidence'):
             reason = 'Claim lacks text or supporting references.'
-        for ref in claim.get('evidence', []):
+        requested_refs = list(claim.get('evidence', []))
+        included = {(ref.get('id'), ref.get('quote')) for ref in requested_refs}
+        for ref in list(requested_refs):
+            for context_id in by_id.get(ref.get('id'), {}).get('context_ids', []):
+                context = by_id.get(context_id)
+                spans = source_spans(context['text']) if context else []
+                if spans and (context_id, spans[0]) not in included:
+                    requested_refs.append({'id': context_id, 'quote': spans[0]})
+                    included.add((context_id, spans[0]))
+        for ref in requested_refs:
             source = by_id.get(ref.get('id'))
             quote = normalize(ref.get('quote', ''))
             if source is None:
@@ -184,7 +199,7 @@ class Synthesis:
             raise InputError('Select the paper you mean in the library, then ask your question.')
         router = self.provider
         identity = router.cache_identity(preference) if isinstance(router, ProviderRouter) else [router.name, router.model]
-        key = hashlib.sha256(json.dumps([PROMPT_VERSION, question, sorted(paper_ids or []), strategy, identity,
+        key = hashlib.sha256(json.dumps([PROMPT_VERSION, GUARD_VERSION, question, sorted(paper_ids or []), strategy, identity,
                                         sorted(p['sha256'] for p in papers)]).encode()).hexdigest()
         with self.corpus.db() as db:
             cached = db.execute('SELECT result FROM cache WHERE key=?', (key,)).fetchone()
@@ -218,7 +233,7 @@ class Synthesis:
         result = {'id': uuid.uuid4().hex, 'created': datetime.now(timezone.utc).isoformat(), 'question': question,
                   'provider': chosen.name, 'model': chosen.model, 'provider_attempts': attempts,
                   'provider_preference': preference or getattr(router, 'preference', chosen.name),
-                  'prompt_version': PROMPT_VERSION, 'claims': accepted, 'rejected_claims': rejected,
+                  'prompt_version': PROMPT_VERSION, 'guard_version': GUARD_VERSION, 'claims': accepted, 'rejected_claims': rejected,
                   'insufficient_evidence': partial, 'limitations': limitations,
                   'evidence': retrieval['evidence'], 'trace': retrieval['trace'], 'usage': usage, 'cached': False,
                   'duration_seconds': round(time.perf_counter() - started, 3),

@@ -56,6 +56,16 @@ def test_arithmetic_must_be_labeled_as_interpretation():
     assert len(accepted) == 1 and accepted[0]['kind'] == 'inference' and len(rejected) == 1
 
 
+def test_a_design_goal_cannot_be_changed_into_a_guaranteed_outcome():
+    quote = 'To avoid context ambiguities, the method includes the full node content for the model.'
+    accepted, rejected = validate_claims([
+        claim('The method avoids context ambiguities.', quote),
+        claim('The method aims to avoid context ambiguities by including full node content.', quote)
+    ], [evidence(quote)])
+    assert len(accepted) == 1 and len(rejected) == 1
+    assert 'aims' in accepted[0]['text']
+
+
 def test_inconsistent_page_provenance_is_rejected_instead_of_using_all_pages():
     quote = 'The study reports an improvement on its test collection.'
     source = evidence(quote, spans=[{'text': 'Unrelated source text.', 'pages': [2]}])
@@ -71,6 +81,17 @@ def test_quote_across_original_blocks_resolves_only_its_actual_pages():
                                    {'text': 'Unrelated later discussion.', 'pages': [4]}])
     accepted, _ = validate_claims([claim('Original passages retain their page numbers.', quote)], [source])
     assert accepted[0]['evidence'][0]['pages'] == [2, 3]
+
+
+def test_table_numeric_citation_includes_original_caption_and_header_context():
+    caption = evidence('Table 1: Macro F1 scores on Dataset A and Dataset B.', context_ids=[])
+    header = dict(evidence('Method Macro F1 Dataset A Dataset B'), citation_id='E2', id='p:2')
+    row = dict(evidence('New method 84.5 79.5 Baseline 69.6 75.1'), citation_id='E3', id='p:3', context_ids=['E1', 'E2'])
+    accepted, rejected = validate_claims([{'kind': 'reported', 'text': 'The new method has 84.5 macro F1 on Dataset A.',
+                                          'evidence': [{'id': 'E3', 'quote': row['text']}]}], [caption, header, row])
+    assert not rejected
+    assert {ref['id'] for ref in accepted[0]['evidence']} == {'E1', 'E2', 'E3'}
+    assert all(ref['pages'] == [3] for ref in accepted[0]['evidence'])
 
 
 def test_reviewer_sees_cited_spans_only_and_no_unverified_limitations_escape(tmp_path):

@@ -253,4 +253,3 @@ class ProviderRouter:
     def complete(self, messages, schema):
         # Convenience for a single call; it deliberately performs no provider fallback.
         return self.candidates()[0].complete(messages, schema)
-

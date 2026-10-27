@@ -336,6 +336,7 @@ class Corpus:
         # table blocks, even when numeric-only rows have poor semantic similarity.
         table_numbers = re.findall(r'\btable\s*(\d+)\b', interpreted)
         table_anchors = []
+        table_context_map = {}
         if strategy == 'adaptive':
             captions = [i for i, n in enumerate(nodes) if n['level'] == 'paragraph' and n['paper_id'] in allowed
                         and re.match(r'^Table\s*\d+\s*[:.]', n['text'], re.I)]
@@ -354,6 +355,7 @@ class Corpus:
                     if (adjacent['level'] == 'paragraph' and adjacent['paper_id'] == node['paper_id'] and
                             set(adjacent['pages']) & set(node['pages'])):
                         add(neighbor, 180)
+                        table_context_map[neighbor] = [index, index + 1]
         # Explicitly requested papers each get evidence before remaining slots compete.
         if target:
             for pid in sorted(target):
@@ -370,6 +372,10 @@ class Corpus:
             add(index)
         evidence = [dict(nodes[i], text=excerpts[i], citation_id=f'E{j + 1}', dense_rank=dense_all.index(i) + 1 if i in dense_all else None,
                          lexical_rank=lexical.index(i) + 1 if i in lexical else None) for j, i in enumerate(selected)]
+        selected_ids = {nodes[index]['id']: evidence[position]['citation_id'] for position, index in enumerate(selected)}
+        for position, index in enumerate(selected):
+            evidence[position]['context_ids'] = [selected_ids[nodes[context]['id']] for context in table_context_map.get(index, [])
+                                                  if context != index and nodes[context]['id'] in selected_ids]
         return {'evidence': evidence, 'trace': {'strategy': strategy, 'resolution': resolution,
                 'interpreted_query': interpreted, 'query_terms': terms,
                 'structural_prior': 'table' if table_anchors else 'overview' if structural_prior else None,

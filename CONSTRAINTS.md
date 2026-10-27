@@ -4,7 +4,7 @@
 2. Secrets remain backend-only in ignored `.env`. Never include them in source, logs, static resources, screenshots, reports or repository history.
 3. No failing automated regression tests in the delivered state. Preserve regressions for observed failures rather than deleting or skipping them to pass.
 4. Real browser checks must finish cleanly and distinguish intentional rejected requests from unexpected errors. Test uploads, sources, exports, quota recovery and narrow layouts.
-5. Displayed citation IDs resolve to the retrieved original source; cited spans match original text. Missing references or unsupported numerical/threshold assertions are withheld, not silently repaired.
+5. Displayed citation IDs resolve to the retrieved original source; cited spans match original text. Missing references or unsupported numerical/threshold assertions are withheld, not silently repaired. Valid table-row citations may include their linked original caption/header passages before support review; this never substitutes an invented reference or generated quote.
 6. Treat source-span validity, LLM support review and scientific entailment as separate properties. Record false acceptances and false rejections. No claim of perfect citation faithfulness or an independent human benchmark.
 7. Preserve PDF page provenance and selected-paper coverage; explicitly report coverage missing because of a budget or source gap.
 8. Benchmark dense, hybrid and adaptive retrieval on the same questions and ceiling. Report measured times even when the proposed method is slower; paper identity coverage is not semantic relevance.

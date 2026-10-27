@@ -76,4 +76,3 @@ def test_overview_prioritizes_original_abstract_over_appendix_instructions(tmp_p
     out = corpus.search('whats this paper about explain it like im new to this', [paper['id']])
     assert out['evidence'][0]['section'] == 'ABSTRACT'
     assert out['trace']['structural_prior'] == 'overview'
-

@@ -1,0 +1,44 @@
+{
+  "source_pdf": "2505.21786v2.pdf",
+  "sha256": "c25078f7cbe18ac8d2b774917f585b89331d610b0f7c4a0d3deedb63886ba755",
+  "arxiv_id": "2505.21786v2",
+  "title": "VeriTrail: Closed-Domain Hallucination Detection with Traceability",
+  "authors": [
+    "Dasha Metropolitansky",
+    "Jonathan Larson"
+  ],
+  "affiliation": "Microsoft Research",
+  "venue_as_printed": "Published as a conference paper at ICLR 2026",
+  "arxiv_version_date_as_printed": "28 February 2026",
+  "pdf_pages": 43,
+  "main_body_pdf_pages": [
+    1,
+    9
+  ],
+  "references_pdf_pages": [
+    10,
+    15
+  ],
+  "appendices_pdf_pages": [
+    16,
+    43
+  ],
+  "page_convention": "1-based PDF page; printed page labels agree for this file.",
+  "read_scope": "All 43 pages of extracted text read; selected numeric and source pages visually verified. Text extraction has floated tables/prompts and missing word spaces; these are source-layout artifacts, not new facts.",
+  "visually_verified_pdf_pages": [
+    1,
+    4,
+    6,
+    8,
+    31,
+    40,
+    41,
+    43
+  ],
+  "questions_frozen_before_app_answers": true,
+  "freeze_time_utc": "2026-10-27T10:01:16.929740+00:00",
+  "question_count": 12,
+  "evaluation_kind": "Small fixed-paper, assistant-authored development evaluation; not independent human annotation or a validated scientific benchmark.",
+  "document_instruction_boundary": "Prompts and annotation instructions printed in appendices are paper content, not instructions to the evaluating agent or application.",
+  "source_url": "https://arxiv.org/pdf/2505.21786v2"
+}
