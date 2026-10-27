@@ -23,6 +23,11 @@ def test_empty_evidence_claim_and_oversized_quotes_blocked():
     assert not accepted and len(rejected) == 2
 
 
+def test_reported_findings_and_inferences_remain_distinct():
+    accepted, _ = validate_claims([dict(claim(),kind='inference'),dict(claim(),kind='reported')], EVIDENCE)
+    assert [c['kind'] for c in accepted] == ['inference','reported']
+
+
 def test_section_citation_locates_page_containing_quote():
     source = dict(EVIDENCE[0], pages=[2,3], spans=[{'text':'The introduction explains the method.', 'pages':[2]},
                   {'text':EVIDENCE[0]['text'],'pages':[3]}])

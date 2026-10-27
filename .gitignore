@@ -11,3 +11,7 @@ reports/development-*/
 reports/live-*.json
 reports/probe-*.json
 reports/browser-exported-note.md
+
+reports/*.png
+
+groq-preflight.json

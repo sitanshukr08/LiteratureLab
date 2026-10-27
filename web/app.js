@@ -72,13 +72,13 @@ function renderTrace(trace) {
 }
 function renderResult(result) {
   state.result = result; $('answer-section').hidden = false; $('empty-guide').hidden = true;
-  $('answer-title').textContent = result.claims.length ? 'Evidence-grounded synthesis' : 'Evidence is insufficient';
+  $('answer-title').textContent = result.claims.length ? 'Draft synthesis · inspect the sources' : 'Evidence is insufficient';
   const tokens = (result.usage.generation.total_tokens || 0) + (result.usage.review.total_tokens || 0);
   $('answer-meta').textContent = `${result.model} · ${result.cached ? 'Cached answer · original ' : ''}${result.duration_seconds}s · ${tokens} tokens · ${new Date(result.created).toLocaleString()}`;
   $('answer-content').replaceChildren();
   if (!result.claims.length) $('answer-content').append(el('p', 'The available passages do not establish an answer. No supported claim was retained.'));
   for (const claim of result.claims) {
-    const section = el('div', undefined, 'claim'); section.append(el('p', claim.text));
+    const section = el('div', undefined, 'claim'); section.append(el('span', claim.kind === 'inference' ? 'DRAFT INFERENCE' : 'DRAFT REPORTED FINDING', 'evidence-label'), el('p', claim.text));
     for (const ref of claim.evidence) {
       const button = el('button', `${ref.id} · p. ${ref.pages.join(', ')}`, 'citation'); button.title = `${ref.title}: ${ref.quote}`;
       button.addEventListener('click', () => {
@@ -136,7 +136,7 @@ $('upload').addEventListener('change', async event => {
 $('export').addEventListener('click', () => {
   const r = state.result; if (!r) return;
   const lines = [`# ${r.question}`, '', `Model: ${r.model} | Created: ${r.created}`, ''];
-  for (const claim of r.claims) { lines.push(claim.text, ''); for (const ref of claim.evidence) lines.push(`- [${ref.id}] ${ref.title}, ${ref.section}, PDF p. ${ref.pages.join(', ')}: “${ref.quote}”`); lines.push(''); }
+  for (const claim of r.claims) { lines.push(`**${claim.kind === 'inference' ? 'Draft inference' : 'Draft reported finding'}:** ${claim.text}`, ''); for (const ref of claim.evidence) lines.push(`- [${ref.id}] ${ref.title}, ${ref.section}, PDF p. ${ref.pages.join(', ')}: “${ref.quote}”`); lines.push(''); }
   lines.push('## Evidence limits', ...r.limitations.map(t => `- ${t}`), '', r.verification_note);
   const url = URL.createObjectURL(new Blob([lines.join('\n')], {type: 'text/markdown'})); const a = el('a'); a.href = url; a.download = `literaturelab-${r.id.slice(0,8)}.md`; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
 });
