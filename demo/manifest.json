@@ -1,0 +1,50 @@
+[
+  {
+    "id": "rag",
+    "arxiv": "2005.11401v4",
+    "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+    "pdf_sha256": "23e3249e9a1e75418d82efecab0ea8c4d033b89c93742f63208d47ce01f21233",
+    "pages": 19,
+    "source_url": "https://arxiv.org/pdf/2005.11401v4"
+  },
+  {
+    "id": "dpr",
+    "arxiv": "2004.04906v3",
+    "title": "Dense Passage Retrieval for Open-Domain Question Answering",
+    "pdf_sha256": "3e67fc1a9977715acf722d85f0b7d124b03715e975f6310a4d6c12094190912f",
+    "pages": 13,
+    "source_url": "https://arxiv.org/pdf/2004.04906v3"
+  },
+  {
+    "id": "raptor",
+    "arxiv": "2401.18059v1",
+    "title": "RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval",
+    "pdf_sha256": "01319e2e6e6ecfd504ee1bbda41d023f9e060bd3505ab3c161baa1d6d696cf75",
+    "pages": 23,
+    "source_url": "https://arxiv.org/pdf/2401.18059v1"
+  },
+  {
+    "id": "lost",
+    "arxiv": "2307.03172v3",
+    "title": "Lost in the Middle: How Language Models Use Long Contexts",
+    "pdf_sha256": "653b29619eae2ae4b361d7bdcdc06db4bedcb1b0eabe31814036beca8c1af0b1",
+    "pages": 18,
+    "source_url": "https://arxiv.org/pdf/2307.03172v3"
+  },
+  {
+    "id": "alce",
+    "arxiv": "2305.14627v2",
+    "title": "Enabling Large Language Models to Generate Text with Citations",
+    "pdf_sha256": "ac8809fe3ca1d52a413f41ef97afd71c43924944d512c90477ec0c28f2ea3a4d",
+    "pages": 24,
+    "source_url": "https://arxiv.org/pdf/2305.14627v2"
+  },
+  {
+    "id": "hichunk",
+    "arxiv": "2509.11552v3",
+    "title": "HiChunk: Evaluating and Enhancing Retrieval-Augmented Generation with Hierarchical Chunking",
+    "pdf_sha256": "6f854d5bb3a1651ae3cda155c3b191442c99a90cffc19b6c9bff73a25ea0b205",
+    "pages": 17,
+    "source_url": "https://arxiv.org/pdf/2509.11552v3"
+  }
+]

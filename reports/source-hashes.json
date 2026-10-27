@@ -1,0 +1,19 @@
+{
+  "literaturelab/api.py": "efee8304ffbbf540a19b7951e47e68e328bc2a4535bcd31f1bdbb245b0d14763",
+  "literaturelab/core.py": "c19379485e977288a686a77fe00d0d589450b0cdc752a06d0dc791e578d2860c",
+  "literaturelab/synthesis.py": "d59f92b1427815cd6e3efe2bd2d4b3df9fa282083dd3b907deba5f4d6a8fd016",
+  "literaturelab/__init__.py": "4aee20c44d838d8c9daa3b05b43ff32da123e0238b32d327120daee4c235399a",
+  "web/app.js": "7838255d7576dbdc37bfd9960f8123d4b9f3ebfc4cbd83be8dd14f870586b559",
+  "web/index.html": "1222348686e14ae8c49c0b7f95867a5d3678bb4e9438381958cab480db8a87c6",
+  "web/style.css": "92d890a2bdc969c8b018e41e6025c342db1321c760f22d71ff66f1536b6d81f7",
+  "scripts/browser_check.py": "16fe6b8d2cc93da6b3f7aa9863cbd7d11ac60a0b314cbeb9b5f3ad4c3acbef8f",
+  "scripts/check_real_upload.py": "bbb0143a83a3ac5a38c37adbba587e1cc46538d2f9bf26509b2d5153b3f85ae2",
+  "scripts/evaluate.py": "f5abaa5a0f5210ffe830a87b43dbf76186798475ccbd3b3065ec7076251e6742",
+  "scripts/reindex.py": "f55b0c2c0dc896959366aa5f5ba180d374afc9cf3e89d6dc11ab2481735569d0",
+  "scripts/seed_demo.py": "ebd8b69e6c68cc1da2116a2c5cf241cb91a415b1ea44be3efabf20c42625d9db",
+  "scripts/write_test_report.py": "fb2eb420ad7084f566a51c0125b483af3571b033380d7c12764035de09c90884",
+  "tests/test_api.py": "6051eed87b9fb47d1a4d76817f5f454e19785f68e48b0cd5fd0bc3bc514c1cda",
+  "tests/test_core.py": "23c312b52003e1c1c34a66a1a5a87bee03a04befe4d27a9b63fc27921490dcb8",
+  "tests/test_provider.py": "7dcfe2b35855271335c5d70011621d88b1461613d0c268240354e54106250552",
+  "tests/test_synthesis.py": "aa84ec850b76b8c8b4f097ce766c8550a3af30dfd2acb41f8e93ac76a4ce47a7"
+}

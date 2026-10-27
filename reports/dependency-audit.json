@@ -1,0 +1,247 @@
+{
+  "checked_date": "2026-10-27",
+  "source": "https://api.osv.dev/v1/querybatch",
+  "scope": "48-package isolated application/test dependency closure; excludes unrelated global packages and operating-system components",
+  "packages": [
+    {
+      "name": "opentelemetry-api",
+      "version": "1.45.1",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "annotated-doc",
+      "version": "0.0.5",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "starlette",
+      "version": "1.10.0",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "anyio",
+      "version": "4.15.1",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "idna",
+      "version": "3.16",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "playwright",
+      "version": "1.64.1",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "pyee",
+      "version": "13.0.1",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "greenlet",
+      "version": "3.5.6",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "httpx",
+      "version": "0.28.1",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "httpcore",
+      "version": "1.0.9",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "h11",
+      "version": "0.16.0",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "certifi",
+      "version": "2026.10.23",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "pytest",
+      "version": "9.0.3",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "Pygments",
+      "version": "2.20.0",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "pluggy",
+      "version": "1.6.0",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "packaging",
+      "version": "26.2",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "iniconfig",
+      "version": "2.3.0",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "colorama",
+      "version": "0.4.6",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "numpy",
+      "version": "2.4.3",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "onnxruntime",
+      "version": "1.26.0",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "protobuf",
+      "version": "5.29.6",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "flatbuffers",
+      "version": "25.12.19",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "fastembed",
+      "version": "0.9.1",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "tqdm",
+      "version": "4.67.3",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "tokenizers",
+      "version": "0.23.2",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "huggingface-hub",
+      "version": "0.24.6",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "requests",
+      "version": "2.34.2",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "urllib3",
+      "version": "2.8.0",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.4.7",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "PyYAML",
+      "version": "6.0.3",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "fsspec",
+      "version": "2026.9.0",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "filelock",
+      "version": "4.2.4",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "py_rust_stemmers",
+      "version": "0.1.8",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "pillow",
+      "version": "13.0.0",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "mmh3",
+      "version": "4.1.0",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "loguru",
+      "version": "0.7.3",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "win32_setctime",
+      "version": "1.2.0",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "pymupdf",
+      "version": "1.28.2",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "pydantic",
+      "version": "2.13.5",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "typing-inspection",
+      "version": "0.4.2",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "pydantic_core",
+      "version": "2.46.5",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "annotated-types",
+      "version": "0.7.0",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "python-dotenv",
+      "version": "1.2.4",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "python-multipart",
+      "version": "0.0.32",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "uvicorn",
+      "version": "0.32.0",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "click",
+      "version": "8.4.1",
+      "vulnerability_ids": []
+    },
+    {
+      "name": "fastapi",
+      "version": "0.162.0",
+      "vulnerability_ids": []
+    }
+  ]
+}

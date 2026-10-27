@@ -1,0 +1,17 @@
+{
+  "prompt_version": "v4-reported-and-inferred",
+  "automated_tests": 29,
+  "automated_failures": 0,
+  "browser_checks": 14,
+  "browser_passed": true,
+  "real_pdf_upload_passed": true,
+  "live_requested": 8,
+  "live_returned": 7,
+  "live_errors": 1,
+  "retained_claims": 15,
+  "withheld_draft_claims": 5,
+  "schema_failures_retried": 0,
+  "live_median_seconds": 12.426,
+  "live_max_seconds": 51.931,
+  "semantic_accuracy": "Not established; independent assistant audit is qualitative, not human benchmark accuracy."
+}

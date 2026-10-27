@@ -1,0 +1,107 @@
+{
+  "created": "2026-10-27T08:09:45.970804+00:00",
+  "browser": "Isolated Microsoft Edge (Playwright)",
+  "url": "http://127.0.0.1:8765",
+  "checks": [
+    {
+      "name": "Initial library and status",
+      "passed": true,
+      "details": {
+        "papers": 6,
+        "ready_seconds": 0.697
+      }
+    },
+    {
+      "name": "Keyboard skip link reaches the research question",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Duplicate PDF upload detected without duplicating index",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Invalid upload rejected and controls recover",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Local retrieval, selected source filtering, provenance and performance trace",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Saved note, claim citation and original evidence navigation",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Original PDF page opens in a separate tab",
+      "passed": true,
+      "details": {
+        "href": "/api/papers/23e3249e9a1e7541/pdf#page=3"
+      }
+    },
+    {
+      "name": "Markdown export download",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Synthesis uses seeded cache without a new generation",
+      "passed": true,
+      "details": {
+        "result_id": "548b390377604fa78b8e5b8a1edb8df0"
+      }
+    },
+    {
+      "name": "Quota failure restores controls and does not display a stale answer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Evaluation view displays recorded measurements",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "375px mobile viewport has no horizontal overflow",
+      "passed": true,
+      "details": {
+        "scroll": 375,
+        "viewport": 375
+      }
+    },
+    {
+      "name": "Visible form controls have accessible names",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "No unexpected console, script, request or HTTP failures",
+      "passed": true,
+      "details": null
+    }
+  ],
+  "console_errors": [],
+  "console_warnings": [],
+  "page_errors": [],
+  "failed_requests": [],
+  "unexpected_http_errors": [],
+  "expected_rejections": [
+    {
+      "url": "http://127.0.0.1:8765/api/papers",
+      "status": 400
+    },
+    {
+      "url": "http://127.0.0.1:8765/api/ask",
+      "status": 429
+    }
+  ],
+  "expected_error_console_entries": [
+    "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+    "Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
+  ],
+  "passed": true
+}

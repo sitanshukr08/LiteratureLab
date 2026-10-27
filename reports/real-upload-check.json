@@ -1,0 +1,36 @@
+{
+  "created": "2026-10-27T07:46:42.249754+00:00",
+  "passed": true,
+  "scope": "One real version-pinned RAG PDF uploaded through FastAPI with real CPU BGE embeddings in an isolated library. No Groq calls.",
+  "checks": [
+    "upload/index",
+    "duplicate",
+    "hybrid query",
+    "exact PDF bytes",
+    "persistent reopen"
+  ],
+  "upload_seconds": 29.915,
+  "paragraphs": 83,
+  "search_trace": {
+    "strategy": "hybrid",
+    "resolution": "paragraph",
+    "reason": "Focused question: original paragraphs.",
+    "total_nodes": 108,
+    "coarse_vectors_scored": 0,
+    "fine_vectors_scored": 83,
+    "requested_papers": [
+      "23e3249e9a1e7541"
+    ],
+    "covered_papers": [
+      "23e3249e9a1e7541"
+    ],
+    "missing_papers": [],
+    "coverage_truncations": [],
+    "evidence_words": 520,
+    "fallback": null,
+    "embedding_ms": 15.21,
+    "dense_ms": 2.01,
+    "lexical_ms": 1.54,
+    "total_ms": 27.25
+  }
+}

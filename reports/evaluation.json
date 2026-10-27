@@ -1,0 +1,6674 @@
+{
+  "created": "2026-10-27T07:57:55.591027+00:00",
+  "prompt_version": "v4-reported-and-inferred",
+  "scope": "Development evaluation on six real papers. Paper coverage is a retrieval diagnostic, not answer accuracy or evidence entailment.",
+  "corpus": {
+    "papers": 6,
+    "paragraphs": 576,
+    "sections": 142
+  },
+  "retrieval_cases": 18,
+  "strategies": {
+    "dense": {
+      "median_ms": 15.47,
+      "p95_ms": 19.82,
+      "paper_coverage_percent": 100.0
+    },
+    "hybrid": {
+      "median_ms": 17.88,
+      "p95_ms": 42.9,
+      "paper_coverage_percent": 100.0
+    },
+    "adaptive": {
+      "median_ms": 33.45,
+      "p95_ms": 53.6,
+      "paper_coverage_percent": 100.0
+    }
+  },
+  "retrieval_runs": [
+    {
+      "case_id": "q01",
+      "strategy": "dense",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:p:79",
+        "23e3249e9a1e7541:p:7",
+        "23e3249e9a1e7541:p:63",
+        "23e3249e9a1e7541:p:0",
+        "23e3249e9a1e7541:p:8",
+        "23e3249e9a1e7541:p:11",
+        "23e3249e9a1e7541:p:24",
+        "23e3249e9a1e7541:p:82",
+        "23e3249e9a1e7541:p:38",
+        "23e3249e9a1e7541:p:15"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 83,
+        "requested_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 888,
+        "fallback": null,
+        "embedding_ms": 6.03,
+        "dense_ms": 0.12,
+        "lexical_ms": 0.0,
+        "total_ms": 15.14
+      }
+    },
+    {
+      "case_id": "q01",
+      "strategy": "dense",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:p:79",
+        "23e3249e9a1e7541:p:7",
+        "23e3249e9a1e7541:p:63",
+        "23e3249e9a1e7541:p:0",
+        "23e3249e9a1e7541:p:8",
+        "23e3249e9a1e7541:p:11",
+        "23e3249e9a1e7541:p:24",
+        "23e3249e9a1e7541:p:82",
+        "23e3249e9a1e7541:p:38",
+        "23e3249e9a1e7541:p:15"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 83,
+        "requested_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 888,
+        "fallback": null,
+        "embedding_ms": 6.21,
+        "dense_ms": 0.12,
+        "lexical_ms": 0.0,
+        "total_ms": 15.63
+      }
+    },
+    {
+      "case_id": "q01",
+      "strategy": "dense",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:p:79",
+        "23e3249e9a1e7541:p:7",
+        "23e3249e9a1e7541:p:63",
+        "23e3249e9a1e7541:p:0",
+        "23e3249e9a1e7541:p:8",
+        "23e3249e9a1e7541:p:11",
+        "23e3249e9a1e7541:p:24",
+        "23e3249e9a1e7541:p:82",
+        "23e3249e9a1e7541:p:38",
+        "23e3249e9a1e7541:p:15"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 83,
+        "requested_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 888,
+        "fallback": null,
+        "embedding_ms": 5.74,
+        "dense_ms": 0.11,
+        "lexical_ms": 0.0,
+        "total_ms": 14.33
+      }
+    },
+    {
+      "case_id": "q02",
+      "strategy": "dense",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:p:16",
+        "23e3249e9a1e7541:p:15",
+        "23e3249e9a1e7541:p:47",
+        "23e3249e9a1e7541:p:17",
+        "23e3249e9a1e7541:p:11",
+        "23e3249e9a1e7541:p:69",
+        "23e3249e9a1e7541:p:68",
+        "23e3249e9a1e7541:p:70",
+        "23e3249e9a1e7541:p:46",
+        "23e3249e9a1e7541:p:60"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 83,
+        "requested_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 575,
+        "fallback": null,
+        "embedding_ms": 5.05,
+        "dense_ms": 0.12,
+        "lexical_ms": 0.0,
+        "total_ms": 13.64
+      }
+    },
+    {
+      "case_id": "q02",
+      "strategy": "dense",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:p:16",
+        "23e3249e9a1e7541:p:15",
+        "23e3249e9a1e7541:p:47",
+        "23e3249e9a1e7541:p:17",
+        "23e3249e9a1e7541:p:11",
+        "23e3249e9a1e7541:p:69",
+        "23e3249e9a1e7541:p:68",
+        "23e3249e9a1e7541:p:70",
+        "23e3249e9a1e7541:p:46",
+        "23e3249e9a1e7541:p:60"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 83,
+        "requested_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 575,
+        "fallback": null,
+        "embedding_ms": 4.92,
+        "dense_ms": 0.11,
+        "lexical_ms": 0.0,
+        "total_ms": 13.75
+      }
+    },
+    {
+      "case_id": "q02",
+      "strategy": "dense",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:p:16",
+        "23e3249e9a1e7541:p:15",
+        "23e3249e9a1e7541:p:47",
+        "23e3249e9a1e7541:p:17",
+        "23e3249e9a1e7541:p:11",
+        "23e3249e9a1e7541:p:69",
+        "23e3249e9a1e7541:p:68",
+        "23e3249e9a1e7541:p:70",
+        "23e3249e9a1e7541:p:46",
+        "23e3249e9a1e7541:p:60"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 83,
+        "requested_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 575,
+        "fallback": null,
+        "embedding_ms": 4.91,
+        "dense_ms": 0.11,
+        "lexical_ms": 0.0,
+        "total_ms": 13.45
+      }
+    },
+    {
+      "case_id": "q03",
+      "strategy": "dense",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "3e67fc1a9977715a:p:54",
+        "3e67fc1a9977715a:p:32",
+        "3e67fc1a9977715a:p:66",
+        "3e67fc1a9977715a:p:105",
+        "3e67fc1a9977715a:p:72",
+        "3e67fc1a9977715a:p:65",
+        "3e67fc1a9977715a:p:67",
+        "3e67fc1a9977715a:p:75",
+        "3e67fc1a9977715a:p:87",
+        "3e67fc1a9977715a:p:45"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 107,
+        "requested_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 801,
+        "fallback": null,
+        "embedding_ms": 5.06,
+        "dense_ms": 0.14,
+        "lexical_ms": 0.0,
+        "total_ms": 13.85
+      }
+    },
+    {
+      "case_id": "q03",
+      "strategy": "dense",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "3e67fc1a9977715a:p:54",
+        "3e67fc1a9977715a:p:32",
+        "3e67fc1a9977715a:p:66",
+        "3e67fc1a9977715a:p:105",
+        "3e67fc1a9977715a:p:72",
+        "3e67fc1a9977715a:p:65",
+        "3e67fc1a9977715a:p:67",
+        "3e67fc1a9977715a:p:75",
+        "3e67fc1a9977715a:p:87",
+        "3e67fc1a9977715a:p:45"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 107,
+        "requested_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 801,
+        "fallback": null,
+        "embedding_ms": 5.01,
+        "dense_ms": 0.13,
+        "lexical_ms": 0.0,
+        "total_ms": 13.6
+      }
+    },
+    {
+      "case_id": "q03",
+      "strategy": "dense",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "3e67fc1a9977715a:p:54",
+        "3e67fc1a9977715a:p:32",
+        "3e67fc1a9977715a:p:66",
+        "3e67fc1a9977715a:p:105",
+        "3e67fc1a9977715a:p:72",
+        "3e67fc1a9977715a:p:65",
+        "3e67fc1a9977715a:p:67",
+        "3e67fc1a9977715a:p:75",
+        "3e67fc1a9977715a:p:87",
+        "3e67fc1a9977715a:p:45"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 107,
+        "requested_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 801,
+        "fallback": null,
+        "embedding_ms": 5.0,
+        "dense_ms": 0.13,
+        "lexical_ms": 0.0,
+        "total_ms": 13.9
+      }
+    },
+    {
+      "case_id": "q04",
+      "strategy": "dense",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "3e67fc1a9977715a:p:78",
+        "3e67fc1a9977715a:p:56",
+        "3e67fc1a9977715a:p:76",
+        "3e67fc1a9977715a:p:97",
+        "3e67fc1a9977715a:p:60",
+        "3e67fc1a9977715a:p:55",
+        "3e67fc1a9977715a:p:94",
+        "3e67fc1a9977715a:p:93",
+        "3e67fc1a9977715a:p:105",
+        "3e67fc1a9977715a:p:62"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 107,
+        "requested_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 857,
+        "fallback": null,
+        "embedding_ms": 7.21,
+        "dense_ms": 0.14,
+        "lexical_ms": 0.0,
+        "total_ms": 16.07
+      }
+    },
+    {
+      "case_id": "q04",
+      "strategy": "dense",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "3e67fc1a9977715a:p:78",
+        "3e67fc1a9977715a:p:56",
+        "3e67fc1a9977715a:p:76",
+        "3e67fc1a9977715a:p:97",
+        "3e67fc1a9977715a:p:60",
+        "3e67fc1a9977715a:p:55",
+        "3e67fc1a9977715a:p:94",
+        "3e67fc1a9977715a:p:93",
+        "3e67fc1a9977715a:p:105",
+        "3e67fc1a9977715a:p:62"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 107,
+        "requested_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 857,
+        "fallback": null,
+        "embedding_ms": 7.27,
+        "dense_ms": 0.14,
+        "lexical_ms": 0.0,
+        "total_ms": 16.16
+      }
+    },
+    {
+      "case_id": "q04",
+      "strategy": "dense",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "3e67fc1a9977715a:p:78",
+        "3e67fc1a9977715a:p:56",
+        "3e67fc1a9977715a:p:76",
+        "3e67fc1a9977715a:p:97",
+        "3e67fc1a9977715a:p:60",
+        "3e67fc1a9977715a:p:55",
+        "3e67fc1a9977715a:p:94",
+        "3e67fc1a9977715a:p:93",
+        "3e67fc1a9977715a:p:105",
+        "3e67fc1a9977715a:p:62"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 107,
+        "requested_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 857,
+        "fallback": null,
+        "embedding_ms": 7.76,
+        "dense_ms": 0.14,
+        "lexical_ms": 0.0,
+        "total_ms": 17.87
+      }
+    },
+    {
+      "case_id": "q05",
+      "strategy": "dense",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:13",
+        "01319e2e6e6ecfd5:p:5",
+        "01319e2e6e6ecfd5:p:6",
+        "01319e2e6e6ecfd5:p:53",
+        "01319e2e6e6ecfd5:p:80",
+        "01319e2e6e6ecfd5:p:76",
+        "01319e2e6e6ecfd5:p:47",
+        "01319e2e6e6ecfd5:p:17",
+        "01319e2e6e6ecfd5:p:40",
+        "01319e2e6e6ecfd5:p:79"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 85,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 603,
+        "fallback": null,
+        "embedding_ms": 5.96,
+        "dense_ms": 0.12,
+        "lexical_ms": 0.0,
+        "total_ms": 15.05
+      }
+    },
+    {
+      "case_id": "q05",
+      "strategy": "dense",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:13",
+        "01319e2e6e6ecfd5:p:5",
+        "01319e2e6e6ecfd5:p:6",
+        "01319e2e6e6ecfd5:p:53",
+        "01319e2e6e6ecfd5:p:80",
+        "01319e2e6e6ecfd5:p:76",
+        "01319e2e6e6ecfd5:p:47",
+        "01319e2e6e6ecfd5:p:17",
+        "01319e2e6e6ecfd5:p:40",
+        "01319e2e6e6ecfd5:p:79"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 85,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 603,
+        "fallback": null,
+        "embedding_ms": 5.99,
+        "dense_ms": 0.12,
+        "lexical_ms": 0.0,
+        "total_ms": 14.55
+      }
+    },
+    {
+      "case_id": "q05",
+      "strategy": "dense",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:13",
+        "01319e2e6e6ecfd5:p:5",
+        "01319e2e6e6ecfd5:p:6",
+        "01319e2e6e6ecfd5:p:53",
+        "01319e2e6e6ecfd5:p:80",
+        "01319e2e6e6ecfd5:p:76",
+        "01319e2e6e6ecfd5:p:47",
+        "01319e2e6e6ecfd5:p:17",
+        "01319e2e6e6ecfd5:p:40",
+        "01319e2e6e6ecfd5:p:79"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 85,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 603,
+        "fallback": null,
+        "embedding_ms": 8.2,
+        "dense_ms": 0.12,
+        "lexical_ms": 0.0,
+        "total_ms": 16.67
+      }
+    },
+    {
+      "case_id": "q06",
+      "strategy": "dense",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:68",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:63",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:82",
+        "01319e2e6e6ecfd5:p:52"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 85,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 608,
+        "fallback": null,
+        "embedding_ms": 7.13,
+        "dense_ms": 0.11,
+        "lexical_ms": 0.0,
+        "total_ms": 15.85
+      }
+    },
+    {
+      "case_id": "q06",
+      "strategy": "dense",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:68",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:63",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:82",
+        "01319e2e6e6ecfd5:p:52"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 85,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 608,
+        "fallback": null,
+        "embedding_ms": 6.9,
+        "dense_ms": 0.11,
+        "lexical_ms": 0.0,
+        "total_ms": 15.0
+      }
+    },
+    {
+      "case_id": "q06",
+      "strategy": "dense",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:68",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:63",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:82",
+        "01319e2e6e6ecfd5:p:52"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 85,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 608,
+        "fallback": null,
+        "embedding_ms": 6.85,
+        "dense_ms": 0.12,
+        "lexical_ms": 0.0,
+        "total_ms": 30.71
+      }
+    },
+    {
+      "case_id": "q07",
+      "strategy": "dense",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "653b29619eae2ae4:p:95",
+        "653b29619eae2ae4:p:65",
+        "653b29619eae2ae4:p:8",
+        "653b29619eae2ae4:p:16",
+        "653b29619eae2ae4:p:50",
+        "653b29619eae2ae4:p:6",
+        "653b29619eae2ae4:p:63",
+        "653b29619eae2ae4:p:64",
+        "653b29619eae2ae4:p:58",
+        "653b29619eae2ae4:p:2"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 98,
+        "requested_papers": [
+          "653b29619eae2ae4"
+        ],
+        "covered_papers": [
+          "653b29619eae2ae4"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 707,
+        "fallback": null,
+        "embedding_ms": 6.01,
+        "dense_ms": 0.14,
+        "lexical_ms": 0.0,
+        "total_ms": 14.14
+      }
+    },
+    {
+      "case_id": "q07",
+      "strategy": "dense",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "653b29619eae2ae4:p:95",
+        "653b29619eae2ae4:p:65",
+        "653b29619eae2ae4:p:8",
+        "653b29619eae2ae4:p:16",
+        "653b29619eae2ae4:p:50",
+        "653b29619eae2ae4:p:6",
+        "653b29619eae2ae4:p:63",
+        "653b29619eae2ae4:p:64",
+        "653b29619eae2ae4:p:58",
+        "653b29619eae2ae4:p:2"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 98,
+        "requested_papers": [
+          "653b29619eae2ae4"
+        ],
+        "covered_papers": [
+          "653b29619eae2ae4"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 707,
+        "fallback": null,
+        "embedding_ms": 5.73,
+        "dense_ms": 0.14,
+        "lexical_ms": 0.0,
+        "total_ms": 14.18
+      }
+    },
+    {
+      "case_id": "q07",
+      "strategy": "dense",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "653b29619eae2ae4:p:95",
+        "653b29619eae2ae4:p:65",
+        "653b29619eae2ae4:p:8",
+        "653b29619eae2ae4:p:16",
+        "653b29619eae2ae4:p:50",
+        "653b29619eae2ae4:p:6",
+        "653b29619eae2ae4:p:63",
+        "653b29619eae2ae4:p:64",
+        "653b29619eae2ae4:p:58",
+        "653b29619eae2ae4:p:2"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 98,
+        "requested_papers": [
+          "653b29619eae2ae4"
+        ],
+        "covered_papers": [
+          "653b29619eae2ae4"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 707,
+        "fallback": null,
+        "embedding_ms": 5.78,
+        "dense_ms": 0.14,
+        "lexical_ms": 0.0,
+        "total_ms": 14.05
+      }
+    },
+    {
+      "case_id": "q08",
+      "strategy": "dense",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "ac8809fe3ca1d52a:p:40",
+        "ac8809fe3ca1d52a:p:52",
+        "ac8809fe3ca1d52a:p:109",
+        "ac8809fe3ca1d52a:p:46",
+        "ac8809fe3ca1d52a:p:53",
+        "ac8809fe3ca1d52a:p:45",
+        "ac8809fe3ca1d52a:p:1",
+        "ac8809fe3ca1d52a:p:42",
+        "ac8809fe3ca1d52a:p:27",
+        "ac8809fe3ca1d52a:p:14"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 122,
+        "requested_papers": [
+          "ac8809fe3ca1d52a"
+        ],
+        "covered_papers": [
+          "ac8809fe3ca1d52a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 801,
+        "fallback": null,
+        "embedding_ms": 6.24,
+        "dense_ms": 0.16,
+        "lexical_ms": 0.0,
+        "total_ms": 14.72
+      }
+    },
+    {
+      "case_id": "q08",
+      "strategy": "dense",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "ac8809fe3ca1d52a:p:40",
+        "ac8809fe3ca1d52a:p:52",
+        "ac8809fe3ca1d52a:p:109",
+        "ac8809fe3ca1d52a:p:46",
+        "ac8809fe3ca1d52a:p:53",
+        "ac8809fe3ca1d52a:p:45",
+        "ac8809fe3ca1d52a:p:1",
+        "ac8809fe3ca1d52a:p:42",
+        "ac8809fe3ca1d52a:p:27",
+        "ac8809fe3ca1d52a:p:14"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 122,
+        "requested_papers": [
+          "ac8809fe3ca1d52a"
+        ],
+        "covered_papers": [
+          "ac8809fe3ca1d52a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 801,
+        "fallback": null,
+        "embedding_ms": 5.9,
+        "dense_ms": 0.15,
+        "lexical_ms": 0.0,
+        "total_ms": 14.02
+      }
+    },
+    {
+      "case_id": "q08",
+      "strategy": "dense",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "ac8809fe3ca1d52a:p:40",
+        "ac8809fe3ca1d52a:p:52",
+        "ac8809fe3ca1d52a:p:109",
+        "ac8809fe3ca1d52a:p:46",
+        "ac8809fe3ca1d52a:p:53",
+        "ac8809fe3ca1d52a:p:45",
+        "ac8809fe3ca1d52a:p:1",
+        "ac8809fe3ca1d52a:p:42",
+        "ac8809fe3ca1d52a:p:27",
+        "ac8809fe3ca1d52a:p:14"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 122,
+        "requested_papers": [
+          "ac8809fe3ca1d52a"
+        ],
+        "covered_papers": [
+          "ac8809fe3ca1d52a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 801,
+        "fallback": null,
+        "embedding_ms": 5.86,
+        "dense_ms": 0.15,
+        "lexical_ms": 0.0,
+        "total_ms": 14.14
+      }
+    },
+    {
+      "case_id": "q09",
+      "strategy": "dense",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:7",
+        "6f854d5bb3a1651a:p:20",
+        "6f854d5bb3a1651a:p:29",
+        "6f854d5bb3a1651a:p:23",
+        "6f854d5bb3a1651a:p:28",
+        "6f854d5bb3a1651a:p:27",
+        "6f854d5bb3a1651a:p:24",
+        "6f854d5bb3a1651a:p:51",
+        "6f854d5bb3a1651a:p:5",
+        "6f854d5bb3a1651a:p:80"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 81,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 575,
+        "fallback": null,
+        "embedding_ms": 5.96,
+        "dense_ms": 0.11,
+        "lexical_ms": 0.0,
+        "total_ms": 16.36
+      }
+    },
+    {
+      "case_id": "q09",
+      "strategy": "dense",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:7",
+        "6f854d5bb3a1651a:p:20",
+        "6f854d5bb3a1651a:p:29",
+        "6f854d5bb3a1651a:p:23",
+        "6f854d5bb3a1651a:p:28",
+        "6f854d5bb3a1651a:p:27",
+        "6f854d5bb3a1651a:p:24",
+        "6f854d5bb3a1651a:p:51",
+        "6f854d5bb3a1651a:p:5",
+        "6f854d5bb3a1651a:p:80"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 81,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 575,
+        "fallback": null,
+        "embedding_ms": 5.99,
+        "dense_ms": 0.11,
+        "lexical_ms": 0.0,
+        "total_ms": 15.47
+      }
+    },
+    {
+      "case_id": "q09",
+      "strategy": "dense",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:7",
+        "6f854d5bb3a1651a:p:20",
+        "6f854d5bb3a1651a:p:29",
+        "6f854d5bb3a1651a:p:23",
+        "6f854d5bb3a1651a:p:28",
+        "6f854d5bb3a1651a:p:27",
+        "6f854d5bb3a1651a:p:24",
+        "6f854d5bb3a1651a:p:51",
+        "6f854d5bb3a1651a:p:5",
+        "6f854d5bb3a1651a:p:80"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 81,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 575,
+        "fallback": null,
+        "embedding_ms": 6.68,
+        "dense_ms": 0.13,
+        "lexical_ms": 0.0,
+        "total_ms": 15.16
+      }
+    },
+    {
+      "case_id": "q10",
+      "strategy": "dense",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:37",
+        "6f854d5bb3a1651a:p:8",
+        "6f854d5bb3a1651a:p:80",
+        "6f854d5bb3a1651a:p:75",
+        "6f854d5bb3a1651a:p:9",
+        "6f854d5bb3a1651a:p:46",
+        "6f854d5bb3a1651a:p:6",
+        "6f854d5bb3a1651a:p:7",
+        "6f854d5bb3a1651a:p:50",
+        "6f854d5bb3a1651a:p:47"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 81,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 536,
+        "fallback": null,
+        "embedding_ms": 6.58,
+        "dense_ms": 0.13,
+        "lexical_ms": 0.0,
+        "total_ms": 15.71
+      }
+    },
+    {
+      "case_id": "q10",
+      "strategy": "dense",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:37",
+        "6f854d5bb3a1651a:p:8",
+        "6f854d5bb3a1651a:p:80",
+        "6f854d5bb3a1651a:p:75",
+        "6f854d5bb3a1651a:p:9",
+        "6f854d5bb3a1651a:p:46",
+        "6f854d5bb3a1651a:p:6",
+        "6f854d5bb3a1651a:p:7",
+        "6f854d5bb3a1651a:p:50",
+        "6f854d5bb3a1651a:p:47"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 81,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 536,
+        "fallback": null,
+        "embedding_ms": 5.71,
+        "dense_ms": 0.11,
+        "lexical_ms": 0.0,
+        "total_ms": 14.83
+      }
+    },
+    {
+      "case_id": "q10",
+      "strategy": "dense",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:37",
+        "6f854d5bb3a1651a:p:8",
+        "6f854d5bb3a1651a:p:80",
+        "6f854d5bb3a1651a:p:75",
+        "6f854d5bb3a1651a:p:9",
+        "6f854d5bb3a1651a:p:46",
+        "6f854d5bb3a1651a:p:6",
+        "6f854d5bb3a1651a:p:7",
+        "6f854d5bb3a1651a:p:50",
+        "6f854d5bb3a1651a:p:47"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 81,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 536,
+        "fallback": null,
+        "embedding_ms": 7.42,
+        "dense_ms": 0.27,
+        "lexical_ms": 0.0,
+        "total_ms": 18.02
+      }
+    },
+    {
+      "case_id": "q11",
+      "strategy": "dense",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:p:38",
+        "3e67fc1a9977715a:p:45",
+        "23e3249e9a1e7541:p:79",
+        "23e3249e9a1e7541:p:23",
+        "23e3249e9a1e7541:p:46",
+        "23e3249e9a1e7541:p:44",
+        "23e3249e9a1e7541:p:8",
+        "23e3249e9a1e7541:p:0",
+        "23e3249e9a1e7541:p:82",
+        "23e3249e9a1e7541:p:70"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 190,
+        "requested_papers": [
+          "23e3249e9a1e7541",
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541",
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 680,
+        "fallback": null,
+        "embedding_ms": 7.23,
+        "dense_ms": 0.23,
+        "lexical_ms": 0.0,
+        "total_ms": 16.29
+      }
+    },
+    {
+      "case_id": "q11",
+      "strategy": "dense",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:p:38",
+        "3e67fc1a9977715a:p:45",
+        "23e3249e9a1e7541:p:79",
+        "23e3249e9a1e7541:p:23",
+        "23e3249e9a1e7541:p:46",
+        "23e3249e9a1e7541:p:44",
+        "23e3249e9a1e7541:p:8",
+        "23e3249e9a1e7541:p:0",
+        "23e3249e9a1e7541:p:82",
+        "23e3249e9a1e7541:p:70"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 190,
+        "requested_papers": [
+          "23e3249e9a1e7541",
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541",
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 680,
+        "fallback": null,
+        "embedding_ms": 6.59,
+        "dense_ms": 0.25,
+        "lexical_ms": 0.0,
+        "total_ms": 14.78
+      }
+    },
+    {
+      "case_id": "q11",
+      "strategy": "dense",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:p:38",
+        "3e67fc1a9977715a:p:45",
+        "23e3249e9a1e7541:p:79",
+        "23e3249e9a1e7541:p:23",
+        "23e3249e9a1e7541:p:46",
+        "23e3249e9a1e7541:p:44",
+        "23e3249e9a1e7541:p:8",
+        "23e3249e9a1e7541:p:0",
+        "23e3249e9a1e7541:p:82",
+        "23e3249e9a1e7541:p:70"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 190,
+        "requested_papers": [
+          "23e3249e9a1e7541",
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541",
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 680,
+        "fallback": null,
+        "embedding_ms": 7.28,
+        "dense_ms": 0.28,
+        "lexical_ms": 0.0,
+        "total_ms": 16.19
+      }
+    },
+    {
+      "case_id": "q12",
+      "strategy": "dense",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:71",
+        "6f854d5bb3a1651a:p:8",
+        "6f854d5bb3a1651a:p:37",
+        "6f854d5bb3a1651a:p:75",
+        "6f854d5bb3a1651a:p:9",
+        "6f854d5bb3a1651a:p:6",
+        "6f854d5bb3a1651a:p:46",
+        "6f854d5bb3a1651a:p:80",
+        "6f854d5bb3a1651a:p:3",
+        "6f854d5bb3a1651a:p:50"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 166,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 595,
+        "fallback": null,
+        "embedding_ms": 7.05,
+        "dense_ms": 0.23,
+        "lexical_ms": 0.0,
+        "total_ms": 16.21
+      }
+    },
+    {
+      "case_id": "q12",
+      "strategy": "dense",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:71",
+        "6f854d5bb3a1651a:p:8",
+        "6f854d5bb3a1651a:p:37",
+        "6f854d5bb3a1651a:p:75",
+        "6f854d5bb3a1651a:p:9",
+        "6f854d5bb3a1651a:p:6",
+        "6f854d5bb3a1651a:p:46",
+        "6f854d5bb3a1651a:p:80",
+        "6f854d5bb3a1651a:p:3",
+        "6f854d5bb3a1651a:p:50"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 166,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 595,
+        "fallback": null,
+        "embedding_ms": 6.92,
+        "dense_ms": 0.22,
+        "lexical_ms": 0.0,
+        "total_ms": 18.08
+      }
+    },
+    {
+      "case_id": "q12",
+      "strategy": "dense",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:71",
+        "6f854d5bb3a1651a:p:8",
+        "6f854d5bb3a1651a:p:37",
+        "6f854d5bb3a1651a:p:75",
+        "6f854d5bb3a1651a:p:9",
+        "6f854d5bb3a1651a:p:6",
+        "6f854d5bb3a1651a:p:46",
+        "6f854d5bb3a1651a:p:80",
+        "6f854d5bb3a1651a:p:3",
+        "6f854d5bb3a1651a:p:50"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 166,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 595,
+        "fallback": null,
+        "embedding_ms": 6.93,
+        "dense_ms": 0.24,
+        "lexical_ms": 0.0,
+        "total_ms": 15.47
+      }
+    },
+    {
+      "case_id": "q13",
+      "strategy": "dense",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:47",
+        "3e67fc1a9977715a:p:105",
+        "653b29619eae2ae4:p:35",
+        "01319e2e6e6ecfd5:p:13",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:52",
+        "01319e2e6e6ecfd5:p:63",
+        "01319e2e6e6ecfd5:p:5",
+        "01319e2e6e6ecfd5:p:7",
+        "01319e2e6e6ecfd5:p:83"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 290,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a",
+          "653b29619eae2ae4"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a",
+          "653b29619eae2ae4"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 737,
+        "fallback": null,
+        "embedding_ms": 7.99,
+        "dense_ms": 0.41,
+        "lexical_ms": 0.0,
+        "total_ms": 17.19
+      }
+    },
+    {
+      "case_id": "q13",
+      "strategy": "dense",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:47",
+        "3e67fc1a9977715a:p:105",
+        "653b29619eae2ae4:p:35",
+        "01319e2e6e6ecfd5:p:13",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:52",
+        "01319e2e6e6ecfd5:p:63",
+        "01319e2e6e6ecfd5:p:5",
+        "01319e2e6e6ecfd5:p:7",
+        "01319e2e6e6ecfd5:p:83"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 290,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a",
+          "653b29619eae2ae4"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a",
+          "653b29619eae2ae4"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 737,
+        "fallback": null,
+        "embedding_ms": 7.41,
+        "dense_ms": 0.38,
+        "lexical_ms": 0.0,
+        "total_ms": 16.47
+      }
+    },
+    {
+      "case_id": "q13",
+      "strategy": "dense",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:47",
+        "3e67fc1a9977715a:p:105",
+        "653b29619eae2ae4:p:35",
+        "01319e2e6e6ecfd5:p:13",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:52",
+        "01319e2e6e6ecfd5:p:63",
+        "01319e2e6e6ecfd5:p:5",
+        "01319e2e6e6ecfd5:p:7",
+        "01319e2e6e6ecfd5:p:83"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 290,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a",
+          "653b29619eae2ae4"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a",
+          "653b29619eae2ae4"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 737,
+        "fallback": null,
+        "embedding_ms": 6.92,
+        "dense_ms": 0.35,
+        "lexical_ms": 0.0,
+        "total_ms": 15.33
+      }
+    },
+    {
+      "case_id": "q14",
+      "strategy": "dense",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:51",
+        "ac8809fe3ca1d52a:p:105",
+        "ac8809fe3ca1d52a:p:107",
+        "ac8809fe3ca1d52a:p:109",
+        "ac8809fe3ca1d52a:p:115",
+        "ac8809fe3ca1d52a:p:1",
+        "ac8809fe3ca1d52a:p:40",
+        "ac8809fe3ca1d52a:p:14",
+        "ac8809fe3ca1d52a:p:15",
+        "ac8809fe3ca1d52a:p:17"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 207,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "ac8809fe3ca1d52a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "ac8809fe3ca1d52a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 755,
+        "fallback": null,
+        "embedding_ms": 6.05,
+        "dense_ms": 0.26,
+        "lexical_ms": 0.0,
+        "total_ms": 14.26
+      }
+    },
+    {
+      "case_id": "q14",
+      "strategy": "dense",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:51",
+        "ac8809fe3ca1d52a:p:105",
+        "ac8809fe3ca1d52a:p:107",
+        "ac8809fe3ca1d52a:p:109",
+        "ac8809fe3ca1d52a:p:115",
+        "ac8809fe3ca1d52a:p:1",
+        "ac8809fe3ca1d52a:p:40",
+        "ac8809fe3ca1d52a:p:14",
+        "ac8809fe3ca1d52a:p:15",
+        "ac8809fe3ca1d52a:p:17"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 207,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "ac8809fe3ca1d52a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "ac8809fe3ca1d52a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 755,
+        "fallback": null,
+        "embedding_ms": 10.42,
+        "dense_ms": 0.32,
+        "lexical_ms": 0.0,
+        "total_ms": 19.63
+      }
+    },
+    {
+      "case_id": "q14",
+      "strategy": "dense",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:51",
+        "ac8809fe3ca1d52a:p:105",
+        "ac8809fe3ca1d52a:p:107",
+        "ac8809fe3ca1d52a:p:109",
+        "ac8809fe3ca1d52a:p:115",
+        "ac8809fe3ca1d52a:p:1",
+        "ac8809fe3ca1d52a:p:40",
+        "ac8809fe3ca1d52a:p:14",
+        "ac8809fe3ca1d52a:p:15",
+        "ac8809fe3ca1d52a:p:17"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 207,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "ac8809fe3ca1d52a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "ac8809fe3ca1d52a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 755,
+        "fallback": null,
+        "embedding_ms": 7.59,
+        "dense_ms": 0.28,
+        "lexical_ms": 0.0,
+        "total_ms": 18.87
+      }
+    },
+    {
+      "case_id": "q15",
+      "strategy": "dense",
+      "repeat": 0,
+      "paper_coverage": null,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:68",
+        "6f854d5bb3a1651a:p:79",
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:56",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:63"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 166,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 577,
+        "fallback": null,
+        "embedding_ms": 11.02,
+        "dense_ms": 0.26,
+        "lexical_ms": 0.0,
+        "total_ms": 20.43
+      }
+    },
+    {
+      "case_id": "q15",
+      "strategy": "dense",
+      "repeat": 1,
+      "paper_coverage": null,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:68",
+        "6f854d5bb3a1651a:p:79",
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:56",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:63"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 166,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 577,
+        "fallback": null,
+        "embedding_ms": 9.94,
+        "dense_ms": 0.25,
+        "lexical_ms": 0.0,
+        "total_ms": 20.16
+      }
+    },
+    {
+      "case_id": "q15",
+      "strategy": "dense",
+      "repeat": 2,
+      "paper_coverage": null,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:68",
+        "6f854d5bb3a1651a:p:79",
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:56",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:63"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 166,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 577,
+        "fallback": null,
+        "embedding_ms": 8.06,
+        "dense_ms": 0.22,
+        "lexical_ms": 0.0,
+        "total_ms": 17.52
+      }
+    },
+    {
+      "case_id": "q16",
+      "strategy": "dense",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:68",
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:63",
+        "01319e2e6e6ecfd5:p:76",
+        "01319e2e6e6ecfd5:p:47"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 85,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 624,
+        "fallback": null,
+        "embedding_ms": 6.16,
+        "dense_ms": 0.13,
+        "lexical_ms": 0.0,
+        "total_ms": 14.59
+      }
+    },
+    {
+      "case_id": "q16",
+      "strategy": "dense",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:68",
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:63",
+        "01319e2e6e6ecfd5:p:76",
+        "01319e2e6e6ecfd5:p:47"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 85,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 624,
+        "fallback": null,
+        "embedding_ms": 5.9,
+        "dense_ms": 0.11,
+        "lexical_ms": 0.0,
+        "total_ms": 14.45
+      }
+    },
+    {
+      "case_id": "q16",
+      "strategy": "dense",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:68",
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:63",
+        "01319e2e6e6ecfd5:p:76",
+        "01319e2e6e6ecfd5:p:47"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 85,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 624,
+        "fallback": null,
+        "embedding_ms": 6.24,
+        "dense_ms": 0.12,
+        "lexical_ms": 0.0,
+        "total_ms": 14.0
+      }
+    },
+    {
+      "case_id": "q17",
+      "strategy": "dense",
+      "repeat": 0,
+      "paper_coverage": null,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:57",
+        "6f854d5bb3a1651a:p:35",
+        "6f854d5bb3a1651a:p:56",
+        "6f854d5bb3a1651a:p:75",
+        "6f854d5bb3a1651a:p:9",
+        "6f854d5bb3a1651a:p:25",
+        "6f854d5bb3a1651a:p:59",
+        "6f854d5bb3a1651a:p:80",
+        "6f854d5bb3a1651a:p:37",
+        "6f854d5bb3a1651a:p:22"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 81,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 743,
+        "fallback": null,
+        "embedding_ms": 7.24,
+        "dense_ms": 0.11,
+        "lexical_ms": 0.0,
+        "total_ms": 15.82
+      }
+    },
+    {
+      "case_id": "q17",
+      "strategy": "dense",
+      "repeat": 1,
+      "paper_coverage": null,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:57",
+        "6f854d5bb3a1651a:p:35",
+        "6f854d5bb3a1651a:p:56",
+        "6f854d5bb3a1651a:p:75",
+        "6f854d5bb3a1651a:p:9",
+        "6f854d5bb3a1651a:p:25",
+        "6f854d5bb3a1651a:p:59",
+        "6f854d5bb3a1651a:p:80",
+        "6f854d5bb3a1651a:p:37",
+        "6f854d5bb3a1651a:p:22"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 81,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 743,
+        "fallback": null,
+        "embedding_ms": 6.51,
+        "dense_ms": 0.11,
+        "lexical_ms": 0.0,
+        "total_ms": 14.7
+      }
+    },
+    {
+      "case_id": "q17",
+      "strategy": "dense",
+      "repeat": 2,
+      "paper_coverage": null,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:57",
+        "6f854d5bb3a1651a:p:35",
+        "6f854d5bb3a1651a:p:56",
+        "6f854d5bb3a1651a:p:75",
+        "6f854d5bb3a1651a:p:9",
+        "6f854d5bb3a1651a:p:25",
+        "6f854d5bb3a1651a:p:59",
+        "6f854d5bb3a1651a:p:80",
+        "6f854d5bb3a1651a:p:37",
+        "6f854d5bb3a1651a:p:22"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 81,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 743,
+        "fallback": null,
+        "embedding_ms": 9.94,
+        "dense_ms": 0.19,
+        "lexical_ms": 0.0,
+        "total_ms": 19.38
+      }
+    },
+    {
+      "case_id": "q18",
+      "strategy": "dense",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:58",
+        "3e67fc1a9977715a:p:76",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:63",
+        "01319e2e6e6ecfd5:p:68",
+        "01319e2e6e6ecfd5:p:47"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 192,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 637,
+        "fallback": null,
+        "embedding_ms": 9.25,
+        "dense_ms": 0.23,
+        "lexical_ms": 0.0,
+        "total_ms": 18.84
+      }
+    },
+    {
+      "case_id": "q18",
+      "strategy": "dense",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:58",
+        "3e67fc1a9977715a:p:76",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:63",
+        "01319e2e6e6ecfd5:p:68",
+        "01319e2e6e6ecfd5:p:47"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 192,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 637,
+        "fallback": null,
+        "embedding_ms": 9.97,
+        "dense_ms": 0.24,
+        "lexical_ms": 0.0,
+        "total_ms": 18.82
+      }
+    },
+    {
+      "case_id": "q18",
+      "strategy": "dense",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:58",
+        "3e67fc1a9977715a:p:76",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:63",
+        "01319e2e6e6ecfd5:p:68",
+        "01319e2e6e6ecfd5:p:47"
+      ],
+      "trace": {
+        "strategy": "dense",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 192,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 637,
+        "fallback": null,
+        "embedding_ms": 8.89,
+        "dense_ms": 0.24,
+        "lexical_ms": 0.0,
+        "total_ms": 18.0
+      }
+    },
+    {
+      "case_id": "q01",
+      "strategy": "hybrid",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:p:7",
+        "23e3249e9a1e7541:p:79",
+        "23e3249e9a1e7541:p:0",
+        "23e3249e9a1e7541:p:8",
+        "23e3249e9a1e7541:p:63",
+        "23e3249e9a1e7541:p:9",
+        "23e3249e9a1e7541:p:11",
+        "23e3249e9a1e7541:p:10",
+        "23e3249e9a1e7541:p:24",
+        "23e3249e9a1e7541:p:2"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 83,
+        "requested_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 978,
+        "fallback": null,
+        "embedding_ms": 6.05,
+        "dense_ms": 0.11,
+        "lexical_ms": 1.75,
+        "total_ms": 16.1
+      }
+    },
+    {
+      "case_id": "q01",
+      "strategy": "hybrid",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:p:7",
+        "23e3249e9a1e7541:p:79",
+        "23e3249e9a1e7541:p:0",
+        "23e3249e9a1e7541:p:8",
+        "23e3249e9a1e7541:p:63",
+        "23e3249e9a1e7541:p:9",
+        "23e3249e9a1e7541:p:11",
+        "23e3249e9a1e7541:p:10",
+        "23e3249e9a1e7541:p:24",
+        "23e3249e9a1e7541:p:2"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 83,
+        "requested_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 978,
+        "fallback": null,
+        "embedding_ms": 6.0,
+        "dense_ms": 0.11,
+        "lexical_ms": 1.77,
+        "total_ms": 16.08
+      }
+    },
+    {
+      "case_id": "q01",
+      "strategy": "hybrid",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:p:7",
+        "23e3249e9a1e7541:p:79",
+        "23e3249e9a1e7541:p:0",
+        "23e3249e9a1e7541:p:8",
+        "23e3249e9a1e7541:p:63",
+        "23e3249e9a1e7541:p:9",
+        "23e3249e9a1e7541:p:11",
+        "23e3249e9a1e7541:p:10",
+        "23e3249e9a1e7541:p:24",
+        "23e3249e9a1e7541:p:2"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 83,
+        "requested_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 978,
+        "fallback": null,
+        "embedding_ms": 6.18,
+        "dense_ms": 0.12,
+        "lexical_ms": 1.65,
+        "total_ms": 16.52
+      }
+    },
+    {
+      "case_id": "q02",
+      "strategy": "hybrid",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:p:15",
+        "23e3249e9a1e7541:p:16",
+        "23e3249e9a1e7541:p:17",
+        "23e3249e9a1e7541:p:47",
+        "23e3249e9a1e7541:p:69",
+        "23e3249e9a1e7541:p:68",
+        "23e3249e9a1e7541:p:70",
+        "23e3249e9a1e7541:p:72",
+        "23e3249e9a1e7541:p:53",
+        "23e3249e9a1e7541:p:14"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 83,
+        "requested_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 569,
+        "fallback": null,
+        "embedding_ms": 5.38,
+        "dense_ms": 0.14,
+        "lexical_ms": 1.93,
+        "total_ms": 15.72
+      }
+    },
+    {
+      "case_id": "q02",
+      "strategy": "hybrid",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:p:15",
+        "23e3249e9a1e7541:p:16",
+        "23e3249e9a1e7541:p:17",
+        "23e3249e9a1e7541:p:47",
+        "23e3249e9a1e7541:p:69",
+        "23e3249e9a1e7541:p:68",
+        "23e3249e9a1e7541:p:70",
+        "23e3249e9a1e7541:p:72",
+        "23e3249e9a1e7541:p:53",
+        "23e3249e9a1e7541:p:14"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 83,
+        "requested_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 569,
+        "fallback": null,
+        "embedding_ms": 5.23,
+        "dense_ms": 0.11,
+        "lexical_ms": 1.74,
+        "total_ms": 15.69
+      }
+    },
+    {
+      "case_id": "q02",
+      "strategy": "hybrid",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:p:15",
+        "23e3249e9a1e7541:p:16",
+        "23e3249e9a1e7541:p:17",
+        "23e3249e9a1e7541:p:47",
+        "23e3249e9a1e7541:p:69",
+        "23e3249e9a1e7541:p:68",
+        "23e3249e9a1e7541:p:70",
+        "23e3249e9a1e7541:p:72",
+        "23e3249e9a1e7541:p:53",
+        "23e3249e9a1e7541:p:14"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 83,
+        "requested_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 569,
+        "fallback": null,
+        "embedding_ms": 5.03,
+        "dense_ms": 0.11,
+        "lexical_ms": 1.71,
+        "total_ms": 14.92
+      }
+    },
+    {
+      "case_id": "q03",
+      "strategy": "hybrid",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "3e67fc1a9977715a:p:54",
+        "3e67fc1a9977715a:p:66",
+        "3e67fc1a9977715a:p:32",
+        "3e67fc1a9977715a:p:87",
+        "3e67fc1a9977715a:p:67",
+        "3e67fc1a9977715a:p:72",
+        "3e67fc1a9977715a:p:65",
+        "3e67fc1a9977715a:p:75",
+        "3e67fc1a9977715a:p:29",
+        "3e67fc1a9977715a:p:55"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 107,
+        "requested_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 838,
+        "fallback": null,
+        "embedding_ms": 4.88,
+        "dense_ms": 0.14,
+        "lexical_ms": 2.04,
+        "total_ms": 14.89
+      }
+    },
+    {
+      "case_id": "q03",
+      "strategy": "hybrid",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "3e67fc1a9977715a:p:54",
+        "3e67fc1a9977715a:p:66",
+        "3e67fc1a9977715a:p:32",
+        "3e67fc1a9977715a:p:87",
+        "3e67fc1a9977715a:p:67",
+        "3e67fc1a9977715a:p:72",
+        "3e67fc1a9977715a:p:65",
+        "3e67fc1a9977715a:p:75",
+        "3e67fc1a9977715a:p:29",
+        "3e67fc1a9977715a:p:55"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 107,
+        "requested_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 838,
+        "fallback": null,
+        "embedding_ms": 4.78,
+        "dense_ms": 0.14,
+        "lexical_ms": 2.11,
+        "total_ms": 14.53
+      }
+    },
+    {
+      "case_id": "q03",
+      "strategy": "hybrid",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "3e67fc1a9977715a:p:54",
+        "3e67fc1a9977715a:p:66",
+        "3e67fc1a9977715a:p:32",
+        "3e67fc1a9977715a:p:87",
+        "3e67fc1a9977715a:p:67",
+        "3e67fc1a9977715a:p:72",
+        "3e67fc1a9977715a:p:65",
+        "3e67fc1a9977715a:p:75",
+        "3e67fc1a9977715a:p:29",
+        "3e67fc1a9977715a:p:55"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 107,
+        "requested_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 838,
+        "fallback": null,
+        "embedding_ms": 5.29,
+        "dense_ms": 0.15,
+        "lexical_ms": 2.19,
+        "total_ms": 15.24
+      }
+    },
+    {
+      "case_id": "q04",
+      "strategy": "hybrid",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "3e67fc1a9977715a:p:78",
+        "3e67fc1a9977715a:p:60",
+        "3e67fc1a9977715a:p:93",
+        "3e67fc1a9977715a:p:52",
+        "3e67fc1a9977715a:p:55",
+        "3e67fc1a9977715a:p:97",
+        "3e67fc1a9977715a:p:56",
+        "3e67fc1a9977715a:p:76",
+        "3e67fc1a9977715a:p:88",
+        "3e67fc1a9977715a:p:9"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 107,
+        "requested_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 849,
+        "fallback": null,
+        "embedding_ms": 7.8,
+        "dense_ms": 0.14,
+        "lexical_ms": 2.46,
+        "total_ms": 19.2
+      }
+    },
+    {
+      "case_id": "q04",
+      "strategy": "hybrid",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "3e67fc1a9977715a:p:78",
+        "3e67fc1a9977715a:p:60",
+        "3e67fc1a9977715a:p:93",
+        "3e67fc1a9977715a:p:52",
+        "3e67fc1a9977715a:p:55",
+        "3e67fc1a9977715a:p:97",
+        "3e67fc1a9977715a:p:56",
+        "3e67fc1a9977715a:p:76",
+        "3e67fc1a9977715a:p:88",
+        "3e67fc1a9977715a:p:9"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 107,
+        "requested_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 849,
+        "fallback": null,
+        "embedding_ms": 7.36,
+        "dense_ms": 0.14,
+        "lexical_ms": 1.95,
+        "total_ms": 18.6
+      }
+    },
+    {
+      "case_id": "q04",
+      "strategy": "hybrid",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "3e67fc1a9977715a:p:78",
+        "3e67fc1a9977715a:p:60",
+        "3e67fc1a9977715a:p:93",
+        "3e67fc1a9977715a:p:52",
+        "3e67fc1a9977715a:p:55",
+        "3e67fc1a9977715a:p:97",
+        "3e67fc1a9977715a:p:56",
+        "3e67fc1a9977715a:p:76",
+        "3e67fc1a9977715a:p:88",
+        "3e67fc1a9977715a:p:9"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 107,
+        "requested_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 849,
+        "fallback": null,
+        "embedding_ms": 6.85,
+        "dense_ms": 0.14,
+        "lexical_ms": 2.18,
+        "total_ms": 17.88
+      }
+    },
+    {
+      "case_id": "q05",
+      "strategy": "hybrid",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:5",
+        "01319e2e6e6ecfd5:p:53",
+        "01319e2e6e6ecfd5:p:80",
+        "01319e2e6e6ecfd5:p:29",
+        "01319e2e6e6ecfd5:p:81",
+        "01319e2e6e6ecfd5:p:47",
+        "01319e2e6e6ecfd5:p:71",
+        "01319e2e6e6ecfd5:p:38",
+        "01319e2e6e6ecfd5:p:31",
+        "01319e2e6e6ecfd5:p:15"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 85,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 662,
+        "fallback": null,
+        "embedding_ms": 6.24,
+        "dense_ms": 0.14,
+        "lexical_ms": 1.91,
+        "total_ms": 17.1
+      }
+    },
+    {
+      "case_id": "q05",
+      "strategy": "hybrid",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:5",
+        "01319e2e6e6ecfd5:p:53",
+        "01319e2e6e6ecfd5:p:80",
+        "01319e2e6e6ecfd5:p:29",
+        "01319e2e6e6ecfd5:p:81",
+        "01319e2e6e6ecfd5:p:47",
+        "01319e2e6e6ecfd5:p:71",
+        "01319e2e6e6ecfd5:p:38",
+        "01319e2e6e6ecfd5:p:31",
+        "01319e2e6e6ecfd5:p:15"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 85,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 662,
+        "fallback": null,
+        "embedding_ms": 5.95,
+        "dense_ms": 0.13,
+        "lexical_ms": 1.81,
+        "total_ms": 17.01
+      }
+    },
+    {
+      "case_id": "q05",
+      "strategy": "hybrid",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:5",
+        "01319e2e6e6ecfd5:p:53",
+        "01319e2e6e6ecfd5:p:80",
+        "01319e2e6e6ecfd5:p:29",
+        "01319e2e6e6ecfd5:p:81",
+        "01319e2e6e6ecfd5:p:47",
+        "01319e2e6e6ecfd5:p:71",
+        "01319e2e6e6ecfd5:p:38",
+        "01319e2e6e6ecfd5:p:31",
+        "01319e2e6e6ecfd5:p:15"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 85,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 662,
+        "fallback": null,
+        "embedding_ms": 6.24,
+        "dense_ms": 0.13,
+        "lexical_ms": 2.64,
+        "total_ms": 19.27
+      }
+    },
+    {
+      "case_id": "q06",
+      "strategy": "hybrid",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:63",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:68",
+        "01319e2e6e6ecfd5:p:82",
+        "01319e2e6e6ecfd5:p:74",
+        "01319e2e6e6ecfd5:p:61"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 85,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 576,
+        "fallback": null,
+        "embedding_ms": 7.34,
+        "dense_ms": 0.11,
+        "lexical_ms": 1.94,
+        "total_ms": 18.25
+      }
+    },
+    {
+      "case_id": "q06",
+      "strategy": "hybrid",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:63",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:68",
+        "01319e2e6e6ecfd5:p:82",
+        "01319e2e6e6ecfd5:p:74",
+        "01319e2e6e6ecfd5:p:61"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 85,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 576,
+        "fallback": null,
+        "embedding_ms": 9.95,
+        "dense_ms": 0.14,
+        "lexical_ms": 2.36,
+        "total_ms": 21.35
+      }
+    },
+    {
+      "case_id": "q06",
+      "strategy": "hybrid",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:63",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:68",
+        "01319e2e6e6ecfd5:p:82",
+        "01319e2e6e6ecfd5:p:74",
+        "01319e2e6e6ecfd5:p:61"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 85,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 576,
+        "fallback": null,
+        "embedding_ms": 8.22,
+        "dense_ms": 0.14,
+        "lexical_ms": 2.26,
+        "total_ms": 20.24
+      }
+    },
+    {
+      "case_id": "q07",
+      "strategy": "hybrid",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "653b29619eae2ae4:p:64",
+        "653b29619eae2ae4:p:0",
+        "653b29619eae2ae4:p:95",
+        "653b29619eae2ae4:p:6",
+        "653b29619eae2ae4:p:2",
+        "653b29619eae2ae4:p:65",
+        "653b29619eae2ae4:p:42",
+        "653b29619eae2ae4:p:8",
+        "653b29619eae2ae4:p:16",
+        "653b29619eae2ae4:p:71"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 98,
+        "requested_papers": [
+          "653b29619eae2ae4"
+        ],
+        "covered_papers": [
+          "653b29619eae2ae4"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 821,
+        "fallback": null,
+        "embedding_ms": 6.89,
+        "dense_ms": 0.26,
+        "lexical_ms": 2.59,
+        "total_ms": 19.05
+      }
+    },
+    {
+      "case_id": "q07",
+      "strategy": "hybrid",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "653b29619eae2ae4:p:64",
+        "653b29619eae2ae4:p:0",
+        "653b29619eae2ae4:p:95",
+        "653b29619eae2ae4:p:6",
+        "653b29619eae2ae4:p:2",
+        "653b29619eae2ae4:p:65",
+        "653b29619eae2ae4:p:42",
+        "653b29619eae2ae4:p:8",
+        "653b29619eae2ae4:p:16",
+        "653b29619eae2ae4:p:71"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 98,
+        "requested_papers": [
+          "653b29619eae2ae4"
+        ],
+        "covered_papers": [
+          "653b29619eae2ae4"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 821,
+        "fallback": null,
+        "embedding_ms": 6.2,
+        "dense_ms": 0.14,
+        "lexical_ms": 1.86,
+        "total_ms": 18.39
+      }
+    },
+    {
+      "case_id": "q07",
+      "strategy": "hybrid",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "653b29619eae2ae4:p:64",
+        "653b29619eae2ae4:p:0",
+        "653b29619eae2ae4:p:95",
+        "653b29619eae2ae4:p:6",
+        "653b29619eae2ae4:p:2",
+        "653b29619eae2ae4:p:65",
+        "653b29619eae2ae4:p:42",
+        "653b29619eae2ae4:p:8",
+        "653b29619eae2ae4:p:16",
+        "653b29619eae2ae4:p:71"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 98,
+        "requested_papers": [
+          "653b29619eae2ae4"
+        ],
+        "covered_papers": [
+          "653b29619eae2ae4"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 821,
+        "fallback": null,
+        "embedding_ms": 5.41,
+        "dense_ms": 0.14,
+        "lexical_ms": 1.85,
+        "total_ms": 15.46
+      }
+    },
+    {
+      "case_id": "q08",
+      "strategy": "hybrid",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "ac8809fe3ca1d52a:p:40",
+        "ac8809fe3ca1d52a:p:109",
+        "ac8809fe3ca1d52a:p:52",
+        "ac8809fe3ca1d52a:p:46",
+        "ac8809fe3ca1d52a:p:45",
+        "ac8809fe3ca1d52a:p:47",
+        "ac8809fe3ca1d52a:p:53",
+        "ac8809fe3ca1d52a:p:118",
+        "ac8809fe3ca1d52a:p:102",
+        "ac8809fe3ca1d52a:p:42"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 122,
+        "requested_papers": [
+          "ac8809fe3ca1d52a"
+        ],
+        "covered_papers": [
+          "ac8809fe3ca1d52a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 727,
+        "fallback": null,
+        "embedding_ms": 6.58,
+        "dense_ms": 0.18,
+        "lexical_ms": 2.43,
+        "total_ms": 17.86
+      }
+    },
+    {
+      "case_id": "q08",
+      "strategy": "hybrid",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "ac8809fe3ca1d52a:p:40",
+        "ac8809fe3ca1d52a:p:109",
+        "ac8809fe3ca1d52a:p:52",
+        "ac8809fe3ca1d52a:p:46",
+        "ac8809fe3ca1d52a:p:45",
+        "ac8809fe3ca1d52a:p:47",
+        "ac8809fe3ca1d52a:p:53",
+        "ac8809fe3ca1d52a:p:118",
+        "ac8809fe3ca1d52a:p:102",
+        "ac8809fe3ca1d52a:p:42"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 122,
+        "requested_papers": [
+          "ac8809fe3ca1d52a"
+        ],
+        "covered_papers": [
+          "ac8809fe3ca1d52a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 727,
+        "fallback": null,
+        "embedding_ms": 7.29,
+        "dense_ms": 0.2,
+        "lexical_ms": 2.72,
+        "total_ms": 18.99
+      }
+    },
+    {
+      "case_id": "q08",
+      "strategy": "hybrid",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "ac8809fe3ca1d52a:p:40",
+        "ac8809fe3ca1d52a:p:109",
+        "ac8809fe3ca1d52a:p:52",
+        "ac8809fe3ca1d52a:p:46",
+        "ac8809fe3ca1d52a:p:45",
+        "ac8809fe3ca1d52a:p:47",
+        "ac8809fe3ca1d52a:p:53",
+        "ac8809fe3ca1d52a:p:118",
+        "ac8809fe3ca1d52a:p:102",
+        "ac8809fe3ca1d52a:p:42"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 122,
+        "requested_papers": [
+          "ac8809fe3ca1d52a"
+        ],
+        "covered_papers": [
+          "ac8809fe3ca1d52a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 727,
+        "fallback": null,
+        "embedding_ms": 8.02,
+        "dense_ms": 0.19,
+        "lexical_ms": 2.57,
+        "total_ms": 19.15
+      }
+    },
+    {
+      "case_id": "q09",
+      "strategy": "hybrid",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:7",
+        "6f854d5bb3a1651a:p:20",
+        "6f854d5bb3a1651a:p:5",
+        "6f854d5bb3a1651a:p:24",
+        "6f854d5bb3a1651a:p:28",
+        "6f854d5bb3a1651a:p:27",
+        "6f854d5bb3a1651a:p:29",
+        "6f854d5bb3a1651a:p:23",
+        "6f854d5bb3a1651a:p:21",
+        "6f854d5bb3a1651a:p:80"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 81,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 543,
+        "fallback": null,
+        "embedding_ms": 6.45,
+        "dense_ms": 0.11,
+        "lexical_ms": 1.72,
+        "total_ms": 18.46
+      }
+    },
+    {
+      "case_id": "q09",
+      "strategy": "hybrid",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:7",
+        "6f854d5bb3a1651a:p:20",
+        "6f854d5bb3a1651a:p:5",
+        "6f854d5bb3a1651a:p:24",
+        "6f854d5bb3a1651a:p:28",
+        "6f854d5bb3a1651a:p:27",
+        "6f854d5bb3a1651a:p:29",
+        "6f854d5bb3a1651a:p:23",
+        "6f854d5bb3a1651a:p:21",
+        "6f854d5bb3a1651a:p:80"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 81,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 543,
+        "fallback": null,
+        "embedding_ms": 5.6,
+        "dense_ms": 0.11,
+        "lexical_ms": 1.76,
+        "total_ms": 15.27
+      }
+    },
+    {
+      "case_id": "q09",
+      "strategy": "hybrid",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:7",
+        "6f854d5bb3a1651a:p:20",
+        "6f854d5bb3a1651a:p:5",
+        "6f854d5bb3a1651a:p:24",
+        "6f854d5bb3a1651a:p:28",
+        "6f854d5bb3a1651a:p:27",
+        "6f854d5bb3a1651a:p:29",
+        "6f854d5bb3a1651a:p:23",
+        "6f854d5bb3a1651a:p:21",
+        "6f854d5bb3a1651a:p:80"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 81,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 543,
+        "fallback": null,
+        "embedding_ms": 6.86,
+        "dense_ms": 0.14,
+        "lexical_ms": 2.07,
+        "total_ms": 17.2
+      }
+    },
+    {
+      "case_id": "q10",
+      "strategy": "hybrid",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:75",
+        "6f854d5bb3a1651a:p:37",
+        "6f854d5bb3a1651a:p:8",
+        "6f854d5bb3a1651a:p:6",
+        "6f854d5bb3a1651a:p:46",
+        "6f854d5bb3a1651a:p:36",
+        "6f854d5bb3a1651a:p:7",
+        "6f854d5bb3a1651a:p:57",
+        "6f854d5bb3a1651a:p:17",
+        "6f854d5bb3a1651a:p:59"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 81,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 762,
+        "fallback": null,
+        "embedding_ms": 5.6,
+        "dense_ms": 0.11,
+        "lexical_ms": 1.63,
+        "total_ms": 16.26
+      }
+    },
+    {
+      "case_id": "q10",
+      "strategy": "hybrid",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:75",
+        "6f854d5bb3a1651a:p:37",
+        "6f854d5bb3a1651a:p:8",
+        "6f854d5bb3a1651a:p:6",
+        "6f854d5bb3a1651a:p:46",
+        "6f854d5bb3a1651a:p:36",
+        "6f854d5bb3a1651a:p:7",
+        "6f854d5bb3a1651a:p:57",
+        "6f854d5bb3a1651a:p:17",
+        "6f854d5bb3a1651a:p:59"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 81,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 762,
+        "fallback": null,
+        "embedding_ms": 5.59,
+        "dense_ms": 0.11,
+        "lexical_ms": 1.62,
+        "total_ms": 14.89
+      }
+    },
+    {
+      "case_id": "q10",
+      "strategy": "hybrid",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:75",
+        "6f854d5bb3a1651a:p:37",
+        "6f854d5bb3a1651a:p:8",
+        "6f854d5bb3a1651a:p:6",
+        "6f854d5bb3a1651a:p:46",
+        "6f854d5bb3a1651a:p:36",
+        "6f854d5bb3a1651a:p:7",
+        "6f854d5bb3a1651a:p:57",
+        "6f854d5bb3a1651a:p:17",
+        "6f854d5bb3a1651a:p:59"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 81,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 762,
+        "fallback": null,
+        "embedding_ms": 5.75,
+        "dense_ms": 0.11,
+        "lexical_ms": 1.58,
+        "total_ms": 15.02
+      }
+    },
+    {
+      "case_id": "q11",
+      "strategy": "hybrid",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:p:28",
+        "3e67fc1a9977715a:p:95",
+        "23e3249e9a1e7541:p:0",
+        "23e3249e9a1e7541:p:38",
+        "3e67fc1a9977715a:p:105",
+        "23e3249e9a1e7541:p:46",
+        "23e3249e9a1e7541:p:7",
+        "23e3249e9a1e7541:p:78",
+        "23e3249e9a1e7541:p:82",
+        "3e67fc1a9977715a:p:104"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 190,
+        "requested_papers": [
+          "23e3249e9a1e7541",
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541",
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 1026,
+        "fallback": null,
+        "embedding_ms": 6.57,
+        "dense_ms": 0.23,
+        "lexical_ms": 2.42,
+        "total_ms": 19.2
+      }
+    },
+    {
+      "case_id": "q11",
+      "strategy": "hybrid",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:p:28",
+        "3e67fc1a9977715a:p:95",
+        "23e3249e9a1e7541:p:0",
+        "23e3249e9a1e7541:p:38",
+        "3e67fc1a9977715a:p:105",
+        "23e3249e9a1e7541:p:46",
+        "23e3249e9a1e7541:p:7",
+        "23e3249e9a1e7541:p:78",
+        "23e3249e9a1e7541:p:82",
+        "3e67fc1a9977715a:p:104"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 190,
+        "requested_papers": [
+          "23e3249e9a1e7541",
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541",
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 1026,
+        "fallback": null,
+        "embedding_ms": 6.31,
+        "dense_ms": 0.23,
+        "lexical_ms": 2.38,
+        "total_ms": 17.06
+      }
+    },
+    {
+      "case_id": "q11",
+      "strategy": "hybrid",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:p:28",
+        "3e67fc1a9977715a:p:95",
+        "23e3249e9a1e7541:p:0",
+        "23e3249e9a1e7541:p:38",
+        "3e67fc1a9977715a:p:105",
+        "23e3249e9a1e7541:p:46",
+        "23e3249e9a1e7541:p:7",
+        "23e3249e9a1e7541:p:78",
+        "23e3249e9a1e7541:p:82",
+        "3e67fc1a9977715a:p:104"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 190,
+        "requested_papers": [
+          "23e3249e9a1e7541",
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541",
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 1026,
+        "fallback": null,
+        "embedding_ms": 6.32,
+        "dense_ms": 0.23,
+        "lexical_ms": 2.48,
+        "total_ms": 17.49
+      }
+    },
+    {
+      "case_id": "q12",
+      "strategy": "hybrid",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:43",
+        "6f854d5bb3a1651a:p:37",
+        "6f854d5bb3a1651a:p:8",
+        "6f854d5bb3a1651a:p:6",
+        "6f854d5bb3a1651a:p:75",
+        "6f854d5bb3a1651a:p:3",
+        "01319e2e6e6ecfd5:p:29",
+        "6f854d5bb3a1651a:p:72",
+        "01319e2e6e6ecfd5:p:81",
+        "6f854d5bb3a1651a:p:17"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 166,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 926,
+        "fallback": null,
+        "embedding_ms": 6.27,
+        "dense_ms": 0.21,
+        "lexical_ms": 2.21,
+        "total_ms": 16.77
+      }
+    },
+    {
+      "case_id": "q12",
+      "strategy": "hybrid",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:43",
+        "6f854d5bb3a1651a:p:37",
+        "6f854d5bb3a1651a:p:8",
+        "6f854d5bb3a1651a:p:6",
+        "6f854d5bb3a1651a:p:75",
+        "6f854d5bb3a1651a:p:3",
+        "01319e2e6e6ecfd5:p:29",
+        "6f854d5bb3a1651a:p:72",
+        "01319e2e6e6ecfd5:p:81",
+        "6f854d5bb3a1651a:p:17"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 166,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 926,
+        "fallback": null,
+        "embedding_ms": 6.16,
+        "dense_ms": 0.2,
+        "lexical_ms": 2.25,
+        "total_ms": 16.98
+      }
+    },
+    {
+      "case_id": "q12",
+      "strategy": "hybrid",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:43",
+        "6f854d5bb3a1651a:p:37",
+        "6f854d5bb3a1651a:p:8",
+        "6f854d5bb3a1651a:p:6",
+        "6f854d5bb3a1651a:p:75",
+        "6f854d5bb3a1651a:p:3",
+        "01319e2e6e6ecfd5:p:29",
+        "6f854d5bb3a1651a:p:72",
+        "01319e2e6e6ecfd5:p:81",
+        "6f854d5bb3a1651a:p:17"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 166,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 926,
+        "fallback": null,
+        "embedding_ms": 6.31,
+        "dense_ms": 0.21,
+        "lexical_ms": 2.13,
+        "total_ms": 16.19
+      }
+    },
+    {
+      "case_id": "q13",
+      "strategy": "hybrid",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:5",
+        "3e67fc1a9977715a:p:63",
+        "653b29619eae2ae4:p:27",
+        "01319e2e6e6ecfd5:p:47",
+        "01319e2e6e6ecfd5:p:80",
+        "01319e2e6e6ecfd5:p:53",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:63",
+        "01319e2e6e6ecfd5:p:52",
+        "01319e2e6e6ecfd5:p:60"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 290,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a",
+          "653b29619eae2ae4"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a",
+          "653b29619eae2ae4"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 546,
+        "fallback": null,
+        "embedding_ms": 7.62,
+        "dense_ms": 0.37,
+        "lexical_ms": 2.5,
+        "total_ms": 20.88
+      }
+    },
+    {
+      "case_id": "q13",
+      "strategy": "hybrid",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:5",
+        "3e67fc1a9977715a:p:63",
+        "653b29619eae2ae4:p:27",
+        "01319e2e6e6ecfd5:p:47",
+        "01319e2e6e6ecfd5:p:80",
+        "01319e2e6e6ecfd5:p:53",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:63",
+        "01319e2e6e6ecfd5:p:52",
+        "01319e2e6e6ecfd5:p:60"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 290,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a",
+          "653b29619eae2ae4"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a",
+          "653b29619eae2ae4"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 546,
+        "fallback": null,
+        "embedding_ms": 6.92,
+        "dense_ms": 0.35,
+        "lexical_ms": 2.31,
+        "total_ms": 17.81
+      }
+    },
+    {
+      "case_id": "q13",
+      "strategy": "hybrid",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:5",
+        "3e67fc1a9977715a:p:63",
+        "653b29619eae2ae4:p:27",
+        "01319e2e6e6ecfd5:p:47",
+        "01319e2e6e6ecfd5:p:80",
+        "01319e2e6e6ecfd5:p:53",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:63",
+        "01319e2e6e6ecfd5:p:52",
+        "01319e2e6e6ecfd5:p:60"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 290,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a",
+          "653b29619eae2ae4"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a",
+          "653b29619eae2ae4"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 546,
+        "fallback": null,
+        "embedding_ms": 7.04,
+        "dense_ms": 0.36,
+        "lexical_ms": 2.32,
+        "total_ms": 17.75
+      }
+    },
+    {
+      "case_id": "q14",
+      "strategy": "hybrid",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:69",
+        "ac8809fe3ca1d52a:p:109",
+        "ac8809fe3ca1d52a:p:105",
+        "ac8809fe3ca1d52a:p:115",
+        "ac8809fe3ca1d52a:p:107",
+        "ac8809fe3ca1d52a:p:1",
+        "ac8809fe3ca1d52a:p:14",
+        "ac8809fe3ca1d52a:p:86",
+        "ac8809fe3ca1d52a:p:40",
+        "ac8809fe3ca1d52a:p:43"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 207,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "ac8809fe3ca1d52a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "ac8809fe3ca1d52a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 634,
+        "fallback": null,
+        "embedding_ms": 6.35,
+        "dense_ms": 0.27,
+        "lexical_ms": 2.39,
+        "total_ms": 17.07
+      }
+    },
+    {
+      "case_id": "q14",
+      "strategy": "hybrid",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:69",
+        "ac8809fe3ca1d52a:p:109",
+        "ac8809fe3ca1d52a:p:105",
+        "ac8809fe3ca1d52a:p:115",
+        "ac8809fe3ca1d52a:p:107",
+        "ac8809fe3ca1d52a:p:1",
+        "ac8809fe3ca1d52a:p:14",
+        "ac8809fe3ca1d52a:p:86",
+        "ac8809fe3ca1d52a:p:40",
+        "ac8809fe3ca1d52a:p:43"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 207,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "ac8809fe3ca1d52a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "ac8809fe3ca1d52a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 634,
+        "fallback": null,
+        "embedding_ms": 6.43,
+        "dense_ms": 0.29,
+        "lexical_ms": 2.67,
+        "total_ms": 17.88
+      }
+    },
+    {
+      "case_id": "q14",
+      "strategy": "hybrid",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:69",
+        "ac8809fe3ca1d52a:p:109",
+        "ac8809fe3ca1d52a:p:105",
+        "ac8809fe3ca1d52a:p:115",
+        "ac8809fe3ca1d52a:p:107",
+        "ac8809fe3ca1d52a:p:1",
+        "ac8809fe3ca1d52a:p:14",
+        "ac8809fe3ca1d52a:p:86",
+        "ac8809fe3ca1d52a:p:40",
+        "ac8809fe3ca1d52a:p:43"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 207,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "ac8809fe3ca1d52a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "ac8809fe3ca1d52a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 634,
+        "fallback": null,
+        "embedding_ms": 7.19,
+        "dense_ms": 0.3,
+        "lexical_ms": 2.87,
+        "total_ms": 19.59
+      }
+    },
+    {
+      "case_id": "q15",
+      "strategy": "hybrid",
+      "repeat": 0,
+      "paper_coverage": null,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:56",
+        "6f854d5bb3a1651a:p:36",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:68",
+        "01319e2e6e6ecfd5:p:71",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:29",
+        "01319e2e6e6ecfd5:p:5"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 166,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 499,
+        "fallback": null,
+        "embedding_ms": 12.32,
+        "dense_ms": 0.3,
+        "lexical_ms": 3.39,
+        "total_ms": 27.92
+      }
+    },
+    {
+      "case_id": "q15",
+      "strategy": "hybrid",
+      "repeat": 1,
+      "paper_coverage": null,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:56",
+        "6f854d5bb3a1651a:p:36",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:68",
+        "01319e2e6e6ecfd5:p:71",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:29",
+        "01319e2e6e6ecfd5:p:5"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 166,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 499,
+        "fallback": null,
+        "embedding_ms": 25.8,
+        "dense_ms": 0.72,
+        "lexical_ms": 4.49,
+        "total_ms": 64.87
+      }
+    },
+    {
+      "case_id": "q15",
+      "strategy": "hybrid",
+      "repeat": 2,
+      "paper_coverage": null,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:56",
+        "6f854d5bb3a1651a:p:36",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:68",
+        "01319e2e6e6ecfd5:p:71",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:29",
+        "01319e2e6e6ecfd5:p:5"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 166,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 499,
+        "fallback": null,
+        "embedding_ms": 18.13,
+        "dense_ms": 0.54,
+        "lexical_ms": 4.53,
+        "total_ms": 37.39
+      }
+    },
+    {
+      "case_id": "q16",
+      "strategy": "hybrid",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:71",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:80",
+        "01319e2e6e6ecfd5:p:25",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:47"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 85,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 590,
+        "fallback": null,
+        "embedding_ms": 15.82,
+        "dense_ms": 0.34,
+        "lexical_ms": 2.84,
+        "total_ms": 35.89
+      }
+    },
+    {
+      "case_id": "q16",
+      "strategy": "hybrid",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:71",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:80",
+        "01319e2e6e6ecfd5:p:25",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:47"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 85,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 590,
+        "fallback": null,
+        "embedding_ms": 13.16,
+        "dense_ms": 0.27,
+        "lexical_ms": 2.86,
+        "total_ms": 30.82
+      }
+    },
+    {
+      "case_id": "q16",
+      "strategy": "hybrid",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:71",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:80",
+        "01319e2e6e6ecfd5:p:25",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:47"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 85,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 590,
+        "fallback": null,
+        "embedding_ms": 12.87,
+        "dense_ms": 0.55,
+        "lexical_ms": 3.31,
+        "total_ms": 31.83
+      }
+    },
+    {
+      "case_id": "q17",
+      "strategy": "hybrid",
+      "repeat": 0,
+      "paper_coverage": null,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:35",
+        "6f854d5bb3a1651a:p:57",
+        "6f854d5bb3a1651a:p:59",
+        "6f854d5bb3a1651a:p:80",
+        "6f854d5bb3a1651a:p:61",
+        "6f854d5bb3a1651a:p:75",
+        "6f854d5bb3a1651a:p:76",
+        "6f854d5bb3a1651a:p:51",
+        "6f854d5bb3a1651a:p:37",
+        "6f854d5bb3a1651a:p:56"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 81,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 900,
+        "fallback": null,
+        "embedding_ms": 14.42,
+        "dense_ms": 0.27,
+        "lexical_ms": 3.15,
+        "total_ms": 32.06
+      }
+    },
+    {
+      "case_id": "q17",
+      "strategy": "hybrid",
+      "repeat": 1,
+      "paper_coverage": null,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:35",
+        "6f854d5bb3a1651a:p:57",
+        "6f854d5bb3a1651a:p:59",
+        "6f854d5bb3a1651a:p:80",
+        "6f854d5bb3a1651a:p:61",
+        "6f854d5bb3a1651a:p:75",
+        "6f854d5bb3a1651a:p:76",
+        "6f854d5bb3a1651a:p:51",
+        "6f854d5bb3a1651a:p:37",
+        "6f854d5bb3a1651a:p:56"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 81,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 900,
+        "fallback": null,
+        "embedding_ms": 14.81,
+        "dense_ms": 0.27,
+        "lexical_ms": 3.19,
+        "total_ms": 32.72
+      }
+    },
+    {
+      "case_id": "q17",
+      "strategy": "hybrid",
+      "repeat": 2,
+      "paper_coverage": null,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:35",
+        "6f854d5bb3a1651a:p:57",
+        "6f854d5bb3a1651a:p:59",
+        "6f854d5bb3a1651a:p:80",
+        "6f854d5bb3a1651a:p:61",
+        "6f854d5bb3a1651a:p:75",
+        "6f854d5bb3a1651a:p:76",
+        "6f854d5bb3a1651a:p:51",
+        "6f854d5bb3a1651a:p:37",
+        "6f854d5bb3a1651a:p:56"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 81,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 900,
+        "fallback": null,
+        "embedding_ms": 15.39,
+        "dense_ms": 0.28,
+        "lexical_ms": 3.31,
+        "total_ms": 33.77
+      }
+    },
+    {
+      "case_id": "q18",
+      "strategy": "hybrid",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:58",
+        "3e67fc1a9977715a:p:76",
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:63",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:56",
+        "01319e2e6e6ecfd5:p:60"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 192,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 584,
+        "fallback": null,
+        "embedding_ms": 22.49,
+        "dense_ms": 0.6,
+        "lexical_ms": 5.57,
+        "total_ms": 43.41
+      }
+    },
+    {
+      "case_id": "q18",
+      "strategy": "hybrid",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:58",
+        "3e67fc1a9977715a:p:76",
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:63",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:56",
+        "01319e2e6e6ecfd5:p:60"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 192,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 584,
+        "fallback": null,
+        "embedding_ms": 23.11,
+        "dense_ms": 0.62,
+        "lexical_ms": 4.85,
+        "total_ms": 44.29
+      }
+    },
+    {
+      "case_id": "q18",
+      "strategy": "hybrid",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:58",
+        "3e67fc1a9977715a:p:76",
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:63",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:56",
+        "01319e2e6e6ecfd5:p:60"
+      ],
+      "trace": {
+        "strategy": "hybrid",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 192,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 584,
+        "fallback": null,
+        "embedding_ms": 22.48,
+        "dense_ms": 0.62,
+        "lexical_ms": 4.73,
+        "total_ms": 42.63
+      }
+    },
+    {
+      "case_id": "q01",
+      "strategy": "adaptive",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:p:7",
+        "23e3249e9a1e7541:p:79",
+        "23e3249e9a1e7541:p:0",
+        "23e3249e9a1e7541:p:8",
+        "23e3249e9a1e7541:p:2",
+        "23e3249e9a1e7541:p:6",
+        "23e3249e9a1e7541:p:1",
+        "23e3249e9a1e7541:p:5",
+        "23e3249e9a1e7541:p:3",
+        "23e3249e9a1e7541:p:4"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 25,
+        "fine_vectors_scored": 10,
+        "requested_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 792,
+        "fallback": null,
+        "embedding_ms": 14.29,
+        "dense_ms": 0.03,
+        "lexical_ms": 2.5,
+        "total_ms": 31.45
+      }
+    },
+    {
+      "case_id": "q01",
+      "strategy": "adaptive",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:p:7",
+        "23e3249e9a1e7541:p:79",
+        "23e3249e9a1e7541:p:0",
+        "23e3249e9a1e7541:p:8",
+        "23e3249e9a1e7541:p:2",
+        "23e3249e9a1e7541:p:6",
+        "23e3249e9a1e7541:p:1",
+        "23e3249e9a1e7541:p:5",
+        "23e3249e9a1e7541:p:3",
+        "23e3249e9a1e7541:p:4"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 25,
+        "fine_vectors_scored": 10,
+        "requested_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 792,
+        "fallback": null,
+        "embedding_ms": 13.96,
+        "dense_ms": 0.04,
+        "lexical_ms": 2.66,
+        "total_ms": 31.18
+      }
+    },
+    {
+      "case_id": "q01",
+      "strategy": "adaptive",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:p:7",
+        "23e3249e9a1e7541:p:79",
+        "23e3249e9a1e7541:p:0",
+        "23e3249e9a1e7541:p:8",
+        "23e3249e9a1e7541:p:2",
+        "23e3249e9a1e7541:p:6",
+        "23e3249e9a1e7541:p:1",
+        "23e3249e9a1e7541:p:5",
+        "23e3249e9a1e7541:p:3",
+        "23e3249e9a1e7541:p:4"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 25,
+        "fine_vectors_scored": 10,
+        "requested_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 792,
+        "fallback": null,
+        "embedding_ms": 12.86,
+        "dense_ms": 0.03,
+        "lexical_ms": 2.98,
+        "total_ms": 30.23
+      }
+    },
+    {
+      "case_id": "q02",
+      "strategy": "adaptive",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:p:15",
+        "23e3249e9a1e7541:p:16",
+        "23e3249e9a1e7541:p:17",
+        "23e3249e9a1e7541:p:14",
+        "23e3249e9a1e7541:p:47",
+        "23e3249e9a1e7541:p:11",
+        "23e3249e9a1e7541:p:48",
+        "23e3249e9a1e7541:p:12",
+        "23e3249e9a1e7541:p:13",
+        "23e3249e9a1e7541:p:49"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 25,
+        "fine_vectors_scored": 10,
+        "requested_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 719,
+        "fallback": null,
+        "embedding_ms": 10.21,
+        "dense_ms": 0.03,
+        "lexical_ms": 2.77,
+        "total_ms": 27.76
+      }
+    },
+    {
+      "case_id": "q02",
+      "strategy": "adaptive",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:p:15",
+        "23e3249e9a1e7541:p:16",
+        "23e3249e9a1e7541:p:17",
+        "23e3249e9a1e7541:p:14",
+        "23e3249e9a1e7541:p:47",
+        "23e3249e9a1e7541:p:11",
+        "23e3249e9a1e7541:p:48",
+        "23e3249e9a1e7541:p:12",
+        "23e3249e9a1e7541:p:13",
+        "23e3249e9a1e7541:p:49"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 25,
+        "fine_vectors_scored": 10,
+        "requested_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 719,
+        "fallback": null,
+        "embedding_ms": 9.97,
+        "dense_ms": 0.03,
+        "lexical_ms": 2.8,
+        "total_ms": 29.23
+      }
+    },
+    {
+      "case_id": "q02",
+      "strategy": "adaptive",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:p:15",
+        "23e3249e9a1e7541:p:16",
+        "23e3249e9a1e7541:p:17",
+        "23e3249e9a1e7541:p:14",
+        "23e3249e9a1e7541:p:47",
+        "23e3249e9a1e7541:p:11",
+        "23e3249e9a1e7541:p:48",
+        "23e3249e9a1e7541:p:12",
+        "23e3249e9a1e7541:p:13",
+        "23e3249e9a1e7541:p:49"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 25,
+        "fine_vectors_scored": 10,
+        "requested_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 719,
+        "fallback": null,
+        "embedding_ms": 10.22,
+        "dense_ms": 0.03,
+        "lexical_ms": 2.75,
+        "total_ms": 27.42
+      }
+    },
+    {
+      "case_id": "q03",
+      "strategy": "adaptive",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "3e67fc1a9977715a:p:66",
+        "3e67fc1a9977715a:p:32",
+        "3e67fc1a9977715a:p:87",
+        "3e67fc1a9977715a:p:65",
+        "3e67fc1a9977715a:p:67",
+        "3e67fc1a9977715a:p:63",
+        "3e67fc1a9977715a:p:64",
+        "3e67fc1a9977715a:p:68",
+        "3e67fc1a9977715a:p:69"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 28,
+        "fine_vectors_scored": 9,
+        "requested_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 603,
+        "fallback": null,
+        "embedding_ms": 10.72,
+        "dense_ms": 0.03,
+        "lexical_ms": 2.89,
+        "total_ms": 28.07
+      }
+    },
+    {
+      "case_id": "q03",
+      "strategy": "adaptive",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "3e67fc1a9977715a:p:66",
+        "3e67fc1a9977715a:p:32",
+        "3e67fc1a9977715a:p:87",
+        "3e67fc1a9977715a:p:65",
+        "3e67fc1a9977715a:p:67",
+        "3e67fc1a9977715a:p:63",
+        "3e67fc1a9977715a:p:64",
+        "3e67fc1a9977715a:p:68",
+        "3e67fc1a9977715a:p:69"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 28,
+        "fine_vectors_scored": 9,
+        "requested_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 603,
+        "fallback": null,
+        "embedding_ms": 11.56,
+        "dense_ms": 0.03,
+        "lexical_ms": 2.91,
+        "total_ms": 29.14
+      }
+    },
+    {
+      "case_id": "q03",
+      "strategy": "adaptive",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "3e67fc1a9977715a:p:66",
+        "3e67fc1a9977715a:p:32",
+        "3e67fc1a9977715a:p:87",
+        "3e67fc1a9977715a:p:65",
+        "3e67fc1a9977715a:p:67",
+        "3e67fc1a9977715a:p:63",
+        "3e67fc1a9977715a:p:64",
+        "3e67fc1a9977715a:p:68",
+        "3e67fc1a9977715a:p:69"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 28,
+        "fine_vectors_scored": 9,
+        "requested_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 603,
+        "fallback": null,
+        "embedding_ms": 11.45,
+        "dense_ms": 0.03,
+        "lexical_ms": 2.82,
+        "total_ms": 30.21
+      }
+    },
+    {
+      "case_id": "q04",
+      "strategy": "adaptive",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "3e67fc1a9977715a:p:78",
+        "3e67fc1a9977715a:p:60",
+        "3e67fc1a9977715a:p:56",
+        "3e67fc1a9977715a:p:76",
+        "3e67fc1a9977715a:p:79",
+        "3e67fc1a9977715a:p:62",
+        "3e67fc1a9977715a:p:58",
+        "3e67fc1a9977715a:p:61",
+        "3e67fc1a9977715a:p:59",
+        "3e67fc1a9977715a:p:57"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 28,
+        "fine_vectors_scored": 11,
+        "requested_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 429,
+        "fallback": null,
+        "embedding_ms": 16.16,
+        "dense_ms": 0.04,
+        "lexical_ms": 2.89,
+        "total_ms": 33.44
+      }
+    },
+    {
+      "case_id": "q04",
+      "strategy": "adaptive",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "3e67fc1a9977715a:p:78",
+        "3e67fc1a9977715a:p:60",
+        "3e67fc1a9977715a:p:56",
+        "3e67fc1a9977715a:p:76",
+        "3e67fc1a9977715a:p:79",
+        "3e67fc1a9977715a:p:62",
+        "3e67fc1a9977715a:p:58",
+        "3e67fc1a9977715a:p:61",
+        "3e67fc1a9977715a:p:59",
+        "3e67fc1a9977715a:p:57"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 28,
+        "fine_vectors_scored": 11,
+        "requested_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 429,
+        "fallback": null,
+        "embedding_ms": 17.17,
+        "dense_ms": 0.04,
+        "lexical_ms": 2.88,
+        "total_ms": 35.3
+      }
+    },
+    {
+      "case_id": "q04",
+      "strategy": "adaptive",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "3e67fc1a9977715a:p:78",
+        "3e67fc1a9977715a:p:60",
+        "3e67fc1a9977715a:p:56",
+        "3e67fc1a9977715a:p:76",
+        "3e67fc1a9977715a:p:79",
+        "3e67fc1a9977715a:p:62",
+        "3e67fc1a9977715a:p:58",
+        "3e67fc1a9977715a:p:61",
+        "3e67fc1a9977715a:p:59",
+        "3e67fc1a9977715a:p:57"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 28,
+        "fine_vectors_scored": 11,
+        "requested_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 429,
+        "fallback": null,
+        "embedding_ms": 17.69,
+        "dense_ms": 0.04,
+        "lexical_ms": 2.86,
+        "total_ms": 34.86
+      }
+    },
+    {
+      "case_id": "q05",
+      "strategy": "adaptive",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:5",
+        "01319e2e6e6ecfd5:p:80",
+        "01319e2e6e6ecfd5:p:81",
+        "01319e2e6e6ecfd5:p:71",
+        "01319e2e6e6ecfd5:p:76",
+        "01319e2e6e6ecfd5:p:6",
+        "01319e2e6e6ecfd5:p:7",
+        "01319e2e6e6ecfd5:p:74",
+        "01319e2e6e6ecfd5:p:79",
+        "01319e2e6e6ecfd5:p:75"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 17,
+        "fine_vectors_scored": 14,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 613,
+        "fallback": null,
+        "embedding_ms": 11.78,
+        "dense_ms": 0.05,
+        "lexical_ms": 2.62,
+        "total_ms": 29.0
+      }
+    },
+    {
+      "case_id": "q05",
+      "strategy": "adaptive",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:5",
+        "01319e2e6e6ecfd5:p:80",
+        "01319e2e6e6ecfd5:p:81",
+        "01319e2e6e6ecfd5:p:71",
+        "01319e2e6e6ecfd5:p:76",
+        "01319e2e6e6ecfd5:p:6",
+        "01319e2e6e6ecfd5:p:7",
+        "01319e2e6e6ecfd5:p:74",
+        "01319e2e6e6ecfd5:p:79",
+        "01319e2e6e6ecfd5:p:75"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 17,
+        "fine_vectors_scored": 14,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 613,
+        "fallback": null,
+        "embedding_ms": 11.72,
+        "dense_ms": 0.05,
+        "lexical_ms": 3.01,
+        "total_ms": 30.19
+      }
+    },
+    {
+      "case_id": "q05",
+      "strategy": "adaptive",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:5",
+        "01319e2e6e6ecfd5:p:80",
+        "01319e2e6e6ecfd5:p:81",
+        "01319e2e6e6ecfd5:p:71",
+        "01319e2e6e6ecfd5:p:76",
+        "01319e2e6e6ecfd5:p:6",
+        "01319e2e6e6ecfd5:p:7",
+        "01319e2e6e6ecfd5:p:74",
+        "01319e2e6e6ecfd5:p:79",
+        "01319e2e6e6ecfd5:p:75"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 17,
+        "fine_vectors_scored": 14,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 613,
+        "fallback": null,
+        "embedding_ms": 15.77,
+        "dense_ms": 0.05,
+        "lexical_ms": 3.16,
+        "total_ms": 33.46
+      }
+    },
+    {
+      "case_id": "q06",
+      "strategy": "adaptive",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:63",
+        "01319e2e6e6ecfd5:p:68",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:82",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:70"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 17,
+        "fine_vectors_scored": 19,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 640,
+        "fallback": null,
+        "embedding_ms": 47.82,
+        "dense_ms": 0.06,
+        "lexical_ms": 5.31,
+        "total_ms": 68.34
+      }
+    },
+    {
+      "case_id": "q06",
+      "strategy": "adaptive",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:63",
+        "01319e2e6e6ecfd5:p:68",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:82",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:70"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 17,
+        "fine_vectors_scored": 19,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 640,
+        "fallback": null,
+        "embedding_ms": 16.01,
+        "dense_ms": 0.06,
+        "lexical_ms": 3.05,
+        "total_ms": 34.23
+      }
+    },
+    {
+      "case_id": "q06",
+      "strategy": "adaptive",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:63",
+        "01319e2e6e6ecfd5:p:68",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:82",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:70"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 17,
+        "fine_vectors_scored": 19,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 640,
+        "fallback": null,
+        "embedding_ms": 16.31,
+        "dense_ms": 0.06,
+        "lexical_ms": 3.19,
+        "total_ms": 33.87
+      }
+    },
+    {
+      "case_id": "q07",
+      "strategy": "adaptive",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "653b29619eae2ae4:p:64",
+        "653b29619eae2ae4:p:0",
+        "653b29619eae2ae4:p:95",
+        "653b29619eae2ae4:p:6",
+        "653b29619eae2ae4:p:2",
+        "653b29619eae2ae4:p:65",
+        "653b29619eae2ae4:p:42",
+        "653b29619eae2ae4:p:8",
+        "653b29619eae2ae4:p:16",
+        "653b29619eae2ae4:p:71"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 24,
+        "fine_vectors_scored": 98,
+        "requested_papers": [
+          "653b29619eae2ae4"
+        ],
+        "covered_papers": [
+          "653b29619eae2ae4"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 821,
+        "fallback": "Small coarse candidate set; searched all eligible paragraphs.",
+        "embedding_ms": 13.97,
+        "dense_ms": 0.32,
+        "lexical_ms": 3.22,
+        "total_ms": 32.74
+      }
+    },
+    {
+      "case_id": "q07",
+      "strategy": "adaptive",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "653b29619eae2ae4:p:64",
+        "653b29619eae2ae4:p:0",
+        "653b29619eae2ae4:p:95",
+        "653b29619eae2ae4:p:6",
+        "653b29619eae2ae4:p:2",
+        "653b29619eae2ae4:p:65",
+        "653b29619eae2ae4:p:42",
+        "653b29619eae2ae4:p:8",
+        "653b29619eae2ae4:p:16",
+        "653b29619eae2ae4:p:71"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 24,
+        "fine_vectors_scored": 98,
+        "requested_papers": [
+          "653b29619eae2ae4"
+        ],
+        "covered_papers": [
+          "653b29619eae2ae4"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 821,
+        "fallback": "Small coarse candidate set; searched all eligible paragraphs.",
+        "embedding_ms": 11.91,
+        "dense_ms": 0.3,
+        "lexical_ms": 3.15,
+        "total_ms": 34.43
+      }
+    },
+    {
+      "case_id": "q07",
+      "strategy": "adaptive",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "653b29619eae2ae4:p:64",
+        "653b29619eae2ae4:p:0",
+        "653b29619eae2ae4:p:95",
+        "653b29619eae2ae4:p:6",
+        "653b29619eae2ae4:p:2",
+        "653b29619eae2ae4:p:65",
+        "653b29619eae2ae4:p:42",
+        "653b29619eae2ae4:p:8",
+        "653b29619eae2ae4:p:16",
+        "653b29619eae2ae4:p:71"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 24,
+        "fine_vectors_scored": 98,
+        "requested_papers": [
+          "653b29619eae2ae4"
+        ],
+        "covered_papers": [
+          "653b29619eae2ae4"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 821,
+        "fallback": "Small coarse candidate set; searched all eligible paragraphs.",
+        "embedding_ms": 18.63,
+        "dense_ms": 0.31,
+        "lexical_ms": 3.49,
+        "total_ms": 36.93
+      }
+    },
+    {
+      "case_id": "q08",
+      "strategy": "adaptive",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "ac8809fe3ca1d52a:p:40",
+        "ac8809fe3ca1d52a:p:52",
+        "ac8809fe3ca1d52a:p:46",
+        "ac8809fe3ca1d52a:p:53",
+        "ac8809fe3ca1d52a:p:45",
+        "ac8809fe3ca1d52a:p:47",
+        "ac8809fe3ca1d52a:p:42",
+        "ac8809fe3ca1d52a:p:51",
+        "ac8809fe3ca1d52a:p:41",
+        "ac8809fe3ca1d52a:p:43"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 29,
+        "fine_vectors_scored": 14,
+        "requested_papers": [
+          "ac8809fe3ca1d52a"
+        ],
+        "covered_papers": [
+          "ac8809fe3ca1d52a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 479,
+        "fallback": null,
+        "embedding_ms": 13.61,
+        "dense_ms": 0.05,
+        "lexical_ms": 2.7,
+        "total_ms": 31.02
+      }
+    },
+    {
+      "case_id": "q08",
+      "strategy": "adaptive",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "ac8809fe3ca1d52a:p:40",
+        "ac8809fe3ca1d52a:p:52",
+        "ac8809fe3ca1d52a:p:46",
+        "ac8809fe3ca1d52a:p:53",
+        "ac8809fe3ca1d52a:p:45",
+        "ac8809fe3ca1d52a:p:47",
+        "ac8809fe3ca1d52a:p:42",
+        "ac8809fe3ca1d52a:p:51",
+        "ac8809fe3ca1d52a:p:41",
+        "ac8809fe3ca1d52a:p:43"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 29,
+        "fine_vectors_scored": 14,
+        "requested_papers": [
+          "ac8809fe3ca1d52a"
+        ],
+        "covered_papers": [
+          "ac8809fe3ca1d52a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 479,
+        "fallback": null,
+        "embedding_ms": 13.01,
+        "dense_ms": 0.05,
+        "lexical_ms": 2.81,
+        "total_ms": 30.83
+      }
+    },
+    {
+      "case_id": "q08",
+      "strategy": "adaptive",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "ac8809fe3ca1d52a:p:40",
+        "ac8809fe3ca1d52a:p:52",
+        "ac8809fe3ca1d52a:p:46",
+        "ac8809fe3ca1d52a:p:53",
+        "ac8809fe3ca1d52a:p:45",
+        "ac8809fe3ca1d52a:p:47",
+        "ac8809fe3ca1d52a:p:42",
+        "ac8809fe3ca1d52a:p:51",
+        "ac8809fe3ca1d52a:p:41",
+        "ac8809fe3ca1d52a:p:43"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 29,
+        "fine_vectors_scored": 14,
+        "requested_papers": [
+          "ac8809fe3ca1d52a"
+        ],
+        "covered_papers": [
+          "ac8809fe3ca1d52a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 479,
+        "fallback": null,
+        "embedding_ms": 13.07,
+        "dense_ms": 0.05,
+        "lexical_ms": 2.77,
+        "total_ms": 30.18
+      }
+    },
+    {
+      "case_id": "q09",
+      "strategy": "adaptive",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:20",
+        "6f854d5bb3a1651a:p:24",
+        "6f854d5bb3a1651a:p:28",
+        "6f854d5bb3a1651a:p:27",
+        "6f854d5bb3a1651a:p:29",
+        "6f854d5bb3a1651a:p:21",
+        "6f854d5bb3a1651a:p:31",
+        "6f854d5bb3a1651a:p:80",
+        "6f854d5bb3a1651a:p:23",
+        "6f854d5bb3a1651a:p:26"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 19,
+        "fine_vectors_scored": 16,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 436,
+        "fallback": null,
+        "embedding_ms": 13.0,
+        "dense_ms": 0.05,
+        "lexical_ms": 2.71,
+        "total_ms": 30.59
+      }
+    },
+    {
+      "case_id": "q09",
+      "strategy": "adaptive",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:20",
+        "6f854d5bb3a1651a:p:24",
+        "6f854d5bb3a1651a:p:28",
+        "6f854d5bb3a1651a:p:27",
+        "6f854d5bb3a1651a:p:29",
+        "6f854d5bb3a1651a:p:21",
+        "6f854d5bb3a1651a:p:31",
+        "6f854d5bb3a1651a:p:80",
+        "6f854d5bb3a1651a:p:23",
+        "6f854d5bb3a1651a:p:26"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 19,
+        "fine_vectors_scored": 16,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 436,
+        "fallback": null,
+        "embedding_ms": 12.89,
+        "dense_ms": 0.05,
+        "lexical_ms": 2.71,
+        "total_ms": 30.56
+      }
+    },
+    {
+      "case_id": "q09",
+      "strategy": "adaptive",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:20",
+        "6f854d5bb3a1651a:p:24",
+        "6f854d5bb3a1651a:p:28",
+        "6f854d5bb3a1651a:p:27",
+        "6f854d5bb3a1651a:p:29",
+        "6f854d5bb3a1651a:p:21",
+        "6f854d5bb3a1651a:p:31",
+        "6f854d5bb3a1651a:p:80",
+        "6f854d5bb3a1651a:p:23",
+        "6f854d5bb3a1651a:p:26"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 19,
+        "fine_vectors_scored": 16,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 436,
+        "fallback": null,
+        "embedding_ms": 13.74,
+        "dense_ms": 0.05,
+        "lexical_ms": 2.73,
+        "total_ms": 30.83
+      }
+    },
+    {
+      "case_id": "q10",
+      "strategy": "adaptive",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:75",
+        "6f854d5bb3a1651a:p:37",
+        "6f854d5bb3a1651a:p:8",
+        "6f854d5bb3a1651a:p:6",
+        "6f854d5bb3a1651a:p:46",
+        "6f854d5bb3a1651a:p:36",
+        "6f854d5bb3a1651a:p:7",
+        "6f854d5bb3a1651a:p:57",
+        "6f854d5bb3a1651a:p:17",
+        "6f854d5bb3a1651a:p:59"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 19,
+        "fine_vectors_scored": 81,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 762,
+        "fallback": "Small coarse candidate set; searched all eligible paragraphs.",
+        "embedding_ms": 12.36,
+        "dense_ms": 0.3,
+        "lexical_ms": 2.85,
+        "total_ms": 32.21
+      }
+    },
+    {
+      "case_id": "q10",
+      "strategy": "adaptive",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:75",
+        "6f854d5bb3a1651a:p:37",
+        "6f854d5bb3a1651a:p:8",
+        "6f854d5bb3a1651a:p:6",
+        "6f854d5bb3a1651a:p:46",
+        "6f854d5bb3a1651a:p:36",
+        "6f854d5bb3a1651a:p:7",
+        "6f854d5bb3a1651a:p:57",
+        "6f854d5bb3a1651a:p:17",
+        "6f854d5bb3a1651a:p:59"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 19,
+        "fine_vectors_scored": 81,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 762,
+        "fallback": "Small coarse candidate set; searched all eligible paragraphs.",
+        "embedding_ms": 12.72,
+        "dense_ms": 0.25,
+        "lexical_ms": 2.91,
+        "total_ms": 30.41
+      }
+    },
+    {
+      "case_id": "q10",
+      "strategy": "adaptive",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:75",
+        "6f854d5bb3a1651a:p:37",
+        "6f854d5bb3a1651a:p:8",
+        "6f854d5bb3a1651a:p:6",
+        "6f854d5bb3a1651a:p:46",
+        "6f854d5bb3a1651a:p:36",
+        "6f854d5bb3a1651a:p:7",
+        "6f854d5bb3a1651a:p:57",
+        "6f854d5bb3a1651a:p:17",
+        "6f854d5bb3a1651a:p:59"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 19,
+        "fine_vectors_scored": 81,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 762,
+        "fallback": "Small coarse candidate set; searched all eligible paragraphs.",
+        "embedding_ms": 13.2,
+        "dense_ms": 0.25,
+        "lexical_ms": 2.96,
+        "total_ms": 30.71
+      }
+    },
+    {
+      "case_id": "q11",
+      "strategy": "adaptive",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:s:10",
+        "3e67fc1a9977715a:s:24",
+        "23e3249e9a1e7541:s:3",
+        "23e3249e9a1e7541:s:18",
+        "23e3249e9a1e7541:s:0",
+        "23e3249e9a1e7541:s:21"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "section",
+        "reason": "Broad question: original section windows.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 53,
+        "requested_papers": [
+          "23e3249e9a1e7541",
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541",
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 1575,
+        "fallback": null,
+        "embedding_ms": 14.93,
+        "dense_ms": 0.18,
+        "lexical_ms": 3.86,
+        "total_ms": 33.69
+      }
+    },
+    {
+      "case_id": "q11",
+      "strategy": "adaptive",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:s:10",
+        "3e67fc1a9977715a:s:24",
+        "23e3249e9a1e7541:s:3",
+        "23e3249e9a1e7541:s:18",
+        "23e3249e9a1e7541:s:0",
+        "23e3249e9a1e7541:s:21"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "section",
+        "reason": "Broad question: original section windows.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 53,
+        "requested_papers": [
+          "23e3249e9a1e7541",
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541",
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 1575,
+        "fallback": null,
+        "embedding_ms": 20.18,
+        "dense_ms": 0.39,
+        "lexical_ms": 3.98,
+        "total_ms": 38.89
+      }
+    },
+    {
+      "case_id": "q11",
+      "strategy": "adaptive",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "23e3249e9a1e7541:s:10",
+        "3e67fc1a9977715a:s:24",
+        "23e3249e9a1e7541:s:3",
+        "23e3249e9a1e7541:s:18",
+        "23e3249e9a1e7541:s:0",
+        "23e3249e9a1e7541:s:21"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "section",
+        "reason": "Broad question: original section windows.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 53,
+        "requested_papers": [
+          "23e3249e9a1e7541",
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "23e3249e9a1e7541",
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 1575,
+        "fallback": null,
+        "embedding_ms": 29.61,
+        "dense_ms": 0.18,
+        "lexical_ms": 3.48,
+        "total_ms": 48.2
+      }
+    },
+    {
+      "case_id": "q12",
+      "strategy": "adaptive",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:s:15",
+        "6f854d5bb3a1651a:s:7",
+        "6f854d5bb3a1651a:s:16",
+        "6f854d5bb3a1651a:s:15",
+        "01319e2e6e6ecfd5:s:12",
+        "01319e2e6e6ecfd5:s:14"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "section",
+        "reason": "Broad question: original section windows.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 36,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 1470,
+        "fallback": null,
+        "embedding_ms": 14.5,
+        "dense_ms": 0.13,
+        "lexical_ms": 2.92,
+        "total_ms": 32.26
+      }
+    },
+    {
+      "case_id": "q12",
+      "strategy": "adaptive",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:s:15",
+        "6f854d5bb3a1651a:s:7",
+        "6f854d5bb3a1651a:s:16",
+        "6f854d5bb3a1651a:s:15",
+        "01319e2e6e6ecfd5:s:12",
+        "01319e2e6e6ecfd5:s:14"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "section",
+        "reason": "Broad question: original section windows.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 36,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 1470,
+        "fallback": null,
+        "embedding_ms": 14.68,
+        "dense_ms": 0.13,
+        "lexical_ms": 2.94,
+        "total_ms": 32.24
+      }
+    },
+    {
+      "case_id": "q12",
+      "strategy": "adaptive",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:s:15",
+        "6f854d5bb3a1651a:s:7",
+        "6f854d5bb3a1651a:s:16",
+        "6f854d5bb3a1651a:s:15",
+        "01319e2e6e6ecfd5:s:12",
+        "01319e2e6e6ecfd5:s:14"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "section",
+        "reason": "Broad question: original section windows.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 36,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 1470,
+        "fallback": null,
+        "embedding_ms": 14.1,
+        "dense_ms": 0.13,
+        "lexical_ms": 2.94,
+        "total_ms": 31.43
+      }
+    },
+    {
+      "case_id": "q13",
+      "strategy": "adaptive",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:s:12",
+        "3e67fc1a9977715a:s:24",
+        "653b29619eae2ae4:s:18",
+        "01319e2e6e6ecfd5:s:13",
+        "01319e2e6e6ecfd5:s:3",
+        "01319e2e6e6ecfd5:s:15"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "section",
+        "reason": "Broad question: original section windows.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 69,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a",
+          "653b29619eae2ae4"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a",
+          "653b29619eae2ae4"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 1526,
+        "fallback": null,
+        "embedding_ms": 18.34,
+        "dense_ms": 0.29,
+        "lexical_ms": 3.05,
+        "total_ms": 37.15
+      }
+    },
+    {
+      "case_id": "q13",
+      "strategy": "adaptive",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:s:12",
+        "3e67fc1a9977715a:s:24",
+        "653b29619eae2ae4:s:18",
+        "01319e2e6e6ecfd5:s:13",
+        "01319e2e6e6ecfd5:s:3",
+        "01319e2e6e6ecfd5:s:15"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "section",
+        "reason": "Broad question: original section windows.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 69,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a",
+          "653b29619eae2ae4"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a",
+          "653b29619eae2ae4"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 1526,
+        "fallback": null,
+        "embedding_ms": 15.89,
+        "dense_ms": 0.25,
+        "lexical_ms": 3.08,
+        "total_ms": 33.94
+      }
+    },
+    {
+      "case_id": "q13",
+      "strategy": "adaptive",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:s:12",
+        "3e67fc1a9977715a:s:24",
+        "653b29619eae2ae4:s:18",
+        "01319e2e6e6ecfd5:s:13",
+        "01319e2e6e6ecfd5:s:3",
+        "01319e2e6e6ecfd5:s:15"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "section",
+        "reason": "Broad question: original section windows.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 69,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a",
+          "653b29619eae2ae4"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a",
+          "653b29619eae2ae4"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 1526,
+        "fallback": null,
+        "embedding_ms": 16.46,
+        "dense_ms": 0.23,
+        "lexical_ms": 3.07,
+        "total_ms": 35.23
+      }
+    },
+    {
+      "case_id": "q14",
+      "strategy": "adaptive",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:58",
+        "ac8809fe3ca1d52a:p:105",
+        "ac8809fe3ca1d52a:p:109",
+        "ac8809fe3ca1d52a:p:107",
+        "ac8809fe3ca1d52a:p:115",
+        "ac8809fe3ca1d52a:p:40",
+        "ac8809fe3ca1d52a:p:43",
+        "ac8809fe3ca1d52a:p:47",
+        "ac8809fe3ca1d52a:p:46",
+        "ac8809fe3ca1d52a:p:41"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 46,
+        "fine_vectors_scored": 45,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "ac8809fe3ca1d52a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "ac8809fe3ca1d52a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 409,
+        "fallback": null,
+        "embedding_ms": 15.94,
+        "dense_ms": 0.17,
+        "lexical_ms": 7.29,
+        "total_ms": 38.98
+      }
+    },
+    {
+      "case_id": "q14",
+      "strategy": "adaptive",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:58",
+        "ac8809fe3ca1d52a:p:105",
+        "ac8809fe3ca1d52a:p:109",
+        "ac8809fe3ca1d52a:p:107",
+        "ac8809fe3ca1d52a:p:115",
+        "ac8809fe3ca1d52a:p:40",
+        "ac8809fe3ca1d52a:p:43",
+        "ac8809fe3ca1d52a:p:47",
+        "ac8809fe3ca1d52a:p:46",
+        "ac8809fe3ca1d52a:p:41"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 46,
+        "fine_vectors_scored": 45,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "ac8809fe3ca1d52a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "ac8809fe3ca1d52a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 409,
+        "fallback": null,
+        "embedding_ms": 29.68,
+        "dense_ms": 0.14,
+        "lexical_ms": 3.23,
+        "total_ms": 82.14
+      }
+    },
+    {
+      "case_id": "q14",
+      "strategy": "adaptive",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:58",
+        "ac8809fe3ca1d52a:p:105",
+        "ac8809fe3ca1d52a:p:109",
+        "ac8809fe3ca1d52a:p:107",
+        "ac8809fe3ca1d52a:p:115",
+        "ac8809fe3ca1d52a:p:40",
+        "ac8809fe3ca1d52a:p:43",
+        "ac8809fe3ca1d52a:p:47",
+        "ac8809fe3ca1d52a:p:46",
+        "ac8809fe3ca1d52a:p:41"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 46,
+        "fine_vectors_scored": 45,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "ac8809fe3ca1d52a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "ac8809fe3ca1d52a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 409,
+        "fallback": null,
+        "embedding_ms": 13.36,
+        "dense_ms": 0.17,
+        "lexical_ms": 8.53,
+        "total_ms": 38.09
+      }
+    },
+    {
+      "case_id": "q15",
+      "strategy": "adaptive",
+      "repeat": 0,
+      "paper_coverage": null,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:56",
+        "6f854d5bb3a1651a:p:80",
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:68",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:71",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:79"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 36,
+        "fine_vectors_scored": 32,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 633,
+        "fallback": null,
+        "embedding_ms": 27.03,
+        "dense_ms": 0.1,
+        "lexical_ms": 3.53,
+        "total_ms": 63.62
+      }
+    },
+    {
+      "case_id": "q15",
+      "strategy": "adaptive",
+      "repeat": 1,
+      "paper_coverage": null,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:56",
+        "6f854d5bb3a1651a:p:80",
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:68",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:71",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:79"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 36,
+        "fine_vectors_scored": 32,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 633,
+        "fallback": null,
+        "embedding_ms": 21.11,
+        "dense_ms": 0.1,
+        "lexical_ms": 3.23,
+        "total_ms": 40.53
+      }
+    },
+    {
+      "case_id": "q15",
+      "strategy": "adaptive",
+      "repeat": 2,
+      "paper_coverage": null,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:56",
+        "6f854d5bb3a1651a:p:80",
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:68",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:71",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:79"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 36,
+        "fine_vectors_scored": 32,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 633,
+        "fallback": null,
+        "embedding_ms": 18.08,
+        "dense_ms": 0.1,
+        "lexical_ms": 3.19,
+        "total_ms": 37.91
+      }
+    },
+    {
+      "case_id": "q16",
+      "strategy": "adaptive",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:71",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:80",
+        "01319e2e6e6ecfd5:p:68",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:57"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 17,
+        "fine_vectors_scored": 26,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 555,
+        "fallback": null,
+        "embedding_ms": 22.19,
+        "dense_ms": 0.08,
+        "lexical_ms": 2.62,
+        "total_ms": 41.83
+      }
+    },
+    {
+      "case_id": "q16",
+      "strategy": "adaptive",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:71",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:80",
+        "01319e2e6e6ecfd5:p:68",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:57"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 17,
+        "fine_vectors_scored": 26,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 555,
+        "fallback": null,
+        "embedding_ms": 12.9,
+        "dense_ms": 0.08,
+        "lexical_ms": 2.66,
+        "total_ms": 32.19
+      }
+    },
+    {
+      "case_id": "q16",
+      "strategy": "adaptive",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:p:58",
+        "01319e2e6e6ecfd5:p:69",
+        "01319e2e6e6ecfd5:p:55",
+        "01319e2e6e6ecfd5:p:59",
+        "01319e2e6e6ecfd5:p:71",
+        "01319e2e6e6ecfd5:p:65",
+        "01319e2e6e6ecfd5:p:80",
+        "01319e2e6e6ecfd5:p:68",
+        "01319e2e6e6ecfd5:p:61",
+        "01319e2e6e6ecfd5:p:57"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 17,
+        "fine_vectors_scored": 26,
+        "requested_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 555,
+        "fallback": null,
+        "embedding_ms": 14.63,
+        "dense_ms": 0.08,
+        "lexical_ms": 2.65,
+        "total_ms": 37.35
+      }
+    },
+    {
+      "case_id": "q17",
+      "strategy": "adaptive",
+      "repeat": 0,
+      "paper_coverage": null,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:35",
+        "6f854d5bb3a1651a:p:57",
+        "6f854d5bb3a1651a:p:59",
+        "6f854d5bb3a1651a:p:80",
+        "6f854d5bb3a1651a:p:61",
+        "6f854d5bb3a1651a:p:75",
+        "6f854d5bb3a1651a:p:76",
+        "6f854d5bb3a1651a:p:51",
+        "6f854d5bb3a1651a:p:37",
+        "6f854d5bb3a1651a:p:56"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 19,
+        "fine_vectors_scored": 81,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 900,
+        "fallback": "Small coarse candidate set; searched all eligible paragraphs.",
+        "embedding_ms": 14.44,
+        "dense_ms": 0.26,
+        "lexical_ms": 3.17,
+        "total_ms": 32.43
+      }
+    },
+    {
+      "case_id": "q17",
+      "strategy": "adaptive",
+      "repeat": 1,
+      "paper_coverage": null,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:35",
+        "6f854d5bb3a1651a:p:57",
+        "6f854d5bb3a1651a:p:59",
+        "6f854d5bb3a1651a:p:80",
+        "6f854d5bb3a1651a:p:61",
+        "6f854d5bb3a1651a:p:75",
+        "6f854d5bb3a1651a:p:76",
+        "6f854d5bb3a1651a:p:51",
+        "6f854d5bb3a1651a:p:37",
+        "6f854d5bb3a1651a:p:56"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 19,
+        "fine_vectors_scored": 81,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 900,
+        "fallback": "Small coarse candidate set; searched all eligible paragraphs.",
+        "embedding_ms": 14.79,
+        "dense_ms": 0.25,
+        "lexical_ms": 3.61,
+        "total_ms": 34.59
+      }
+    },
+    {
+      "case_id": "q17",
+      "strategy": "adaptive",
+      "repeat": 2,
+      "paper_coverage": null,
+      "evidence_ids": [
+        "6f854d5bb3a1651a:p:35",
+        "6f854d5bb3a1651a:p:57",
+        "6f854d5bb3a1651a:p:59",
+        "6f854d5bb3a1651a:p:80",
+        "6f854d5bb3a1651a:p:61",
+        "6f854d5bb3a1651a:p:75",
+        "6f854d5bb3a1651a:p:76",
+        "6f854d5bb3a1651a:p:51",
+        "6f854d5bb3a1651a:p:37",
+        "6f854d5bb3a1651a:p:56"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "paragraph",
+        "reason": "Focused question: original paragraphs.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 19,
+        "fine_vectors_scored": 81,
+        "requested_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "covered_papers": [
+          "6f854d5bb3a1651a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 900,
+        "fallback": "Small coarse candidate set; searched all eligible paragraphs.",
+        "embedding_ms": 16.17,
+        "dense_ms": 0.26,
+        "lexical_ms": 3.12,
+        "total_ms": 34.24
+      }
+    },
+    {
+      "case_id": "q18",
+      "strategy": "adaptive",
+      "repeat": 0,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:s:12",
+        "3e67fc1a9977715a:s:18",
+        "01319e2e6e6ecfd5:s:13",
+        "01319e2e6e6ecfd5:s:14",
+        "3e67fc1a9977715a:s:15",
+        "01319e2e6e6ecfd5:s:0"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "section",
+        "reason": "Broad question: original section windows.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 45,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 1537,
+        "fallback": null,
+        "embedding_ms": 22.93,
+        "dense_ms": 0.16,
+        "lexical_ms": 3.8,
+        "total_ms": 43.19
+      }
+    },
+    {
+      "case_id": "q18",
+      "strategy": "adaptive",
+      "repeat": 1,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:s:12",
+        "3e67fc1a9977715a:s:18",
+        "01319e2e6e6ecfd5:s:13",
+        "01319e2e6e6ecfd5:s:14",
+        "3e67fc1a9977715a:s:15",
+        "01319e2e6e6ecfd5:s:0"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "section",
+        "reason": "Broad question: original section windows.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 45,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 1537,
+        "fallback": null,
+        "embedding_ms": 24.65,
+        "dense_ms": 0.16,
+        "lexical_ms": 3.71,
+        "total_ms": 46.68
+      }
+    },
+    {
+      "case_id": "q18",
+      "strategy": "adaptive",
+      "repeat": 2,
+      "paper_coverage": 1.0,
+      "evidence_ids": [
+        "01319e2e6e6ecfd5:s:12",
+        "3e67fc1a9977715a:s:18",
+        "01319e2e6e6ecfd5:s:13",
+        "01319e2e6e6ecfd5:s:14",
+        "3e67fc1a9977715a:s:15",
+        "01319e2e6e6ecfd5:s:0"
+      ],
+      "trace": {
+        "strategy": "adaptive",
+        "resolution": "section",
+        "reason": "Broad question: original section windows.",
+        "total_nodes": 718,
+        "coarse_vectors_scored": 0,
+        "fine_vectors_scored": 45,
+        "requested_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a"
+        ],
+        "covered_papers": [
+          "01319e2e6e6ecfd5",
+          "3e67fc1a9977715a"
+        ],
+        "missing_papers": [],
+        "coverage_truncations": [],
+        "evidence_words": 1537,
+        "fallback": null,
+        "embedding_ms": 21.82,
+        "dense_ms": 0.16,
+        "lexical_ms": 3.68,
+        "total_ms": 41.83
+      }
+    }
+  ],
+  "retrieval_note": "Same question corpus, 1600-word ceiling, three repetitions. Adaptive section windows differ from baseline paragraphs. Coverage checks paper identity, not whether all required facts were retrieved. No speed superiority claim is made.",
+  "live_cases": [
+    {
+      "case_id": "q02",
+      "question": "How do RAG-Sequence and RAG-Token differ in their treatment of retrieved documents during generation?",
+      "claims": 4,
+      "rejected": 0,
+      "seconds": 3.429,
+      "insufficient_evidence": false,
+      "invalid_citations_or_spans": 0,
+      "cached": false,
+      "result_id": "548b390377604fa78b8e5b8a1edb8df0"
+    },
+    {
+      "case_id": "q06",
+      "question": "RAPTOR with GPT-4 reports 82.6% accuracy versus a previous 62.3% on QuALITY. Calculate the absolute gain in percentage points and distinguish it from retrieval speed.",
+      "claims": 1,
+      "rejected": 1,
+      "seconds": 3.61,
+      "insufficient_evidence": true,
+      "invalid_citations_or_spans": 0,
+      "cached": false,
+      "result_id": "8a8d055847d347b2a8ca3e91d839ef75"
+    },
+    {
+      "case_id": "q08",
+      "question": "According to ALCE, how do citation recall and citation precision differ, and why is merely checking that a citation identifier exists insufficient?",
+      "claims": 3,
+      "rejected": 0,
+      "seconds": 12.557,
+      "insufficient_evidence": false,
+      "invalid_citations_or_spans": 0,
+      "cached": false,
+      "result_id": "941a551a0ee8454b80ec6430f32e2c45"
+    },
+    {
+      "case_id": "q12",
+      "question": "Compare RAPTOR's hierarchy with HiChunk's hierarchy and retrieval granularity mechanisms. Do these passages establish which has lower query latency?",
+      "claims": 3,
+      "rejected": 2,
+      "seconds": 51.931,
+      "insufficient_evidence": true,
+      "invalid_citations_or_spans": 0,
+      "cached": false,
+      "result_id": "c63117da361c44d1b99b8a22992808aa"
+    },
+    {
+      "case_id": "q13",
+      "question": "Synthesize design lessons from DPR, RAPTOR, and Lost in the Middle for selecting evidence for a local literature assistant. Clearly distinguish reported findings from your design inferences.",
+      "claims": 3,
+      "rejected": 2,
+      "seconds": 51.186,
+      "insufficient_evidence": true,
+      "invalid_citations_or_spans": 0,
+      "cached": false,
+      "result_id": "5ec8d23cbe3241ecab51140a7472c54e"
+    },
+    {
+      "case_id": "q15",
+      "question": "What exact median wall-clock retrieval latency, in milliseconds, did RAPTOR and HiChunk each achieve on a Dell G15 with an RTX 3050 6 GB GPU?",
+      "claims": 0,
+      "rejected": 0,
+      "seconds": 8.707,
+      "insufficient_evidence": true,
+      "invalid_citations_or_spans": 0,
+      "cached": false,
+      "result_id": "d1a1fadd16f44a918907f249842de624"
+    },
+    {
+      "case_id": "q17",
+      "question": "What exact learning rate was used to fine-tune the HiChunk hierarchy model? The supplied passages discuss only its benchmark motivation and high-level method.",
+      "claims": 1,
+      "rejected": 0,
+      "seconds": 12.426,
+      "insufficient_evidence": false,
+      "invalid_citations_or_spans": 0,
+      "cached": false,
+      "result_id": "5d44c82fccdf4c68a307e8cccb57068c"
+    },
+    {
+      "case_id": "q18",
+      "question": "Can we conclude RAPTOR is quantitatively superior to DPR by comparing RAPTOR's 82.6% versus 62.3% QuALITY result with DPR's 9\u201319% improvement over BM25? Explain what makes this comparison valid or invalid.",
+      "error": "Groq free-tier quota reached. Wait for the limit to reset and retry.",
+      "provider_diagnostic": {
+        "http_status": 429,
+        "code": "rate_limit_exceeded"
+      }
+    }
+  ]
+}

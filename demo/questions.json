@@ -1,0 +1,313 @@
+[
+  {
+    "id": "q01",
+    "kind": "single_paper",
+    "question": "What are the parametric and non-parametric memory components of the original RAG model, and how are the retriever and generator learned? Use only the supplied reference passages, cite the relevant reference numbers, and say explicitly if the evidence does not establish an answer. Answer in two short paragraphs, at most 170 words.",
+    "evidence_ids": [
+      "rag:p2:b30:w0",
+      "rag:p3:b31:w0"
+    ],
+    "required_facts": [
+      "Parametric memory is BART/pretrained seq2seq; non-parametric memory is dense Wikipedia index accessed with DPR.",
+      "The retriever and generator are jointly learned/end-to-end."
+    ],
+    "gold_papers": [
+      "rag"
+    ]
+  },
+  {
+    "id": "q02",
+    "kind": "single_paper",
+    "question": "How do RAG-Sequence and RAG-Token differ in their treatment of retrieved documents during generation? Use only the supplied reference passages, cite the relevant reference numbers, and say explicitly if the evidence does not establish an answer. Answer in two short paragraphs, at most 170 words.",
+    "evidence_ids": [
+      "rag:p3:b3:w0",
+      "rag:p3:b14:w0"
+    ],
+    "required_facts": [
+      "RAG-Sequence marginalizes a single latent retrieved document for the complete output.",
+      "RAG-Token can marginalize a different retrieved document for each token."
+    ],
+    "gold_papers": [
+      "rag"
+    ]
+  },
+  {
+    "id": "q03",
+    "kind": "numeric",
+    "question": "What batch size and additional negative-passage setting were used to train DPR in the main experiments? Use only the supplied reference passages, cite the relevant reference numbers, and say explicitly if the evidence does not establish an answer. Answer in two short paragraphs, at most 170 words.",
+    "evidence_ids": [
+      "dpr:p5:b6:w0"
+    ],
+    "required_facts": [
+      "Batch size 128.",
+      "In-batch negatives plus one additional BM25 negative passage per question."
+    ],
+    "gold_papers": [
+      "dpr"
+    ]
+  },
+  {
+    "id": "q04",
+    "kind": "numeric",
+    "question": "What does DPR's reported 9–19% absolute improvement over Lucene-BM25 measure? Is it a measured speedup or a direct claim about final answer accuracy? Use only the supplied reference passages, cite the relevant reference numbers, and say explicitly if the evidence does not establish an answer. Answer in two short paragraphs, at most 170 words.",
+    "evidence_ids": [
+      "dpr:p1:b5:w0"
+    ],
+    "required_facts": [
+      "9–19 percentage points in top-20 passage retrieval accuracy.",
+      "Not a retrieval latency speedup or the stated magnitude of answer accuracy improvement."
+    ],
+    "gold_papers": [
+      "dpr"
+    ]
+  },
+  {
+    "id": "q05",
+    "kind": "single_paper",
+    "question": "Describe how RAPTOR constructs its multi-resolution tree and what information is retained at the leaves and higher levels. Use only the supplied reference passages, cite the relevant reference numbers, and say explicitly if the evidence does not establish an answer. Answer in two short paragraphs, at most 170 words.",
+    "evidence_ids": [
+      "raptor:p3:b5:w0",
+      "raptor:p3:b6:w0",
+      "raptor:p3:b9:w0"
+    ],
+    "required_facts": [
+      "Original contiguous chunks with SBERT embeddings form leaves.",
+      "Cluster, summarize with language model, re-embed and recursively repeat.",
+      "Higher levels are summaries, with soft clustering able to assign a node to multiple clusters."
+    ],
+    "gold_papers": [
+      "raptor"
+    ]
+  },
+  {
+    "id": "q06",
+    "kind": "numeric",
+    "question": "RAPTOR with GPT-4 reports 82.6% accuracy versus a previous 62.3% on QuALITY. Calculate the absolute gain in percentage points and distinguish it from retrieval speed. Use only the supplied reference passages, cite the relevant reference numbers, and say explicitly if the evidence does not establish an answer. Answer in two short paragraphs, at most 170 words.",
+    "evidence_ids": [
+      "raptor:p8:b14:w0"
+    ],
+    "required_facts": [
+      "82.6 minus 62.3 equals 20.3 percentage points.",
+      "This is QA accuracy, not a measured retrieval speed improvement."
+    ],
+    "gold_papers": [
+      "raptor"
+    ]
+  },
+  {
+    "id": "q07",
+    "kind": "single_paper",
+    "question": "What position-dependent behavior does Lost in the Middle report, and why is simply making the prompt longer an unreliable solution? Use only the supplied reference passages, cite the relevant reference numbers, and say explicitly if the evidence does not establish an answer. Answer in two short paragraphs, at most 170 words.",
+    "evidence_ids": [
+      "lost:p1:b18:w0",
+      "lost:p2:b3:w0",
+      "lost:p2:b7:w0"
+    ],
+    "required_facts": [
+      "Relevant information near beginning or end is often easier to use than information in the middle.",
+      "Long context availability does not guarantee robust use; encoder-decoder robustness also depends on training-time length."
+    ],
+    "gold_papers": [
+      "lost"
+    ]
+  },
+  {
+    "id": "q08",
+    "kind": "citation_evaluation",
+    "question": "According to ALCE, how do citation recall and citation precision differ, and why is merely checking that a citation identifier exists insufficient? Use only the supplied reference passages, cite the relevant reference numbers, and say explicitly if the evidence does not establish an answer. Answer in two short paragraphs, at most 170 words.",
+    "evidence_ids": [
+      "alce:p4:b52:w0",
+      "alce:p4:b53:w0",
+      "alce:p1:b21:w0"
+    ],
+    "required_facts": [
+      "Recall checks whether statements have cited evidence that jointly entails them.",
+      "Precision detects irrelevant citations.",
+      "A valid identifier does not prove the passage supports the claim."
+    ],
+    "gold_papers": [
+      "alce"
+    ]
+  },
+  {
+    "id": "q09",
+    "kind": "post_release_paper",
+    "question": "Why does HiChunk introduce HiCBench, where do its documents come from, and how is evidence-dense QA constructed? Use only the supplied reference passages, cite the relevant reference numbers, and say explicitly if the evidence does not establish an answer. Answer in two short paragraphs, at most 170 words.",
+    "evidence_ids": [
+      "hichunk:p1:b9:w0",
+      "hichunk:p2:b2:w0"
+    ],
+    "required_facts": [
+      "Existing benchmark evidence sparsity weakly distinguishes chunking approaches.",
+      "Documents originate from OHRBench with manually annotated hierarchical boundaries.",
+      "LLMs use annotated structure to generate evidence-dense QA and extract/filter evidence."
+    ],
+    "gold_papers": [
+      "hichunk"
+    ]
+  },
+  {
+    "id": "q10",
+    "kind": "post_release_paper",
+    "question": "How does HiChunk address retrieval granularity, and what does its experiment with maximum hierarchy levels show about overly coarse chunks? Use only the supplied reference passages, cite the relevant reference numbers, and say explicitly if the evidence does not establish an answer. Answer in two short paragraphs, at most 170 words.",
+    "evidence_ids": [
+      "hichunk:p2:b3:w0",
+      "hichunk:p5:b25:w0",
+      "hichunk:p10:b60:w0"
+    ],
+    "required_facts": [
+      "Fine-tuned LLM hierarchy plus Auto-Merge adjusts granularity; fixed-size subchunks are used.",
+      "Level 1 alone can degrade performance because semantics are too coarse.",
+      "Evidence recall improves from maximum levels 1 to 3 then largely stabilizes."
+    ],
+    "gold_papers": [
+      "hichunk"
+    ]
+  },
+  {
+    "id": "q11",
+    "kind": "cross_paper",
+    "question": "Compare DPR and the original RAG model: what part of the retrieval-and-answering pipeline does each focus on, and how are their learning setups related? Use only the supplied reference passages, cite the relevant reference numbers, and say explicitly if the evidence does not establish an answer. Answer in two short paragraphs, at most 170 words.",
+    "evidence_ids": [
+      "dpr:p1:b5:w0",
+      "dpr:p5:b6:w0",
+      "rag:p2:b30:w0"
+    ],
+    "required_facts": [
+      "DPR focuses on learned dual-encoder dense passage retrieval with question-passage training.",
+      "RAG combines DPR-based retrieval with BART generation and joint/end-to-end learning.",
+      "Distinguish retriever quality from complete answer generation."
+    ],
+    "gold_papers": [
+      "dpr",
+      "rag"
+    ]
+  },
+  {
+    "id": "q12",
+    "kind": "cross_paper",
+    "question": "Compare RAPTOR's hierarchy with HiChunk's hierarchy and retrieval granularity mechanisms. Do these passages establish which has lower query latency? Use only the supplied reference passages, cite the relevant reference numbers, and say explicitly if the evidence does not establish an answer. Answer in two short paragraphs, at most 170 words.",
+    "evidence_ids": [
+      "raptor:p3:b5:w0",
+      "raptor:p3:b6:w0",
+      "raptor:p3:b7:w0",
+      "hichunk:p2:b3:w0",
+      "hichunk:p5:b25:w0"
+    ],
+    "required_facts": [
+      "RAPTOR recursively clusters and summarizes embedding-based chunks.",
+      "HiChunk learns hierarchical document boundaries and uses Auto-Merge over chunks.",
+      "No controlled relative latency result in supplied passages."
+    ],
+    "gold_papers": [
+      "raptor",
+      "hichunk"
+    ]
+  },
+  {
+    "id": "q13",
+    "kind": "multi_paper_synthesis",
+    "question": "Synthesize design lessons from DPR, RAPTOR, and Lost in the Middle for selecting evidence for a local literature assistant. Clearly distinguish reported findings from your design inferences. Use only the supplied reference passages, cite the relevant reference numbers, and say explicitly if the evidence does not establish an answer. Answer in two short paragraphs, at most 170 words.",
+    "evidence_ids": [
+      "dpr:p1:b5:w0",
+      "raptor:p3:b6:w0",
+      "raptor:p3:b7:w0",
+      "lost:p1:b18:w0"
+    ],
+    "required_facts": [
+      "Dense retrieval helps select passages; hierarchical summaries offer different resolutions.",
+      "Position effects mean indiscriminately adding more context may fail.",
+      "Recommendations are labeled as inferences, with evidence from all three papers."
+    ],
+    "gold_papers": [
+      "dpr",
+      "raptor",
+      "lost"
+    ]
+  },
+  {
+    "id": "q14",
+    "kind": "cross_paper",
+    "question": "Does RAPTOR's improvement on QuALITY establish citation faithfulness for a literature assistant? Use ALCE to explain what must be evaluated separately. Use only the supplied reference passages, cite the relevant reference numbers, and say explicitly if the evidence does not establish an answer. Answer in two short paragraphs, at most 170 words.",
+    "evidence_ids": [
+      "raptor:p8:b14:w0",
+      "alce:p1:b4:w0",
+      "alce:p4:b52:w0",
+      "alce:p4:b53:w0"
+    ],
+    "required_facts": [
+      "QuALITY accuracy does not itself establish citation support.",
+      "ALCE separates correctness/citation quality and requires support and relevance of cited evidence.",
+      "Need citation recall/completeness and precision/support checks."
+    ],
+    "gold_papers": [
+      "raptor",
+      "alce"
+    ]
+  },
+  {
+    "id": "q15",
+    "kind": "unanswerable",
+    "question": "What exact median wall-clock retrieval latency, in milliseconds, did RAPTOR and HiChunk each achieve on a Dell G15 with an RTX 3050 6 GB GPU? Use only the supplied reference passages, cite the relevant reference numbers, and say explicitly if the evidence does not establish an answer. Answer in two short paragraphs, at most 170 words.",
+    "evidence_ids": [
+      "raptor:p3:b6:w0",
+      "raptor:p6:b1:w0",
+      "hichunk:p2:b3:w0"
+    ],
+    "required_facts": [
+      "Explicitly states the supplied evidence does not report this hardware-specific median latency.",
+      "Does not invent latency measurements."
+    ],
+    "gold_papers": [],
+    "unanswerable": true
+  },
+  {
+    "id": "q16",
+    "kind": "false_premise",
+    "question": "A reviewer claims RAPTOR's 20% gain means queries run 20% faster. Is that interpretation justified by the supplied result? Use only the supplied reference passages, cite the relevant reference numbers, and say explicitly if the evidence does not establish an answer. Answer in two short paragraphs, at most 170 words.",
+    "evidence_ids": [
+      "raptor:p8:b14:w0",
+      "raptor:p6:b1:w0"
+    ],
+    "required_facts": [
+      "Rejects the premise; the result concerns QuALITY accuracy.",
+      "Speed must be benchmarked separately; no 20% latency gain is established."
+    ],
+    "gold_papers": [
+      "raptor"
+    ]
+  },
+  {
+    "id": "q17",
+    "kind": "unanswerable",
+    "question": "What exact learning rate was used to fine-tune the HiChunk hierarchy model? The supplied passages discuss only its benchmark motivation and high-level method. Use only the supplied reference passages, cite the relevant reference numbers, and say explicitly if the evidence does not establish an answer. Answer in two short paragraphs, at most 170 words.",
+    "evidence_ids": [
+      "hichunk:p1:b9:w0",
+      "hichunk:p2:b2:w0",
+      "hichunk:p2:b3:w0"
+    ],
+    "required_facts": [
+      "Explicitly says the learning rate is not reported in the supplied passages.",
+      "Does not invent a numerical learning rate."
+    ],
+    "gold_papers": [],
+    "unanswerable": true
+  },
+  {
+    "id": "q18",
+    "kind": "metric_comparability",
+    "question": "Can we conclude RAPTOR is quantitatively superior to DPR by comparing RAPTOR's 82.6% versus 62.3% QuALITY result with DPR's 9–19% improvement over BM25? Explain what makes this comparison valid or invalid. Use only the supplied reference passages, cite the relevant reference numbers, and say explicitly if the evidence does not establish an answer. Answer in two short paragraphs, at most 170 words.",
+    "evidence_ids": [
+      "raptor:p8:b14:w0",
+      "dpr:p1:b5:w0"
+    ],
+    "required_facts": [
+      "Cannot directly rank them from these figures.",
+      "Different tasks/metrics: QuALITY answer accuracy versus top-20 passage retrieval accuracy, with different baselines."
+    ],
+    "gold_papers": [
+      "raptor",
+      "dpr"
+    ]
+  }
+]
